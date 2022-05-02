@@ -31,3 +31,6 @@ Twitterユーザーを対象。
 
 # 画面遷移図
 https://www.figma.com/file/UwepZFhub60nnhZ16Ugd21/ensoku-no-oyatsu-ha-300-yen-made?node-id=0%3A1
+
+# ER図
+https://drive.google.com/file/d/1J0Py7mTY_zP0ftL_MTqgxwzdHzGOZRZe/view?usp=sharing
