@@ -10,22 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_09_102035) do
+ActiveRecord::Schema.define(version: 2022_05_09_132953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "baskets", force: :cascade do |t|
-    t.integer "oatsu_id"
-    t.integer "user_id"
     t.integer "quantitiy"
+    t.bigint "oyatsu_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["oyatsu_id"], name: "index_baskets_on_oyatsu_id"
+    t.index ["user_id"], name: "index_baskets_on_user_id"
   end
 
   create_table "oyatsus", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
+    t.string "name", null: false
+    t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,4 +38,6 @@ ActiveRecord::Schema.define(version: 2022_05_09_102035) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "baskets", "oyatsus"
+  add_foreign_key "baskets", "users"
 end
