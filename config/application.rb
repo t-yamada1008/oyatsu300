@@ -34,5 +34,8 @@ module EnsokuNoOyatsuHa300YenMade
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # to auto load lib/ directory
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end

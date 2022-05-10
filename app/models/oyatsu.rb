@@ -1,3 +1,4 @@
+# おやつモデル
 class Oyatsu < ApplicationRecord
   has_many :baskets
 
