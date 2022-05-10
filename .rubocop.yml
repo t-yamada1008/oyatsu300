@@ -1,0 +1,14 @@
+# 自動生成されたファイルを対象外にする
+AllCops:
+  Exclude:
+    - 'Gemfile'
+    - 'node_modules/**/*'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'test/**/*'
+    - 'spec/**/*'
+
+# 要検討
+Style/FrozenStringLiteralComment:
+  Enabled: false
