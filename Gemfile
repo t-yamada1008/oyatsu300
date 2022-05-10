@@ -51,7 +51,7 @@ group :development, :test do
   gem 'rails-flog', require: 'flog' # コンソールでのSQL整形
 
   # scraping
-  gem 'nokogiri'
+  gem 'nokogiri', '~> 1.13', '>= 1.13.6'
 end
 
 group :development do
