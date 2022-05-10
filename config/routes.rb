@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'oyatsus#index'
   get 'users/index'
   get 'users/show'
   get 'baskets/index'
