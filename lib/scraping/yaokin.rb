@@ -5,6 +5,8 @@ require 'nokogiri'
 module Scraping
   # やおきん用
   module Yaokin
+    include Scraping::ScrapingCore
+    include Scraping::DownloadImage
     def test
       p '読み込めてるよ！'
     end
@@ -24,18 +26,6 @@ module Scraping
       puts name
       puts price
       puts img
-    end
-
-    # 対象のURLをパースする
-    def parse_document(url)
-      # システム負荷対策の1.5~3秒ランダムスリープ
-      sleep rand(1.5..3.0)
-      p url
-      begin
-        Nokogiri::HTML.parse(URI.parse(url).open.read)
-      rescue OpenURI::HTTPError => e
-        p e
-      end
     end
 
     # ジャンルのURLを取得する
@@ -97,7 +87,7 @@ module Scraping
         # アイテムhtml
         item_data[:name] = item_doc.css('.verlign_m')[1].children.attribute('alt').value
         item_data[:price] = item_doc.css('p')[6].children[1].text.chop
-        item_data[:image] = item_doc.css('.verlign_m')[1].children.attribute('src').value
+        item_data[:image] = base_url + item_doc.css('.verlign_m')[1].children.attribute('src').value
 
         item.push item_data
       end
