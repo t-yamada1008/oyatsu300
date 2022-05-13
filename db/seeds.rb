@@ -16,6 +16,7 @@ item.each do |i|
     name: i[:name]
   ) do |oyatsu|
     oyatsu.name = i[:name]
+    oyatsu.genre = i[:genre]
     oyatsu.price = i[:price]
     oyatsu.image = i[:image]
   end
