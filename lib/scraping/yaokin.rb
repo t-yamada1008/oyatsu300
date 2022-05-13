@@ -73,6 +73,9 @@ module Scraping
         # 商品名を取得
         item_name = item_doc.css('.verlign_m')[1].children.attribute('alt').value
 
+        # 商品ジャンルを取得
+        item_genre = i.split('/').pop(2).first
+
         # 商品価格を取得
         item_price = item_doc.css('p')[6].children[1].text
 
@@ -82,11 +85,12 @@ module Scraping
         # '円'を切り取りIntegerに変換
         item_price = item_price.chop.to_i
 
-        # 商品URLを取得
-        item_image = base_url + item_doc.css('.verlign_m')[1].children.attribute('src').value
+        # 商品イメージのURLを取得
+        item_image = item_doc.css('.verlign_m')[1].children.attribute('src').value
 
         # 商品データを確定
         item_data[:name] = item_name
+        item_data[:genre] = item_genre
         item_data[:price] = item_price
         item_data[:image] = item_image
         item.push item_data
