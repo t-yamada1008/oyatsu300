@@ -7,25 +7,8 @@ module Scraping
   module Yaokin
     include Scraping::ScrapingCore
     include Scraping::DownloadImage
-    def test
+    def check_scraping_yaokin
       p '読み込めてるよ！'
-    end
-
-    def oyatsu(url)
-      # urlにアクセスしてhtmlを取得する
-      html = URI.parse(url).open.read
-
-      # 取得したhtmlをNokogiriでパースする
-      doc = Nokogiri::HTML.parse(html)
-
-      # htmlの要素を取得して出力する
-      name = doc.css('.verlign_m')[1].children.attribute('alt').value
-      price = doc.css('p')[6].children[1].text.chop
-      img = doc.css('.verlign_m')[1].children.attribute('src').value
-
-      puts name
-      puts price
-      puts img
     end
 
     # ジャンルのURLを取得する
@@ -84,15 +67,32 @@ module Scraping
         # アイテムhtmlを取得してパース
         item_doc = parse_document(i)
 
-        # アイテムhtml
-        item_data[:name] = item_doc.css('.verlign_m')[1].children.attribute('alt').value
-        item_data[:price] = item_doc.css('p')[6].children[1].text.chop
-        item_data[:image] = base_url + item_doc.css('.verlign_m')[1].children.attribute('src').value
+        # item_docの取得に失敗した場合は次のループへ
+        next if item_doc.nil?
 
+        # 商品名を取得
+        item_name = item_doc.css('.verlign_m')[1].children.attribute('alt').value
+
+        # 商品価格を取得
+        item_price = item_doc.css('p')[6].children[1].text
+
+        # フリープライスの品物の場合、次のループへ
+        next if item_price.include?('フリープライス')
+
+        # '円'を切り取りIntegerに変換
+        item_price = item_price.chop.to_i
+
+        # 商品URLを取得
+        item_image = base_url + item_doc.css('.verlign_m')[1].children.attribute('src').value
+
+        # 商品データを確定
+        item_data[:name] = item_name
+        item_data[:price] = item_price
+        item_data[:image] = item_image
         item.push item_data
+        p item_data
       end
       item
     end
-    # oyatsu('http://www.yaokin.com/products_search/umaibo/item_M27001')
   end
 end
