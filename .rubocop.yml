@@ -1,5 +1,6 @@
 # 自動生成されたファイルを対象外にする
 AllCops:
+  TargetRubyVersion: 3.1.2
   Exclude:
     - 'Gemfile'
     - 'node_modules/**/*'
@@ -12,3 +13,6 @@ AllCops:
 # 要検討
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/AbcSize:
+  Max: 30

@@ -49,6 +49,9 @@ group :development, :test do
 
   # Debug and Code Formatting for development and test
   gem 'rails-flog', require: 'flog' # コンソールでのSQL整形
+
+  # scraping
+  gem 'nokogiri', '~> 1.13', '>= 1.13.6'
 end
 
 group :development do
