@@ -15,10 +15,11 @@ module Scraping
       sleep rand(1.5..3.0)
       p url
       begin
-        Nokogiri::HTML.parse(URI.parse(url).open.read)
+        doc = Nokogiri::HTML.parse(URI.parse(url).open.read)
       rescue OpenURI::HTTPError => e
         p e.message
       end
+      doc
     end
   end
 end
