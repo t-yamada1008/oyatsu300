@@ -86,7 +86,7 @@ module Scraping
         item_price = item_price.chop.to_i
 
         # 商品イメージのURLを取得
-        item_image = item_doc.css('.verlign_m')[1].children.attribute('src').value
+        item_image = base_url + item_doc.css('.verlign_m')[1].children.attribute('src').value
 
         # 商品データを確定
         item_data[:name] = item_name
