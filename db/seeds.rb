@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+include Scraping::Yaokin
+
+# おやつデータをDBに保存する
+item = Oyatsu.new.yaokin_oyatsu
+p item
+item.each do |i|
+  Oyatsu.find_or_create_by!(
+    name: i[:name]
+  ) do |oyatsu|
+    oyatsu.name = i[:name]
+    oyatsu.price = i[:price]
+    oyatsu.image = i[:image]
+  end
+end
+
