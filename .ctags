@@ -1,0 +1,4 @@
+--append=yes
+--recurse=yes
+--langmap=Ruby:+.rb+.erb
+--Ruby-kinds=cfFm
