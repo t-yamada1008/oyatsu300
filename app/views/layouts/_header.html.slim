@@ -1,1 +1,17 @@
-p 'headerですよ'
+header
+  / 上部ナビゲーションバー
+  nav.navbar.is-transparent.is-info role='navigation' aria-rabel='top navigation'
+    div.navbar-brand
+      a.navbar-item href='#'
+        =image_tag "download_images/banana/banana.png"
+    div.navbar-menu id='menu'
+      div.navbar-start
+      div.navbar-end
+        a.navbar-item.has-text-link href='#'
+          div.button.is-warning みんなのおやつ
+
+  / メインヘッダー
+  section.hero.is-warning
+    .hero-body
+      h1.title 遠足のおやつは300円まで
+      h2.subtitle 好きなおやつを選んでね！
