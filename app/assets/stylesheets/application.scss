@@ -15,7 +15,6 @@
  */
 
 @import "bulma";
-
 .oyatsu_tooltip{
     position: relative;
     cursor: pointer;
@@ -36,17 +35,9 @@
     background: #000;
     width: 100px;
 }
-.oyatsu_description:before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    border: 15px solid transparent;
-    border-top: 15px solid #000;
-    margin-left: -15px;
-}
+
 .oyatsu_tooltip:hover .oyatsu_description{
     display: inline-block;
-    top: 0px;
-    left: 100px;
+    top: 50px;
+    left: 50px;
 }
