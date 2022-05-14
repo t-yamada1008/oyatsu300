@@ -1,4 +1,4 @@
-section.hero.is-medium.is-link
-  .hero-body
-    .title
-      medium hero
+- if @oyatsus.present?
+  = render @oyatsus
+- else
+  = 'no reslut'
