@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 # --- Add Gems ---
 # Reduces boot times through caching; required in config/boot.rb
-# gem "bulma-rails", "~> 0.9.3"
+gem "bulma-rails", "~> 0.9.3"
 
 # Japanese localization
 gem 'rails-i18n'
