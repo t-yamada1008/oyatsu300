@@ -1,3 +1,16 @@
+div.modal id="modal-js-#{oyatsu.id}"
+  div.modal-background
+  div.modal-card
+    header.modal-card-head
+      p.modal-card-title.has-text-centered #{oyatsu.name}
+      button.delete aria-label='close'
+    section.modal-card-body.has-text-centered
+      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image.split('/').last}" 
+    footer.modal-card-foot
+      button.button.is-success.has-text-centered plus
+      button.button.has-text-centered cancel
+
 div.oyatsu_tooltip
-  = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image.split('/').last}"
-  div.oyatsu_description #{oyatsu.name} #{oyatsu.price}円
+  div.js-modal-trigger data-target="modal-js-#{oyatsu.id}"
+    = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image.split('/').last}" 
+    div.oyatsu_description #{oyatsu.name} #{oyatsu.price}円
