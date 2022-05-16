@@ -6,9 +6,12 @@ div.modal id="modal-js-#{oyatsu.id}"
       button.delete aria-label='close'
     section.modal-card-body.has-text-centered
       = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image.split('/').last}" 
+      p.has-text-centered #{oyatsu.price}円
     footer.modal-card-foot
-      button.button.is-success.has-text-centered plus
-      button.button.has-text-centered cancel
+      input.input type='text' placeholder='text input'
+      button.button ふやす
+      button.button へらす
+
 
 div.oyatsu_tooltip
   div.js-modal-trigger data-target="modal-js-#{oyatsu.id}"
