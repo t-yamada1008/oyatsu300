@@ -12,9 +12,6 @@ module Scraping
 
     # ダウンロードメソッド
     def download_image(image_url, genre)
-      # いらないかもだけど念の為対象URLへの負荷対策としてsleepを仕込んでおく
-      sleep 1
-
       # ファイルの保存先はapp/assets/images/download_imagesに固定
       dir_download_images = "#{Rails.root}/app/assets/images/download_images"
       Dir.mkdir dir_download_images unless Dir.exist?(dir_download_images)
@@ -26,6 +23,12 @@ module Scraping
 
       p image_url
       p file_name
+
+      # ファイルが存在する場合はダウンロード
+      return if File.exist?(file_name)
+
+      # いらないかもだけど念の為対象URLへの負荷対策としてsleepを仕込んでおく
+      sleep 1
       File.open(file_name, 'w+b') do |f|
         URI.parse(image_url).open do |u|
           f.write(u.read)
@@ -37,7 +40,7 @@ module Scraping
     def download_all_images
       oyatsu = Oyatsu.all
       oyatsu.each do |o|
-        download_image(o[:image], o[:genre])
+        download_image(o[:image_url], o[:genre])
       end
     end
   end
