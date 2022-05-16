@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      logout if logged_in?
+      auto_login(@user)
       redirect_to choose_oyatsu_path, success: t('.success')
     else
       flash.now[:danger] = t('.failed')

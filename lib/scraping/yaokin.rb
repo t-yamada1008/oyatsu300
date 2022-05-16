@@ -85,14 +85,17 @@ module Scraping
         # '円'を切り取りIntegerに変換
         item_price = item_price.chop.to_i
 
+        # 300円以上の品物の場合、次のループへ
+        next if item_price > 300
+
         # 商品イメージのURLを取得
-        item_image = base_url + item_doc.css('.verlign_m')[1].children.attribute('src').value
+        item_image_url = base_url + item_doc.css('.verlign_m')[1].children.attribute('src').value
 
         # 商品データを確定
         item_data[:name] = item_name
         item_data[:genre] = item_genre
         item_data[:price] = item_price
-        item_data[:image] = item_image
+        item_data[:image_url] = item_image_url
         item.push item_data
         p item_data
       end

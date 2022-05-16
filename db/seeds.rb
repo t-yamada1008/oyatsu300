@@ -18,7 +18,7 @@ item.each do |i|
     oyatsu.name = i[:name]
     oyatsu.genre = i[:genre]
     oyatsu.price = i[:price]
-    oyatsu.image = i[:image]
+    oyatsu.image_url = i[:image_url]
   end
 end
-
+item.download_all_images
