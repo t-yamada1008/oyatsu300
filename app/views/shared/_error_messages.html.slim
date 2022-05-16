@@ -1,0 +1,5 @@
+div.notification.is-danger  id='error_explanation'
+  .ul
+    - object.errors.full_messages.each do |message|
+      .li
+        = message
