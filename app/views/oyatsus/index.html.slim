@@ -1,4 +1,4 @@
-div.hero.is-info.has-text-centered #{current_user.name}のおこづかい:  おかいけい
+= render 'oyatsus/basket'
 
 - if @oyatsus.present?
   = render @oyatsus

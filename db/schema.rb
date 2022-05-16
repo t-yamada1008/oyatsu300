@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_05_16_132953) do
   enable_extension "plpgsql"
 
   create_table "baskets", force: :cascade do |t|
-    t.integer "quantitiy"
+    t.integer "quantity"
     t.bigint "oyatsu_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2022_05_16_132953) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
+    t.integer "purse", null: false
     t.string "comment"
     t.string "email"
     t.string "crypted_password"

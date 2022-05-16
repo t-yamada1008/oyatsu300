@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.purse = 300
 
     if @user.save
       logout if logged_in?
