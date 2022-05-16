@@ -1,7 +1,12 @@
-section.hero.is-info.is-fullheight
+section.hero.is-info.is-medium
   div.hero-body
-    div.container.has-text-centered
-      p.title
-        Fullheight hero
-      p.subtitle">
-        Fullheight subtitle
+    div.container
+      p.title.has-text-centered あそびかた！
+      div.has-text-centered
+        ul
+          li 1. おかしをえらんでね。
+          p すきなおかしをクリックしよう！
+          li 2. いくつ買うかえらんでね。
+          p 300円まで買えるよ。
+          li 3. きまったらレジにいこう。
+/      = form_with model: @user, scope: post, url: 'choose_oyatsu_path'
