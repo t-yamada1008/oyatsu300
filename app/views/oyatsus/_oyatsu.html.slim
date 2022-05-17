@@ -8,9 +8,18 @@ div.modal id="modal-js-#{oyatsu.id}"
       = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}" 
       p.has-text-centered #{oyatsu.price}円
     footer.modal-card-foot
-      input.input type='text' placeholder='text input'
-      button.button ふやす
-      button.button へらす
+      = form_with model: [@basket, oyatsu], url: '/baskets', method: 'post', local: true do |f|
+        div.field
+          label.label
+            = f.label :quantity, 'こすう'
+          div.control
+            = f.text_field :quantity, id: 'quantity', class: 'input is-round is-half'
+        div.field
+          div.control
+            = f.hidden_field :oyatsu_id, value: oyatsu.id
+        div.field
+          div.control
+            = f.submit 'カゴにいれる', class: 'button is-link is-round'
 
 
 div.oyatsu_tooltip
