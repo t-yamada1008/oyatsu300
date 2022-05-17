@@ -1,0 +1,9 @@
+div.container.is-max-desktop
+  - basket_oyatsus.each do |bo|
+    div.columns.is-vcentered
+      div.column
+        p.has-text-lef #{bo.oyatsu.name}
+      div.column
+        p.has-text-centered #{bo.quantity}個
+      div.column
+        = link_to 'やっぱやめる', basket_path(bo.id), method: 'delete', class: 'button'
