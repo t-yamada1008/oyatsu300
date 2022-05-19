@@ -1,0 +1,16 @@
+div.modal id="modal-js-#{basket.id}"
+  div.modal-background
+  div.modal-card
+    header.modal-card-head
+      p.modal-card-title.has-text-centered #{basket.oyatsu.name}
+      button.delete aria-label='close'
+    section.modal-card-body.has-text-centered
+      = image_tag "download_images/#{basket.oyatsu.genre}/#{basket.oyatsu.image_url.split('/').last}" 
+      p.has-text-centered #{basket.quantity}個
+    footer.modal-card-foot
+      p オトナモード
+
+div.oyatsu_tooltip
+  div.js-modal-trigger data-target="modal-js-#{basket.id}"
+    = image_tag "download_images/#{basket.oyatsu.genre}/#{basket.oyatsu.image_url.split('/').last}" 
+    div.oyatsu_description #{basket.oyatsu.name} #{basket.quantity}個
