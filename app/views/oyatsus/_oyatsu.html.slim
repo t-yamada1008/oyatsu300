@@ -5,8 +5,11 @@ div.modal id="modal-js-#{oyatsu.id}"
       p.modal-card-title.has-text-centered #{oyatsu.name}
       button.delete aria-label='close'
     section.modal-card-body.has-text-centered
-      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
-      p.modal-card-title.has-text-centered #{oyatsu.price}円
+      - if oyatsu.name == 'バナナ'
+        = image_tag "preset_images/banana.png"
+      - else
+        = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
+        p.modal-card-title.has-text-centered #{oyatsu.price}円
     footer.modal-card-foot
       - if oyatsu.name == 'バナナ'
         p.modal-card-title.has-text-centered バナナはおやつにふくまれないよ！
@@ -27,5 +30,8 @@ div.modal id="modal-js-#{oyatsu.id}"
 
 div.oyatsu_tooltip
   div.js-modal-trigger data-target="modal-js-#{oyatsu.id}"
-    = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
+    - if oyatsu.name == 'バナナ'
+      = image_tag "preset_images/banana.png"
+    - else
+      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
     div.oyatsu_description #{oyatsu.name} #{oyatsu.price}円
