@@ -21,18 +21,21 @@ module Scraping
       # ファイル名を指定
       file_name = "#{dir_path}/#{image_url.split('/').last}"
 
-      p image_url
-      p file_name
-
       # ファイルが存在する場合はダウンロード
       return if File.exist?(file_name)
 
       # いらないかもだけど念の為対象URLへの負荷対策としてsleepを仕込んでおく
       sleep 1
+      begin
+      p image_url
+      p file_name
       File.open(file_name, 'w+b') do |f|
         URI.parse(image_url).open do |u|
           f.write(u.read)
         end
+      end
+      rescue NoMethodError => e
+      p e.message
       end
     end
 
