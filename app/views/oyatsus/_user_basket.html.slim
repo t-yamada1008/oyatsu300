@@ -13,6 +13,7 @@ div.hero.is-info
         div.subtitle もういちどえらびなおそう！
       - elsif current_user.purse == 300
         div.title すきなおかしをえらんでね！
+        div.subtitle うまくえらべない時はページをこうしん!
       - else
         div.title これでだいじょうぶ？
         = link_to 'これにきめた！', user_baskets_path(current_user.id), class: 'button is-warning'
