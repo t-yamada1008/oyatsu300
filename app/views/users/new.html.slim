@@ -7,8 +7,6 @@ section.hero.is-info.is-medium
           - if @user.errors.any?
             = render 'shared/error_messages', object: f.object
           div.field
-            label.label.has-text-centered
-              = f.label :name, 'おなまえ'
             div.control
               = f.text_field :name, id: 'name', class: 'input is-large is-round is-half'
           div.field.has-text-centered
