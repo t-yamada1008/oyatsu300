@@ -15,7 +15,7 @@ Oyatsu.find_or_create_by!(
   oyatsu.name = 'バナナ'
   oyatsu.genre = 'banana'
   oyatsu.price = 100
-  oyatsu.image_url = "#{Rails.root}/app/assets/images/download_images/banana/banana.png"
+  oyatsu.image_url = "#{Rails.root}/app/assets/images/preset_images/banana.png"
 end
 
 # おやつデータをDBに保存する
