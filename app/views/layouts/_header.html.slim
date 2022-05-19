@@ -2,13 +2,22 @@ header
   / 上部ナビゲーションバー
   nav.navbar.is-transparent.is-info role='navigation' aria-rabel='top navigation'
     div.navbar-brand
-      a.navbar-item href='#'
-        =image_tag "download_images/banana/banana.png"
+      = link_to image_tag("download_images/banana/banana.png", class: 'navbar-item', size: '80x80'), '/'
     div.navbar-menu id='menu'
       div.navbar-start
       div.navbar-end
-        a.navbar-item.has-text-link href='#'
-          div.button.is-warning みんなのおやつ
+        - if logged_in?
+          div.navbar-item.has-text-link
+            = link_to 'はじめからやりなおす', user_path(current_user.id), class: 'button is-danger', method: 'delete'
+        - if !logged_in? && !current_page?(root_path)
+          div.navbar-item.has-text-link
+            = link_to 'はじめにもどる', root_path, class: 'button is-warning'
+        - if logged_in? && !current_page?(choose_oyatsu_path)
+          div.navbar-item.has-text-link
+            = link_to 'おかしをえらぶ', choose_oyatsu_path, class: 'button is-warning'
+        - if !current_page?(users_path)
+          div.navbar-item.has-text-link
+            = link_to 'みんなのおやつ', users_path, class: 'button is-warning'
 
   / メインヘッダー
   section.hero.is-warning

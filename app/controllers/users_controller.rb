@@ -1,6 +1,7 @@
 # User
 class UsersController < ApplicationController
   before_action :set_current_user, only: %i[edit update]
+  skip_before_action :require_login, only: %i[new create], raise: false
   require 'securerandom'
 
   def index
@@ -17,7 +18,6 @@ class UsersController < ApplicationController
     @user.purse = 300
 
     if @user.save
-      logout if logged_in?
       auto_login(@user)
       redirect_to choose_oyatsu_path, success: 'せいこう'
     else
@@ -35,6 +35,11 @@ class UsersController < ApplicationController
       flash.now[:danger] = 'しっぱい'
       redirect_to user_baskets_path(@user.id)
     end
+  end
+
+  def destroy
+    logout if logged_in?
+    redirect_to root_path
   end
 
   private

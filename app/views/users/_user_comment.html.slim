@@ -6,5 +6,7 @@
     div.column
       p.has-text-left #{user.comment}
     div.column
-      = link_to 'みてあげる', user_baskets_path(current_user.id), class: 'button is-warning'
-/       = link_to 'やっぱやめる', basket_path(bo.id), method: 'delete', class: 'button'
+      - if logged_in? && user.id == current_user.id
+        = link_to 'かくにんする', user_baskets_path(user.id), class: 'button is-warning'
+      - else
+        = link_to 'みてあげる', user_baskets_path(user.id), class: 'button is-warning'
