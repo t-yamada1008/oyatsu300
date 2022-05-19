@@ -8,9 +8,9 @@ div.modal id="modal-js-#{basket.oyatsu.id}"
       = image_tag "download_images/#{basket.oyatsu.genre}/#{basket.oyatsu.image_url.split('/').last}"
       p.has-text-centered.has-text-black #{basket.quantity}個
     footer.modal-card-foot
-      p.has-text-centered.has-text-black オトナモード
+      p.modal-card-title.has-text-centered.has-text-light オトナモード
 
 div.oyatsu_tooltip
   div.js-modal-trigger data-target="modal-js-#{basket.oyatsu.id}"
     = image_tag "download_images/#{basket.oyatsu.genre}/#{basket.oyatsu.image_url.split('/').last}"
-    div.oyatsu_description #{basket.oyatsu.name} #{basket.quantity}個
+    p #{basket.oyatsu.name} #{basket.quantity}個
