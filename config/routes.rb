@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/choose_oyatsu', to: 'oyatsus#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :users, only: %i[index show create]
-  resources :baskets, only: %i[new create update destroy]
+  resources :users, only: %i[index show create] do
+    resources :baskets, only: %i[index show new create update destroy], shallow: true
+  end
 end
