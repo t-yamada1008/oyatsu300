@@ -1,2 +1,14 @@
-h1 Users#index
-p Find me in app/views/users/index.html.slim
+section.hero.is-info.is-medium
+  div.hero-body
+    div.section
+      div.container.has-text-centered
+        div.title みんなのおやつ
+    div.section
+      div.container.is-max-desktop
+        div.columns.is-vcentered
+          div.column.has-text-centered
+            p.has-text-centered ユーザー名
+          div.column.has-text-centered
+            p.has-text-centered ひとこと
+          div.column
+        = render 'user_comment', {users: @users}

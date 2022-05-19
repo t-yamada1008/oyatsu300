@@ -1,0 +1,10 @@
+div.container
+  = form_with model: User.new, url: user_path(current_user.id), method: 'patch', local: true do |f|
+    div.field
+      label.label
+        = f.label :comment, 'ひとこと'
+      div.control
+        = f.text_field :comment, id: 'comment', class: 'input is-round is-half'
+    div.field
+      div.control
+        = f.submit 'みんなにみせてもいいよ', class: 'button is-link is-round'

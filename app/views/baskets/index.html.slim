@@ -1,6 +1,7 @@
 section.hero.is-info.is-medium
   div.hero-body
     div.section
-      div.container.is-max-desktop
+      div.container.is-max-desktop.has-text-centered
         p.title.has-text-centered #{current_user.name}のおやつ
+        = render 'form'
         = render @baskets
