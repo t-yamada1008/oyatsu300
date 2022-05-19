@@ -18,7 +18,7 @@ Oyatsu.find_or_create_by!(
   oyatsu.image_url = "#{Rails.root}/app/assets/images/download_images/banana/banana.png"
 end
 
- おやつデータをDBに保存する
+# おやつデータをDBに保存する
 item = Oyatsu.new.yaokin_oyatsu
 p item
 item.each do |i|
