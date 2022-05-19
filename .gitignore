@@ -36,7 +36,7 @@ yarn-debug.log*
 .yarn-integrity
 
 # スクレイピングした画像は対象外とする
-/app/assets/images/download_images
+#/app/assets/images/download_images
 
 # ctagsファイルを除外する
 tags
