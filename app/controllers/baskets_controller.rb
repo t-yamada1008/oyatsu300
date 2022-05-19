@@ -5,6 +5,10 @@ class BasketsController < ApplicationController
     @baskets = Basket.where(user_id: params[:user_id])
   end
 
+  def new
+    @basket = Basket.new
+  end
+
   def create
     @basket = Basket.new(basket_params)
     @basket.user_id = current_user.id
@@ -28,6 +32,6 @@ class BasketsController < ApplicationController
   end
 
   def basket_params
-    params.require(:basket, :oyatsu).permit(:quantity, :oyatsu_id)
+    params.require(:basket).permit(:quantity, :oyatsu_id)
   end
 end
