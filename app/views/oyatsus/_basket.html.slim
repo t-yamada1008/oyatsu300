@@ -2,7 +2,8 @@ div.hero.is-info
   div.hero-body.has-text-centered
     - calculation
     div.section
-      div.title  #{current_user.name}の残りのおこづかい: #{current_user.purse}
+      div.title  残りのおこづかい: #{current_user.purse}
+      div.subtitle #{current_user.name}の買い物かご
       - if current_user.baskets.present?
         = render 'oyatsus/basket_oyatsu', {basket_oyatsus: current_user.baskets}
         - current_user.baskets.each do |b|
@@ -11,6 +12,6 @@ div.hero.is-info
     div.section
       - if current_user.purse.negative?
         div.title あれれ、おかねがたりないみたい
-          div.subtitle もういちどえらびなおそう！
+        div.subtitle もういちどえらびなおそう！
       - else
           = link_to 'レジ', user_baskets_path(current_user.id), class: 'button'
