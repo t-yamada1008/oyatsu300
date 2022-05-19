@@ -5,24 +5,24 @@ div.modal id="modal-js-#{oyatsu.id}"
       p.modal-card-title.has-text-centered #{oyatsu.name}
       button.delete aria-label='close'
     section.modal-card-body.has-text-centered
-      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}" 
+      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
       p.has-text-centered #{oyatsu.price}円
-    footer.modal-card-foot
-      = form_with model: Basket.new, url: user_baskets_path(oyatsu.id), method: 'post', local: true do |f|
-        div.field
-          label.label
-            = f.label :quantity, 'こすう'
-          div.control
-            = f.text_field :quantity, id: 'quantity', class: 'input is-round is-half'
-        div.field
-          div.control
-            = f.hidden_field :oyatsu_id, value: oyatsu.id
-        div.field
-          div.control
-            = f.submit 'カゴにいれる', class: 'button is-link is-round'
+      div.container
+        = form_with model: Basket.new, url: user_baskets_path(oyatsu.id), method: 'post', class: 'has-text-centered',  local: true do |f|
+          div.field
+            label.label
+              = f.label :quantity, 'こすう'
+            div.control
+              = f.text_field :quantity, id: 'quantity', class: 'input is-round is-half'
+          div.field
+            div.control
+              = f.hidden_field :oyatsu_id, value: oyatsu.id
+          div.field
+            div.control
+              = f.submit 'カゴにいれる', class: 'button is-link is-round'
 
 
 div.oyatsu_tooltip
   div.js-modal-trigger data-target="modal-js-#{oyatsu.id}"
-    = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}" 
+    = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
     div.oyatsu_description #{oyatsu.name} #{oyatsu.price}円
