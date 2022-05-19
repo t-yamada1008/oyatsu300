@@ -8,7 +8,7 @@ div.modal id="modal-js-#{oyatsu.id}"
       = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}" 
       p.has-text-centered #{oyatsu.price}円
     footer.modal-card-foot
-      = form_with model: [@basket, oyatsu], url: '/baskets', method: 'post', local: true do |f|
+      = form_with url: '/baskets', method: 'post', local: true do |f|
         div.field
           label.label
             = f.label :quantity, 'こすう'

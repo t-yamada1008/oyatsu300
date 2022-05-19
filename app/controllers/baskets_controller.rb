@@ -1,6 +1,10 @@
 class BasketsController < ApplicationController
   before_action :set_basket, only: %i[destroy]
 
+  def index
+    @baskets = Basket.where(user_id: params[:user_id])
+  end
+
   def create
     @basket = Basket.new(basket_params)
     @basket.user_id = current_user.id
@@ -24,6 +28,6 @@ class BasketsController < ApplicationController
   end
 
   def basket_params
-    params.require(:oyatsu).permit(:quantity, :oyatsu_id)
+    params.require(:basket, :oyatsu).permit(:quantity, :oyatsu_id)
   end
 end

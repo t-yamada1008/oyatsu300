@@ -11,5 +11,6 @@ div.hero.is-info
     div.section
       - if current_user.purse.negative?
         div.title あれれ、おかねがたりないみたい
+          div.subtitle もういちどえらびなおそう！
       - else
-        button.button おかいけい
+          = link_to 'レジ', user_baskets_path(current_user.id), class: 'button'
