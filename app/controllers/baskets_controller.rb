@@ -1,5 +1,6 @@
 class BasketsController < ApplicationController
   before_action :set_basket, only: %i[destroy]
+  skip_before_action :require_login, only: %i[index], raise: false
 
   def index
     @baskets = Basket.where(user_id: params[:user_id])

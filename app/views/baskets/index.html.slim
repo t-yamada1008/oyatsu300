@@ -2,6 +2,7 @@ section.hero.is-info.is-medium
   div.hero-body
     div.section
       div.container.is-max-desktop.has-text-centered
-        p.title.has-text-centered #{current_user.name}のおやつ
-        = render 'form'
+        p.title.has-text-centered #{@baskets[0].user.name}のおやつ
+        - if logged_in? && @baskets[0].user_id == current_user.id
+          = render 'form'
         = render @baskets

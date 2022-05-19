@@ -10,8 +10,8 @@ div.modal id="modal-js-#{oyatsu.id}"
       div.container
         = form_with model: Basket.new, url: user_baskets_path(oyatsu.id), method: 'post', class: 'has-text-centered',  local: true do |f|
           div.field
-            label.label
-              = f.label :quantity, 'こすう'
+            label.label.has-text-left
+              = f.label :quantity, 'いくつ買う？'
             div.control
               = f.text_field :quantity, id: 'quantity', class: 'input is-round is-half'
           div.field
