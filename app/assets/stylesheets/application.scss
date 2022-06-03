@@ -14,7 +14,9 @@
  *= require_self
  */
 
-@import "bulma";
+//@import "~bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 .oyatsu_tooltip{
     position: relative;
     cursor: pointer;

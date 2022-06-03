@@ -26,14 +26,13 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # --- Add Gems ---
-# Reduces boot times through caching; required in config/boot.rb
-gem "bulma-rails", "~> 0.9.3"
 
 # Japanese localization
 gem 'rails-i18n'
 
 # Frontend
-gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+# bootstrap
+gem 'bootstrap', '~> 5.0.2'
 gem 'slim-rails'
 gem 'html2slim'
 
