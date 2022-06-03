@@ -1,4 +1,3 @@
-# User
 class UsersController < ApplicationController
   before_action :set_current_user, only: %i[edit update]
   skip_before_action :require_login, only: %i[new create], raise: false

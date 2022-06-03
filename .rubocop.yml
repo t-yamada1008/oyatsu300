@@ -10,8 +10,10 @@ AllCops:
     - 'test/**/*'
     - 'spec/**/*'
 
-# 要検討
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false
 
 Metrics/AbcSize:
