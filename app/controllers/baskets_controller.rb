@@ -11,12 +11,12 @@ class BasketsController < ApplicationController
   end
 
   def create
-    @basket = Basket.new(basket_params)
-    @basket.user_id = current_user.id
+    @basket = @user.baskets.build(basket_params)
 
     if @basket.save
       redirect_to choose_oyatsu_path, success: 'せいこう'
     else
+      # TODO: renderに変更
       redirect_to choose_oyatsu_path, success: 'しっぱい'
     end
   end
