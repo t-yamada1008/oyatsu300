@@ -34,3 +34,20 @@ https://www.figma.com/file/UwepZFhub60nnhZ16Ugd21/ensoku-no-oyatsu-ha-300-yen-ma
 
 # ER図
 https://drive.google.com/file/d/1J0Py7mTY_zP0ftL_MTqgxwzdHzGOZRZe/view?usp=sharing
+
+# コミットメッセージルール
+修正対応によって下記のメッセージを使い分けること。
+v1やv2などのバージョンごとの管理は廃止する。
+
+Add:     (機能・ファイルなどを)追加する
+Fix:     (コードなどを)修正する
+Improve: (コードなどを)改善する
+Update:  (パッケージやドキュメントなどを)更新する
+Remove:  (ファイル名やコードを)除去する
+Rename:  (ファイル名を)変更する
+Move:    (AをBに)移動する
+Change:  (AをBに)変更する
+
+# イシュールール
+ラベルから最適なものを選ぶこと。
+
