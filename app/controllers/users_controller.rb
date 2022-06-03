@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create], raise: false
   require 'securerandom'
 
+  # 遠足のおやつは300円まで
+  OKOZUKAI = 300
+
   def index
     @users = User.all
   end
@@ -14,7 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.email = "#{SecureRandom.uuid}@example.com"
-    @user.purse = 300
+    @user.purse = OKOZUKAI
 
     if @user.save
       auto_login(@user)
