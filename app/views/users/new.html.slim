@@ -1,22 +1,15 @@
-section.hero.is-info.is-medium
-  div.hero-body
-    div.section
-      div.container.is-max-desktop
-        p.title.has-text-centered おなまえをいれてね！
-        = form_with model: @user, local: true do |f|
-          - if @user.errors.any?
-            = render 'shared/error_messages', object: f.object
-          div.field
-            div.control
-              = f.text_field :name, id: 'name', class: 'input is-large is-round is-half'
-          div.field.has-text-centered
-            div.control
-              = f.submit 'えらぶ', class: 'button is-link is-large is-round'
-    div.section
-      div.container
-        p.subtitle.has-text-centered あそびかた！
-        div.has-text-centered
-          ul
-            li すきなおかしをクリック！いくつ買うかえらんでね。
-            li きまったらレジにいこう。
+h1 おなまえをいれてね！
+= form_with model: @user, local: true do |f|
+  - if @user.errors.any?
+    = render 'shared/error_messages', object: f.object
+  div.field
+    div.control
+      = f.text_field :name, id: 'name', class: 'input is-large is-round is-half'
+  div.field.has-text-centered
+    div.control
+      = f.submit 'えらぶ', class: 'button is-link is-large is-round'
+h2 あそびかた！
+ul.list
+  li すきなおかしをクリック！いくつ買うかえらんでね。
+  li きまったらレジにいこう。
 
