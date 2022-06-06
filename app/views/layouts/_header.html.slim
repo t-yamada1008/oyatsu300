@@ -1,26 +1,17 @@
-header
-  / 上部ナビゲーションバー
-  nav.navbar.is-transparent.is-info role='navigation' aria-rabel='top navigation'
-    div.navbar-brand
-      = link_to image_tag("preset_images/banana.png", class: 'navbar-item', size: '80x80'), '/'
-    div.navbar-menu id='menu'
-      div.navbar-start
-      div.navbar-end
-        - if logged_in?
-          div.navbar-item.has-text-link
-            = link_to 'はじめからやりなおす', user_path(current_user.id), class: 'button is-danger', method: 'delete'
-        - if !logged_in? && !current_page?(root_path)
-          div.navbar-item.has-text-link
-            = link_to 'はじめにもどる', root_path, class: 'button is-warning'
-        - if logged_in? && !current_page?(choose_oyatsu_path)
-          div.navbar-item.has-text-link
-            = link_to 'おかしをえらぶ', choose_oyatsu_path, class: 'button is-warning'
-        - if !current_page?(users_path)
-          div.navbar-item.has-text-link
-            = link_to 'みんなのおやつ', users_path, class: 'button is-warning'
-
-  / メインヘッダー
-  section.hero.is-warning
-    .hero-body
-      h1.title 遠足のおやつは300円まで
-      h2.subtitle すきなおやつをえらんでね！
+header.mb-auto
+  div
+    div.float-md-start.mb-0
+      = link_to image_tag("preset_images/banana.png", class: '', size: '60x60'), '/'
+    nav.nav.nav-masthead.justify-content-center.float-md-end
+      - if logged_in?
+        div.nav-link
+          = link_to 'はじめからやりなおす', user_path(current_user.id), class: 'button is-danger', method: 'delete'
+      - if !logged_in? && !current_page?(root_path)
+        div.nav-link
+          = link_to 'はじめにもどる', root_path, class: 'button is-warning'
+      - if logged_in? && !current_page?(choose_oyatsu_path)
+        div.nav-link
+          = link_to 'おかしをえらぶ', choose_oyatsu_path, class: 'button is-warning'
+      - if !current_page?(users_path)
+        div.nav-link
+          = link_to 'みんなのおやつ', users_path, class: 'button is-warning'
