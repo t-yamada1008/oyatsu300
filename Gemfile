@@ -26,7 +26,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # --- Add Gems ---
-
 # Japanese localization
 gem 'rails-i18n'
 
@@ -35,6 +34,9 @@ gem 'rails-i18n'
 gem 'bootstrap', '~> 5.0.2'
 gem 'slim-rails'
 gem 'html2slim'
+
+# font-awesome
+gem 'font-awesome-sass'
 
 # Page nation
 gem 'kaminari'

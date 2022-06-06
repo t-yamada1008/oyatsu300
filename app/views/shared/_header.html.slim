@@ -1,0 +1,31 @@
+header
+  nav.navbar.navbar-expand-lg.navigation.navbar-dark.d-flex.header_style
+    div.container-fluid
+      // = image_tag "preset_images/banana.png", size: '60x60'
+      = link_to '遠足のおやつは300円まで', '/', class: 'navbar-brand justify-content-start'
+      - if logged_in?
+        button.navbar-toggler[
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#navbarSupportedContent'
+          aria-controls='navbarSupportedContent'
+          aria-expanded='false'
+          aria-label='Toggle'
+          ]
+          span.navbar-toggler-icon
+        div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end
+          ul.navbar-nav.mr-auto.mb-2.mb-lg-0
+              li.nav-item
+                = link_to 'はじめからやりなおす', user_path(current_user.id), method: 'delete', class: 'nav-link'
+              li.nav-item
+                = link_to 'はじめにもどる', root_path, class: 'nav-link'
+              li.nav-item
+                = link_to 'おかしをえらぶ', choose_oyatsu_path, class: 'nav-link'
+              li.nav-item
+                = link_to 'みんなのおやつ', users_path, class: 'nav-link'
+      - else
+        div.justify-content-end
+          // TODO: 要検討
+          = link_to 'ログイン', '#', class: 'btn btn-light mx-3'
+          = link_to '新規登録', '#', class: 'btn btn-outline-light'
+
