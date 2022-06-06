@@ -3,12 +3,11 @@ html
   head
     title
       | 遠足のおやつは300円まで
-    = render 'layouts/meta_tags'
+    = render 'shared/meta_tags'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  body.d-flex.h-100.text-center
-    div.cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column
-      = render 'layouts/header'
-      main.text-center.bg-container
-        = yield
-      = render 'layouts/footer'
+  body
+    = render 'shared/header'
+    = render 'shared/flash_message'
+    = yield
+    = render 'shared/footer'

@@ -14,8 +14,13 @@
  *= require_self
  */
 
-//@import "~bootstrap/scss/bootstrap.scss";
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 .oyatsu_tooltip{
     position: relative;
@@ -43,3 +48,14 @@
     top: 50px;
     left: 50px;
 }
+
+// navbarの背景色を変更
+.navbar {
+  background-color: #C7000B;
+
+}
+
+// pending: navbarの文字色
+//.navbar-brand{
+//  color: #DCDDDD;
+//}
