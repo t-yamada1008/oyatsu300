@@ -100,6 +100,8 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (2.0.2)
     ffi (1.15.5)
+    font-awesome-sass (6.1.1)
+      sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     hpricot (0.8.6)
@@ -324,6 +326,7 @@ DEPENDENCIES
   bullet
   byebug
   faker
+  font-awesome-sass
   html2slim
   jbuilder (~> 2.7)
   kaminari
