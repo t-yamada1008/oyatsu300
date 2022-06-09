@@ -51,7 +51,6 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 // navbarの背景色を変更
 .navbar {
-//  background-color: #C7000B;
   background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
 }
 
@@ -60,9 +59,8 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 //  color: #DCDDDD;
 //}
 
-// navbarの背景色を変更
-.footer_container {
-//  background-color: #C7000B;
+// footerの背景色を変更
+.footer_background {
   background-image: linear-gradient(to right, #C7000B 0%, #F5B090 100%);
 }
 
