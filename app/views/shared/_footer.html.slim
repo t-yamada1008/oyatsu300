@@ -1,7 +1,16 @@
-footer.mt-auto.text-center
-  p.mb-1 遠足のおやつは300円まで
-  ul.list-inline
-    li.list-inline-item
-      a href='#' りようきやく
-    li.list-inline-item
-      a href='#' おといあわせ
+# TODO: リンクの追加
+footer.mt-auto.text-center.text-lg-start.test-muted.footer_background
+  section.d-flex.justify-content-center.p-4
+    div
+      = link_to '#', id: 'twitter', class: 'link-light'
+        i.fa-brands.fa-twitter  おうえんする！
+  section
+    div.container.text-center
+      div.row
+        div.col
+          = link_to 'りようきやく', '#', class: 'link-light'
+        div.col
+          = link_to 'おといあわせ', '#', class: 'link-light'
+  section
+    div.text-center.p-4
+      = link_to '©遠足のおやつは300円まで', '#', class: 'link-light'
