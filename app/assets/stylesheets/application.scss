@@ -22,33 +22,71 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
-.oyatsu_tooltip{
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-}
-.oyatsu_tooltip p{
-    margin:0;
-    padding:0;
-}
-.oyatsu_description {
-    display: none;
-    position: absolute;
-    padding: 10px;
-    font-size: 12px;
-    line-height: 1.6em;
-    color: #fff;
-    border-radius: 5px;
-    background: #000;
-    width: 100px;
+.main-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.oyatsu_tooltip:hover .oyatsu_description{
-    display: inline-block;
-    top: 50px;
-    left: 50px;
+.main-wrapper {
+  background-image: image-url("top.jpg");
+  height: calc(100vh - 134px);
+  position: relative;
+  background-size: cover;
 }
 
+.main-wrapper:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-inner-text {
+  position: absolute;
+  //top: 50%;
+  //left: 50%;
+  width: 100%;
+  text-align: center;
+  color: white;
+
+  @media screen and (max-width: 767px) {
+    font-size: 2.0rem;
+  }
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 // navbarの背景色を変更
 .navbar {
   background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
@@ -61,6 +99,6 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 // footerの背景色を変更
 .footer_background {
-  background-image: linear-gradient(to right, #C7000B 0%, #F5B090 100%);
+  background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
 }
 
