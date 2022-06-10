@@ -1,0 +1,32 @@
+/ TODO: content_for
+/ - content_for :title, t('.title')
+div.main-wrapper
+  div.main-inner-text
+    form.form-signin
+      // TODO: ロゴ画像
+      // = link_to
+      h1.mt-3.mb-3.font-weight-normal
+        / TODO: 置き換え
+        = t('.title')
+      // TODO: twitterログイン
+      div.twitter-signin
+        p.border-bottom ツイッターログイン
+      = form_with url: login_path, local: true do |f|
+        div.form-group
+          = f.label :name, t('.name')
+          = f.text_field :name, id: 'name', class: 'form-control'
+        div.form-group
+          = f.label :email, t('.email')
+          = f.email_field :email, id: 'email', class: 'form-control', blaceholder: 'email'
+        div.field.has-text-centered
+          = f.label :password, t('.password'), for: 'password'
+          = f.password_field :password, id: 'password', class: 'form-control', blaceholder: 'email'
+        = f.submit 'えらぶ', class: 'btn btn-primary'
+      h1 あそびかた
+      div.columns
+        div.column
+          p すきなおかしをクリック！
+        div.column
+          p いくつ買うかえらんでね。
+        div.column
+          p きまったらレジにいこう。

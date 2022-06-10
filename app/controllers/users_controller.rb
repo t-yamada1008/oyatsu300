@@ -10,24 +10,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    @user.email = "#{SecureRandom.uuid}@example.com"
-    @user.purse = OKOZUKAI
-
-    if @user.save
-      auto_login(@user)
-      redirect_to choose_oyatsu_path, success: 'せいこう'
-    else
-      flash.now[:danger] = 'しっぱい'
-      render 'new'
-    end
-  end
-
   def edit; end
 
   def update
@@ -37,11 +19,6 @@ class UsersController < ApplicationController
       flash.now[:danger] = 'しっぱい'
       redirect_to user_baskets_path(@user.id)
     end
-  end
-
-  def destroy
-    logout if logged_in?
-    redirect_to root_path
   end
 
   private
