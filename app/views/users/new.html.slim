@@ -1,0 +1,22 @@
+/ TODO: content_for
+/ - content_for :title, t('.title')
+div.main-wrapper
+  div.main-inner-text
+    h1.mt-3.mb-3.font-weight-normal
+      / TODO: 置き換え
+      = t('.title')
+    section.form-box.border
+      = form_with model: @user, local: true do |f|
+        - if @user.errors.any?
+          = render 'shared/error_messages', object: f.object
+        div.form-group
+          = f.label :name, t('.name')
+          = f.text_field :name, id: 'name', class: 'form-control', placeholder: 'おなまえ'
+        div.form-group
+          = f.label :email, t('.email')
+          = f.email_field :email, id: 'email', class: 'form-control', placeholder: 'めーるあどれす'
+        div.field.has-text-centered
+          = f.label :password, t('.password'), for: 'password'
+          = f.password_field :password, id: 'password', class: 'form-control', placeholder: 'ぱすわーど'
+        /= f.submit t('.login'), class: 'btn btn-primary' TODO言語対応
+        = f.submit 'しんきとうろく', class: 'btn btn-light'
