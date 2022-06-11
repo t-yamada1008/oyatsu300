@@ -7,22 +7,23 @@ div.main-wrapper
     h1.mt-3.mb-3.font-weight-normal
       / TODO: 置き換え
       = t('.title')
-    section.form-box.border
-      // TODO: twitterログイン
-      div.twitter-box
-        p.border-bottom ツイッターログイン
-      = form_with url: login_path, local: true do |f|
-        //div.form-group
-          = f.label :name, t('.name')
-          = f.text_field :name, id: 'name', class: 'form-control'
-        div.form-group
-          = f.label :email, t('.email')
-          = f.email_field :email, id: 'email', class: 'form-control', blaceholder: 'email'
-        div.field.has-text-centered
-          = f.label :password, t('.password'), for: 'password'
-          = f.password_field :password, id: 'password', class: 'form-control', blaceholder: 'email'
-        /= f.submit t('.login'), class: 'btn btn-primary' TODO言語対応
-        = f.submit 'ろぐいん', class: 'btn btn-light'
+    - unless logged_in?
+      section.form-box.border
+        // TODO: twitterログイン
+        div.twitter-box
+          p.border-bottom ツイッターログイン
+        = form_with url: login_path, local: true do |f|
+          div.form-group
+            = f.label :email, t('.email')
+            = f.email_field :email, id: 'email', class: 'form-control', blaceholder: 'email'
+          div.field.has-text-centered
+            = f.label :password, t('.password'), for: 'password'
+            = f.password_field :password, id: 'password', class: 'form-control', blaceholder: 'email'
+          /= f.submit t('.login'), class: 'btn btn-primary' TODO言語対応
+          = f.submit 'ろぐいん', class: 'btn btn-light'
+      = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light mt-3'
+    - else
+      = link_to 'おやつをえらぶ', choose_oyatsu_path, class: 'btn btn-outline-light mt-3 btn-lg'
     h1.mt-3 あそびかた
     div.columns
       div.column
@@ -31,4 +32,3 @@ div.main-wrapper
         p 2. いくつ買うかえらんでね
       div.column
         p 3. きまったらレジにいこう
-    = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light'

@@ -15,14 +15,14 @@ header
           span.navbar-toggler-icon
         div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end
           ul.navbar-nav.mr-auto.mb-2.mb-lg-0
-              li.nav-item
-                = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
-              li.nav-item
-                = link_to 'はじめにもどる', root_path, class: 'nav-link'
-              li.nav-item
-                = link_to 'おかしをえらぶ', choose_oyatsu_path, class: 'nav-link'
-              li.nav-item
-                = link_to 'みんなのおやつ', users_path, class: 'nav-link'
+            li.nav-item
+              = link_to "まいぺーじ: #{current_user.name}", user_path(current_user.id), class: 'nav-link'
+            li.nav-item
+              = link_to 'おかしをえらぶ', choose_oyatsu_path, class: 'nav-link'
+            li.nav-item
+              = link_to 'みんなのおやつ', users_path, class: 'nav-link'
+            li.nav-item
+              = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
       - else
         div.justify-content-end
           // TODO: 要検討

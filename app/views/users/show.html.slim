@@ -1,0 +1,15 @@
+/ TODO: content_for
+/ - content_for :title, t('.title')
+div.main-wrapper
+  div.main-inner-text
+    h1.mt-3.mb-3.font-weight-normal
+      / TODO: 置き換え
+      = t('.title')
+    section.columns
+      div.column.mb-3
+        h2 おなまえ:
+        h3= "#{current_user.name}"
+      div.column.mb-3
+        h2 めーるあどれす:
+        h3= "#{current_user.email}"
+      = link_to 'こうしんする', edit_user_path(current_user.id), class: 'btn btn-outline-light'
