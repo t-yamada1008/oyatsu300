@@ -15,9 +15,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.purse = OKOZUKAI
 
     if @user.save
-      redirect_to login_path, success: t('.success')
+      redirect_to '/', success: t('.success')
     else
       flash.now[:danger] = t('.failed')
       render :new
@@ -42,6 +43,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_comfirmaition)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
