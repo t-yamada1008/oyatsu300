@@ -2,7 +2,7 @@ header
   nav.navbar.navbar-expand-lg.navigation.navbar-dark.d-flex.header_style
     div.container-fluid
       // = image_tag "preset_images/banana.png", size: '60x60'
-      = link_to '遠足のおやつは300円まで', '/', class: 'navbar-brand justify-content-start'
+      = link_to '遠足のおやつは300円まで', root_path, class: 'navbar-brand justify-content-start'
       - if logged_in?
         button.navbar-toggler[
           type='button'
@@ -15,17 +15,17 @@ header
           span.navbar-toggler-icon
         div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end
           ul.navbar-nav.mr-auto.mb-2.mb-lg-0
-              li.nav-item
-                = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
-              li.nav-item
-                = link_to 'はじめにもどる', root_path, class: 'nav-link'
-              li.nav-item
-                = link_to 'おかしをえらぶ', choose_oyatsu_path, class: 'nav-link'
-              li.nav-item
-                = link_to 'みんなのおやつ', users_path, class: 'nav-link'
+            li.nav-item
+              = link_to "まいぺーじ: #{current_user.name}", user_path(current_user.id), class: 'nav-link'
+            li.nav-item
+              = link_to 'おかしをえらぶ', choose_oyatsu_path, class: 'nav-link'
+            li.nav-item
+              = link_to 'みんなのおやつ', users_path, class: 'nav-link'
+            li.nav-item
+              = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
       - else
         div.justify-content-end
           // TODO: 要検討
-          = link_to 'ろぐいん', '/', class: 'btn btn-light mx-3'
+          = link_to 'ろぐいん', root_path, class: 'btn btn-light mx-3'
           = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light'
 

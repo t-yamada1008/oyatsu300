@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show; end
+
   def new
     @user = User.new
   end
@@ -29,10 +31,12 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to users_path, success: 'せいこう'
+      binding.pry
+      redirect_to user_path(current_user.id), success: 'せいこう'
     else
+      binding.pry
       flash.now[:danger] = 'しっぱい'
-      redirect_to user_baskets_path(@user.id)
+      render :edit
     end
   end
 

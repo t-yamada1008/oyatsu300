@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
   def new; end
 
   def create
-    @user = login(user_params)
+    @user = login(params[:email], params[:password])
 
     if @user
       redirect_back_or_to choose_oyatsu_path, success: t('.success')
@@ -17,11 +17,5 @@ class UserSessionsController < ApplicationController
   def destroy
     logout
     redirect_to root_path
-  end
-
-  private
-
-  def user_params
-    prams.require(:user).permit(:email, :password, :password_comfirmaition)
   end
 end
