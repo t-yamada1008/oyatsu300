@@ -42,7 +42,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 .main-inner-text {
@@ -58,47 +58,27 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   }
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
 // navbarの背景色を変更
-.navbar {
+header {
   background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
 }
-
-// pending: navbarの文字色
-//.navbar-brand{
-//  color: #DCDDDD;
-//}
 
 // footerの背景色を変更
-.footer_background {
+footer {
   background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
 }
 
+// _reboot.scssに対処できないため!importantで指定
+a {
+  text-decoration: none!important;
+}
+
+
+.notification {
+  text-align: left;
+}
+
+.alert {
+  text-align: center;
+  margin-bottom: 0!important;
+}

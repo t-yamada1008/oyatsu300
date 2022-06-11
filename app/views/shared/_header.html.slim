@@ -16,7 +16,7 @@ header
         div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end
           ul.navbar-nav.mr-auto.mb-2.mb-lg-0
               li.nav-item
-                = link_to 'はじめからやりなおす', user_path(current_user.id), method: 'delete', class: 'nav-link'
+                = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
               li.nav-item
                 = link_to 'はじめにもどる', root_path, class: 'nav-link'
               li.nav-item
@@ -26,6 +26,6 @@ header
       - else
         div.justify-content-end
           // TODO: 要検討
-          = link_to 'ログイン', '#', class: 'btn btn-light mx-3'
-          = link_to '新規登録', '#', class: 'btn btn-outline-light'
+          = link_to 'ろぐいん', '/', class: 'btn btn-light mx-3'
+          = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light'
 
