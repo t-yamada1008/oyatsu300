@@ -2,7 +2,7 @@ header
   nav.navbar.navbar-expand-lg.navigation.navbar-dark.d-flex.header_style
     div.container-fluid
       // = image_tag "preset_images/banana.png", size: '60x60'
-      = link_to '遠足のおやつは300円まで', '/', class: 'navbar-brand justify-content-start'
+      = link_to '遠足のおやつは300円まで', root_path, class: 'navbar-brand justify-content-start'
       - if logged_in?
         button.navbar-toggler[
           type='button'
@@ -26,6 +26,6 @@ header
       - else
         div.justify-content-end
           // TODO: 要検討
-          = link_to 'ろぐいん', '/', class: 'btn btn-light mx-3'
+          = link_to 'ろぐいん', root_path, class: 'btn btn-light mx-3'
           = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light'
 
