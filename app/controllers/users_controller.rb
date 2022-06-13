@@ -31,8 +31,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      binding.pry
-      redirect_to user_path(current_user.id), success: 'せいこう'
+      redirect_to user_path(current_user.id), success: t('.success')
     else
       binding.pry
       flash.now[:danger] = 'しっぱい'
