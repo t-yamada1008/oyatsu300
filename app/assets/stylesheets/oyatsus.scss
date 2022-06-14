@@ -1,3 +1,26 @@
 // Place all the styles related to the oyatsus controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.card-wrapper {
+  background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
+  text-align: center;
+  display: flex;
+}
+
+.card-img-style {
+  height: 200px;
+  width: auto;
+}
+
+.card-body-style {
+  flex-direction: column;
+}
+
+.card-title {
+  flex-grow: 1;
+}
+
+.card-price {
+  flex-grow: 1;
+}
