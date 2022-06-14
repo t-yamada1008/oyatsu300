@@ -1,6 +1,14 @@
-= render 'oyatsus/user_basket'
-
-- if @oyatsus.present?
-  = render @oyatsus
-- else
-  = 'no reslut'
+- content_for :title, t('.title')
+div.oyatsu_wrapper
+  section.basket_container
+  / TODO: ショッピングカートのサブミット
+  / ajax処理後で変動させる
+  /= render 'oyatsus/user_basket'
+  / おやつ一覧画面
+  section.oyatsu_container.py-5.bg-light
+    div.container
+      - if @oyatsus.present?
+        div.row
+           = render @oyatsus
+      - else
+        = t('no reslut')

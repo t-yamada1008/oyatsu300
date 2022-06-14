@@ -1,15 +1,19 @@
-div.modal id="modal-js-#{oyatsu.id}"
-  div.modal-background
-  div.modal-card
-    header.modal-card-head
+section.col-md-4.mb-3
+  div.card.card-wrapper.mb-4.box-shadow.h-100.d-flex
+    div.justify-content-center
+      div.card-img-top
+        = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}", class: 'card-img-style'
+      div.card-body.card-body-style
+        h5.card-title = oyatsu.name
+        p.card-price = "#{oyatsu.price}円"
+        = link_to 'えらぶ', '#', class: 'btn btn-primary'
+
+//    header.modal-card-head
       p.modal-card-title.has-text-centered #{oyatsu.name}
       button.delete aria-label='close'
     section.modal-card-body.has-text-centered
-      - if oyatsu.name == 'バナナ'
-        = image_tag "preset_images/banana.png"
-      - else
-        = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
-        p.modal-card-title.has-text-centered #{oyatsu.price}円
+      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
+      p.modal-card-title.has-text-centered #{oyatsu.price}円
     footer.modal-card-foot
       - if oyatsu.name == 'バナナ'
         p.modal-card-title.has-text-centered バナナはおやつにふくまれないよ！
@@ -27,11 +31,3 @@ div.modal id="modal-js-#{oyatsu.id}"
             div.field
               div.control
                 = f.submit 'カゴにいれる', class: 'button is-link is-round'
-
-div.oyatsu_tooltip
-  div.js-modal-trigger data-target="modal-js-#{oyatsu.id}"
-    - if oyatsu.name == 'バナナ'
-      = image_tag "preset_images/banana.png"
-    - else
-      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
-    div.oyatsu_description #{oyatsu.name} #{oyatsu.price}円
