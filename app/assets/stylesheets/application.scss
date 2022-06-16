@@ -22,6 +22,11 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url(asset_path('/Roboto-Regular.ttf'));
+}
+
 .main-wrapper {
   display: -ms-flexbox;
   display: flex;
