@@ -1,8 +1,7 @@
 doctype html
 html
   head
-    title
-      | 遠足のおやつは300円まで
+    title = page_title(yield(:title))
     = render 'shared/meta_tags'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
