@@ -43,5 +43,8 @@ module EnsokuNoOyatsuHa300YenMade
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
+    # font
+    config.assets.enabled = true
+    config.assets.paths << "#{Rails.root.to_s}/app/assets/fonts"
   end
 end
