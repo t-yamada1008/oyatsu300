@@ -65,12 +65,12 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 // navbarの背景色を変更
 header {
-  background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 }
 
 // footerの背景色を変更
 footer {
-  background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 }
 
 // _reboot.scssに対処できないため!importantで指定
