@@ -24,3 +24,21 @@
 .card-price {
   flex-grow: 1;
 }
+
+.pagination {
+  justify-content: center;
+}
+
+.page-item .page-link {
+  color: #ff5858;
+}
+
+.page-item .page-link:hover {
+  color: #f09819;
+}
+
+.page-item.active .page-link {
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  color: white;
+  border: white;
+}

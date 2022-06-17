@@ -7,8 +7,11 @@ div.oyatsu_wrapper
   / おやつ一覧画面
   section.oyatsu_container.py-5.bg-light
     div.container
-      - if @oyatsus.present?
-        div.row
-           = render @oyatsus
-      - else
-        = t('no reslut')
+      div.row
+        - if @oyatsus.present?
+          div.row
+             = render @oyatsus
+        - else
+          = t('no reslut')
+      div.link-info
+        = paginate @oyatsus
