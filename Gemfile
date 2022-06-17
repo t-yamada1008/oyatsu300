@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # --- Add Gems ---
+# login
+gem 'sorcery', '~> 0.16.3'
+
 # Japanese localization
 gem 'rails-i18n'
 
@@ -41,12 +44,12 @@ gem 'font-awesome-sass'
 # Page nation
 gem 'kaminari'
 
+# search
+gem 'ransack'
+
 # Image
 # gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'mini_magick', '~> 4.11'
-
-# login
-gem 'sorcery', '~> 0.16.3'
 
 # rails6.1.5対処
 gem 'net-smtp'
