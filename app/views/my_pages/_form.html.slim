@@ -1,0 +1,17 @@
+= form_with model: user, url: my_page_path, local: true do |f|
+  - if @user.errors.any?
+    = render 'shared/error_messages', object: f.object
+  div.form-group
+    = f.label :name, User.human_attribute_name(:name)
+    = f.text_field :name,  class: 'form-control', placeholder: 'おなまえ'
+  div.form-group
+    = f.label :email, User.human_attribute_name(:email)
+    = f.email_field :email, class: 'form-control', placeholder: 'めーるあどれす'
+  div.form-group
+    = f.label :password, User.human_attribute_name(:password)
+    = f.password_field :password, class: 'form-control', placeholder: 'ぱすわーど'
+  div.form-group
+    = f.label :password_confirmation, User.human_attribute_name(:password_confirmation)
+    = f.password_field :password_confirmation, class: 'form-control', placeholder: 'ぱすわーどかくにん'
+  /= f.submit t('.login'), class: 'btn btn-primary' TODO言語対応
+  = f.submit 'とうろく', class: 'btn btn-light'
