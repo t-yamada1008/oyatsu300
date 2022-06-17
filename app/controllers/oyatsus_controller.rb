@@ -3,6 +3,7 @@ class OyatsusController < ApplicationController
   before_action :require_login
 
   def index
-    @oyatsus = Oyatsu.all.page(params[:page])
+    @q = Oyatsu.ransack(params[:q])
+    @oyatsus = @q.result.page(params[:page])
   end
 end
