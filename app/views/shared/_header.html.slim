@@ -22,7 +22,7 @@ header
           div#navbarSupportedContent.collapse.navbar-collapse
             ul.navbar-nav.mr-auto.mb-2.mb-lg-0
               li.nav-item
-                = link_to "まいぺーじ: #{current_user.name}", user_path(current_user.id), class: 'nav-link'
+                = link_to "まいぺーじ: #{current_user.name}", my_page_path, class: 'nav-link'
               li.nav-item
                 = link_to 'おやつをえらぶ', choose_oyatsu_path, class: 'nav-link'
               li.nav-item
