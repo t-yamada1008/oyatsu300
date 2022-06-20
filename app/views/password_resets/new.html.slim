@@ -1,0 +1,12 @@
+- content_for :title, t('.title')
+div.main-wrapper
+  div.main-inner-text
+    h1.mt-3.mb-3.font-weight-normal
+      = t('.title')
+    section.form-box.border
+      = form_with url: password_resets_path, locale: true, method: :post do |f|
+        div.form-group
+          = f.label :email, t('.email')
+          = f.email_field :email, id: 'email', class: 'form-control', blaceholder: 'email'
+        /= f.submit t('.submit'), class: 'btn btn-light'
+        = f.submit 'きいてみる', class: 'btn btn-outline-light'
