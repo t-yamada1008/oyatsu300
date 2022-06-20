@@ -1,5 +1,5 @@
 = form_with model: user, local: true do |f|
-  - if @user.errors.any?
+  - if user.errors.any?
     = render 'shared/error_messages', object: f.object
   div.form-group
     = f.label :name, User.human_attribute_name(:name)
