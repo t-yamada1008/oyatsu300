@@ -31,6 +31,7 @@ header
                 = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
       - else
         // TODO: 要検討
-        = link_to 'ろぐいん', root_path, class: 'btn btn-light mx-3'
-        = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light'
+        div.col.text-end
+          = link_to 'ろぐいん', root_path, class: 'btn btn-outline-light mx-3'
+          = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light'
 

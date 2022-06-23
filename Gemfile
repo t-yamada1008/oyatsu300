@@ -71,6 +71,9 @@ group :development, :test do
 
   # scraping
   gem 'nokogiri', '~> 1.13', '>= 1.13.6'
+
+# 環境設定用gem
+  gem 'config'
 end
 
 group :development do
@@ -82,6 +85,9 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # email
+  gem 'letter_opener_web'
 
   # Lint
   gem 'rubocop'
