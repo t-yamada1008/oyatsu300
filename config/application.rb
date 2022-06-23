@@ -35,6 +35,14 @@ module EnsokuNoOyatsuHa300YenMade
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # rails g 時のファイル作成の可否を設定
+    config.generators do |g|
+      g.skip_routes true
+      g.assets false
+      g.helper false
+      g.test_framework false
+    end
+
     # to auto load lib/ directory
     config.autoload_paths += %W(#{config.root}/lib)
 
