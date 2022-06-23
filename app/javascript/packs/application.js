@@ -8,9 +8,10 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '../stylesheets/application';
-import '../../../node_modules/@fortawesome/fontawesome-free/js/all.js';
-import 'bootstrap';
-import '../stylesheets/application.scss'
+import '@fortawesome/fontawesome-free/js/all.js';
+
+require("bootstrap");
+require("admin-lte");
 
 Rails.start()
 Turbolinks.start()

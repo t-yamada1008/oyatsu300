@@ -34,7 +34,6 @@ gem 'rails-i18n'
 
 # Frontend
 # bootstrap
-gem 'bootstrap', '~> 5.0.2'
 gem 'slim-rails'
 gem 'html2slim'
 
