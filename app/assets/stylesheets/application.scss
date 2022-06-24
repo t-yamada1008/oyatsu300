@@ -16,6 +16,7 @@
 @import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "admin-lte/dist/css/adminlte.min.css";
 @import "./oyatsus.scss";
+@import "./admin/base.scss";
 
 @font-face {
   font-family: "Roboto-Regular";
@@ -31,18 +32,21 @@
   padding-bottom: 40px;
 }
 
-.main-wrapper {
-  background-image: image-url("top.jpg");
+.main-bg {
   height: calc(100vh - 134px);
   position: relative;
   background-size: cover;
 }
 
-.main-wrapper:before {
+.main-bg:before {
   content: '';
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.65);
+}
+
+.main-bg-img {
+  background-image: image-url("top.jpg");
 }
 
 .main-inner-text {
