@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title = page_title(yield(:title), admin: true)
+    meta charset="utf-8"
+    meta name="robots" content="noindex nofollow"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'admin', media: 'all'
+  body.hold-transition.login-page
+    div
+      = render 'shared/flash_message'
+      = yield

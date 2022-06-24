@@ -18,11 +18,6 @@
 @import "./oyatsus.scss";
 @import "./admin/base.scss";
 
-@font-face {
-  font-family: "Roboto-Regular";
-  src: url(asset_path('/Roboto-Regular.ttf'));
-}
-
 .main-wrapper {
   display: -ms-flexbox;
   display: flex;
