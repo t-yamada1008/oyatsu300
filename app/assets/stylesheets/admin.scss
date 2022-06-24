@@ -2,6 +2,5 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.admin-bg-img {
-  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-}
+@import 'admin-lte/plugins/fontawesome-free/css/all.min.css';
+@import 'admin-lte/dist/css/adminlte.css';

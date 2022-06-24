@@ -1,16 +1,24 @@
 / 動的にページタイトルを表示
-- content_for :title
-div.main-wrapper.main-bg.admin-bg-img
-  div.main-inner-text
-    /h1.mt-3.mb-3.font-weight-normal = t('.title')
-    h1.mt-3.mb-3.font-weight-normal 管理画面ログイン
-    section.form-box.border
-      = form_with url: admin_boards_path, local: true do |f|
+- content_for :title, t('.title')
+div.login-box
+  div.login-logo
+    = t('.title')
+  div.card
+    div.card-body.login-card-body
+      = form_with  url: admin_login_path, local: true do |f|
         div.form-group
-          = f.label :email, t('.email')
-          = f.email_field :email, id: 'email', class: 'form-control', blaceholder: 'email'
-        div.field.has-text-centered
-          = f.label :password, t('.password'), for: 'password'
-          = f.password_field :password, id: 'password', class: 'form-control', blaceholder: 'email'
-        /= f.submit t('.login'), class: 'btn btn-primary' TODO言語対応
-        = f.submit 'ろぐいん', class: 'btn btn-outline-light'
+          = f.label :email, User.human_attribute_name(:email)
+          div.input-group.mb-3
+            = f.email_field :email, id: 'email', class: 'form-control', placeholder: t('.email')
+            div.input-group-append
+              div.input-group-text
+                span.fas.fa-envelope
+          = f.label :password, User.human_attribute_name(:password)
+          div.input-group.mb-3
+            = f.password_field :password, id: 'password', class: 'form-control', placeholder: t('.password')
+            div.input-group-append
+              div.input-group-text
+                span.fas.fa-lock
+          div.row
+            div.col-12
+              = f.submit t('.login'), class: 'btn btn-block btn-outline-light'

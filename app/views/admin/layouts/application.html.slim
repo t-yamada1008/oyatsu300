@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title = page_title(yield(:title), admin: true)
+    meta charset="utf-8"
+    meta name="ja"
+    meta name="robots" content="noindex nofollow"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'admin', media: 'all'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body.hold-transition.sidebar-mini.layout-fixed
+    div.wrapper
+      /= render 'admin/shared/header'
+      /= render 'admin/shared/sidebar'
+  div.content-wrapper
+    = render 'shared/flash_message'
+    = yield
+  = render 'admin/shared/footer'
+  = javascript_pack_tag 'admin'
