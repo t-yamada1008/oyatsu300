@@ -1,0 +1,24 @@
+/ 動的にページタイトルを表示
+- content_for :title, t('.title')
+div.login-box
+  div.login-logo
+    = t('.title')
+  div.card
+    div.card-body.login-card-body
+      = form_with  url: admin_login_path, local: true do |f|
+        div.form-group
+          = f.label :email, User.human_attribute_name(:email)
+          div.input-group.mb-3
+            = f.email_field :email, id: 'email', class: 'form-control', placeholder: t('.email')
+            div.input-group-append
+              div.input-group-text
+                span.fas.fa-envelope
+          = f.label :password, User.human_attribute_name(:password)
+          div.input-group.mb-3
+            = f.password_field :password, id: 'password', class: 'form-control', placeholder: t('.password')
+            div.input-group-append
+              div.input-group-text
+                span.fas.fa-lock
+          div.row
+            div.col-12
+              = f.submit t('.login'), class: 'btn btn-block btn-outline-light'

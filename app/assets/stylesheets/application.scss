@@ -10,22 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
-$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
-@import '@fortawesome/fontawesome-free/scss/fontawesome';
-@import '@fortawesome/fontawesome-free/scss/solid';
-@import '@fortawesome/fontawesome-free/scss/regular';
-@import '@fortawesome/fontawesome-free/scss/brands';
-@import '@fortawesome/fontawesome-free/scss/v4-shims';
-
-@font-face {
-  font-family: "Roboto-Regular";
-  src: url(asset_path('/Roboto-Regular.ttf'));
-}
+@import "bootstrap/scss/bootstrap.scss";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "admin-lte/dist/css/adminlte.min.css";
+@import "./oyatsus.scss";
+@import "./admin/base.scss";
 
 .main-wrapper {
   display: -ms-flexbox;
@@ -36,18 +27,21 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   padding-bottom: 40px;
 }
 
-.main-wrapper {
-  background-image: image-url("top.jpg");
+.main-bg {
   height: calc(100vh - 134px);
   position: relative;
   background-size: cover;
 }
 
-.main-wrapper:before {
+.main-bg:before {
   content: '';
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.65);
+}
+
+.main-bg-img {
+  background-image: image-url("top.jpg");
 }
 
 .main-inner-text {
@@ -64,7 +58,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 }
 
 // navbarの背景色を変更
-header {
+header .navbar-dark{
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 }
 
@@ -87,3 +81,35 @@ a {
   text-align: center;
   margin-bottom: 0!important;
 }
+
+.form-box {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-box .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-box .form-control:focus {
+  z-index: 2;
+}
+
+.form-box input[type="email"] {
+  margin-bottom: -1px;
+}
+
+.form-box input[type="password"] {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+

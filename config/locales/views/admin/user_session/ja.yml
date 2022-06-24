@@ -1,0 +1,8 @@
+ja:
+  admin:
+    user_sessions:
+      new:
+        title: '管理者用ログイン画面'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        login: 'ログイン'

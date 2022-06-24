@@ -1,0 +1,8 @@
+nav.main-header.navbar.navbar-expand.navbar-white.navbar-light
+  ul.navbar-nav
+    li.nav-item
+      = link_to 'test', '#' class: "nav-link", 'data-widget': 'pushmenu'
+        i.fas.fa-bars
+  ul.navbar-nav.ml-auto
+    li.nav-item
+      = link_to t('.logout'), admin_logout_path, class: 'nav-link', method: :delete
