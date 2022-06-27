@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_23_071101) do
+ActiveRecord::Schema.define(version: 2022_06_27_104454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2022_06_23_071101) do
     t.index ["user_id"], name: "index_baskets_on_user_id"
   end
 
+  create_table "ensokus", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "parse", null: false
+    t.string "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_ensokus_on_user_id"
+  end
+
   create_table "oyatsus", force: :cascade do |t|
     t.string "name", null: false
     t.string "genre", null: false
@@ -36,8 +45,6 @@ ActiveRecord::Schema.define(version: 2022_06_23_071101) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "purse", null: false
-    t.string "comment"
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
@@ -54,4 +61,5 @@ ActiveRecord::Schema.define(version: 2022_06_23_071101) do
 
   add_foreign_key "baskets", "oyatsus"
   add_foreign_key "baskets", "users"
+  add_foreign_key "ensokus", "users"
 end
