@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_06_27_104454) do
 
   create_table "ensokus", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "purse", null: false
+    t.integer "purse", default: 300, null: false
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
