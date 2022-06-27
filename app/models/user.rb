@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  has_many :ensokus
   has_many :baskets
 
   validates :name, presence: true, length: { maximum: 128 }
