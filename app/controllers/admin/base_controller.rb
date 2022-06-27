@@ -3,10 +3,10 @@ class Admin::BaseController < ApplicationController
   layout 'admin/layouts/application'
 
   def not_authorized
-    flash[:warning] = t('defaults.message.not_authorized')
+    flash[:warning] = t('.not_authorized')
   end
 
   def check_admin
-    redirect_to rootpath, warning: t('defaults.message.not_authorized') unless current_user.admin?
+    redirect_to root_path, warning: t('.not_authorized') unless current_user.admin?
   end
 end

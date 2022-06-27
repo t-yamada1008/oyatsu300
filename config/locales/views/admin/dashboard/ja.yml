@@ -1,0 +1,5 @@
+ja:
+  admin:
+    dashboards:
+      index:
+        not_authorized: '管理者アカウントじゃないよ'
