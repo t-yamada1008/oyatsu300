@@ -16,5 +16,5 @@ Turbolinks.start()
 ActiveStorage.start()
 
 // ---end---
-require("@fortawesome/fontawesome-free")
 require("bootstrap");
+require("@fortawesome/fontawesome-free")
