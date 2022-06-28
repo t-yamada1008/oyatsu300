@@ -6,4 +6,11 @@ class Ensoku < ApplicationRecord
     less_than_or_equal_to: 300
   }
   validates :comment, length: { maximum: 65_535 }
+  validates :comment, length: { maximum: 65_535 }
+
+  enum status: {
+    selecting: 0,
+    colse: 1,
+    open: 2
+  }
 end
