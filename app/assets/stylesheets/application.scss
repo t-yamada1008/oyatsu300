@@ -11,12 +11,15 @@
  * It is generally better to create a new file per style scope.
  *
  */
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/brands';
 
-@import "bootstrap/scss/bootstrap.scss";
-@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import 'bootstrap/scss/bootstrap';
 @import "admin-lte/dist/css/adminlte.min.css";
 @import "./oyatsus.scss";
-@import "./admin/base.scss";
 
 .main-wrapper {
   display: -ms-flexbox;
@@ -60,6 +63,9 @@
 // navbarの背景色を変更
 header .navbar-dark{
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+}
+.navbar-expand-lg .navbar-collapse {
+    justify-content: right;
 }
 
 // footerの背景色を変更
