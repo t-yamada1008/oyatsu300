@@ -2,3 +2,5 @@ ja:
   oyatsus:
     index:
       title: おやつをえらぶ
+      no_result: みつからないよ！
+      seach_again: もういちど、けんさくしてみてね。
