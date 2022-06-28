@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 2022_06_27_104454) do
 
   create_table "ensokus", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "parse", null: false
+    t.integer "purse", default: 300, null: false
     t.string "comment"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_ensokus_on_user_id"
