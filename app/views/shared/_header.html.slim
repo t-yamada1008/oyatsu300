@@ -5,32 +5,16 @@ header
       div.col
         = link_to '遠足のおやつは300円まで', root_path, class: 'navbar-brand'
       - if logged_in?
-        div.col
-          - if current_page?(choose_oyatsu_path)
-            div.seach
-              = render 'oyatsus/search_form', q: @q, url: choose_oyatsu_path
+        - if current_page?(choose_oyatsu_path)
+          div.col
+            = render 'oyatsus/search_form', q: @q, url: choose_oyatsu_path
+          div.col
+            = render 'baskets/basket_submit'
+          div.col
+            = "のこり: #{@ensoku.purse} 円"
         div.col.text-end
-          button.navbar-toggler[
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#navbarSupportedContent'
-            aria-controls='navbarSupportedContent'
-            aria-expanded='false'
-            aria-label='Toggle'
-            ]
-            span.navbar-toggler-icon
-          div#navbarSupportedContent.collapse.navbar-collapse
-            ul.navbar-nav.mr-auto.mb-2.mb-lg-0
-              li.nav-item
-                = link_to "まいぺーじ: #{current_user.name}", my_page_path, class: 'nav-link'
-              li.nav-item
-                = link_to 'おやつをえらぶ', choose_oyatsu_path, class: 'nav-link'
-              li.nav-item
-                = link_to 'みんなのおやつ', users_path, class: 'nav-link'
-              li.nav-item
-                = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
+          = render 'shared/toggle'
       - else
-        // TODO: 要検討
         div.col.text-end
           = link_to 'ろぐいん', root_path, class: 'btn btn-outline-light mx-3'
           = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light'

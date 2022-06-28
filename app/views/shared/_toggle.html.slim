@@ -1,0 +1,19 @@
+button.navbar-toggler[
+  type='button'
+  data-bs-toggle='collapse'
+  data-bs-target='#navbarSupportedContent'
+  aria-controls='navbarSupportedContent'
+  aria-expanded='false'
+  aria-label='Toggle'
+  ]
+  span.navbar-toggler-icon
+div#navbarSupportedContent.collapse.navbar-collapse.justify-content-right
+  ul.navbar-nav
+    li.nav-item
+      = link_to "まいぺーじ: #{current_user.name}", my_page_path, class: 'nav-link'
+    li.nav-item
+      = link_to 'おやつをえらぶ', choose_oyatsu_path, class: 'nav-link'
+    li.nav-item
+      = link_to 'みんなのおやつ', users_path, class: 'nav-link'
+    li.nav-item
+      = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
