@@ -1,17 +1,18 @@
 # Oyatsus Contorller
 class OyatsusController < ApplicationController
-  before_action :require_login
+  before_action :require_login, :set_ensoku
 
   def index
-    @ensoku = current_user.ensokus.create if @ensoku.blank?
     @q = Oyatsu.ransack(params[:q])
     @oyatsus = @q.result.page(params[:page])
   end
 
   private
 
-  # 紐づく遠足がなければ遠足作成
-  def check_ensoku
+  def set_ensoku
+    if @ensoku.blank?
 
+    end
+    @ensoku = current_user.ensokus.create if current_user.ensokus.blank?
   end
 end
