@@ -11,7 +11,7 @@ class Admin::UserSessionsController < Admin::BaseController
     if @user
       redirect_back_or_to admin_root_path, success: t('.success')
     else
-      flash.now[:danger] = t('.failed')
+      flash.now[:danger] = t('.failure')
       render 'new'
     end
   end
