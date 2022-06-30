@@ -7,12 +7,7 @@ class OyatsusController < ApplicationController
     @oyatsus = @q.result.page(params[:page])
   end
 
-  private
-
   def set_ensoku
-    if @ensoku.blank?
-
-    end
-    @ensoku = current_user.ensokus.create if current_user.ensokus.blank?
+    @ensoku = Ensoku.find(params[:ensoku])
   end
 end
