@@ -4,5 +4,5 @@ div.main-wrapper.main-bg.main-bg-img
     // TODO: ロゴ画像
     // = link_to
     h1.mt-3.mb-3.font-weight-normal = t('.title')
-    = link_to 'おやつをえらぶ', choose_oyatsu_path, class: 'btn btn-outline-light mt-3 btn-lg'
+    = link_to 'おやつをえらぶ', user_ensokus_path, method: :post,  class: 'btn btn-outline-light mt-3 btn-lg'
     = render 'shared/how_to_play'
