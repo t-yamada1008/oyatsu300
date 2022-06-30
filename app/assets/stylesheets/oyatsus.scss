@@ -41,6 +41,7 @@
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
+// ボタン
 .btn.btn-outline-dark {
   color: #ff5858;
   border-color: #ff5858;
@@ -51,6 +52,10 @@
   border-color: white;
 }
 
+.btn-outline-dark:active {
+  background-color: #ff5858!important;
+  border-color: #ff5858!important;
+}
 // ページネーション
 .pagination {
   justify-content: center;
