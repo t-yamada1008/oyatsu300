@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
 
 
-  resources :ensokus, only: %i[index]
   resources :users, only: %i[index new create] do
-    resources :baskets, only: %i[index show new create destroy], shallow: true
+    resources :ensokus, shallow:true  do
+      resources :baskets, only: %i[index show new create destroy], shallow: true
+    end
   end
 
   namespace :admin do

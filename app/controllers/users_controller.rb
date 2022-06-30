@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to '/', success: t('.success')
     else
-      flash.now[:danger] = t('.failed')
+      flash.now[:danger] = t('.failure')
       render :new
     end
   end

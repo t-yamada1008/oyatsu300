@@ -9,7 +9,7 @@ class MyPagesController < ApplicationController
     if @user.update(user_params)
       redirect_to my_page_path, success: t('.success')
     else
-      flash.now[:danger] = t('.failed')
+      flash.now[:danger] = t('.failure')
       render :edit
     end
   end
