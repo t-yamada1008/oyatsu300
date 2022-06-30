@@ -1,17 +1,12 @@
 - content_for :title, t('.title')
-div.oyatsu_wrapper
-  section.basket_container
-  / TODO: ショッピングカートのサブミット
-  / ajax処理後で変動させる
-  /= render 'oyatsus/user_basket'
-  / おやつ一覧画面
-  section.oyatsu_container.py-5.bg-light
+- if @oyatsus.present?
+  div.main-wrapper.oyatsus-bg.main-bg-img
     div.container
       div.row
-        - if @oyatsus.present?
-          div.row
-             = render @oyatsus
-        - else
-          = t('no reslut')
-      div.link-info
-        = paginate @oyatsus
+        = render @oyatsus
+      = paginate @oyatsus
+- else
+  div.main-wrapper.main-bg.main-bg-img
+    div.main-inner-text
+      h1.mt-3.mb-3.font-weight-normal = t('.no_result')
+      h3.mt-3.mb-3.font-weight-normal = t('.seach_again')

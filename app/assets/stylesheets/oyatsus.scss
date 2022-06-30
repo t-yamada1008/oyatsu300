@@ -2,14 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.oyatsus-bg {
+  position: relative;
+  background-size: cover;
+  min-height: 100vh
+}
+
+.oyatsus-bg:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
 .card-wrapper {
-  background-image: linear-gradient(to right, #F9C270 0%, #C7000B 100%);
-  text-align: center;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   display: flex;
 }
 
 .card-img-style {
-  height: 200px;
+  height: 150px;
   width: auto;
 }
 
@@ -25,6 +37,21 @@
   flex-grow: 1;
 }
 
+.list-group-item {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.btn.btn-outline-dark {
+  color: #ff5858;
+  border-color: #ff5858;
+}
+
+.btn.btn-outline-dark:hover {
+  background-color: #f09819;
+  border-color: white;
+}
+
+// ページネーション
 .pagination {
   justify-content: center;
 }
@@ -36,9 +63,8 @@
 .page-item .page-link:hover {
   color: #f09819;
 }
-
 .page-item.active .page-link {
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
   color: white;
-  border: white;
+  border-color: white!important;
 }
