@@ -1,4 +1,5 @@
 class Ensoku < ApplicationRecord
+  has_many :basket
   belongs_to :user
   validates :purse, presence: true, numericality: {
     only_integer: true,
