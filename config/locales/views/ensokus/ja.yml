@@ -2,4 +2,5 @@ ja:
   ensokus:
     new:
       title: '遠足のおやつは300円まで！'
-
+      choose_anew: 'あたらしくえらぶ'
+      choose_from_a_series: 'つづきからえらぶ'

@@ -1,3 +1,10 @@
 ja:
   activerecord:
     models:
+      user: 'ゆーざー'
+    attributes:
+      user:
+        name: 'おなまえ'
+        email: 'めーるあどれす'
+        password: 'ぱすわーど'
+        password_confirmation: 'ぱすわーど(かくにん)'
