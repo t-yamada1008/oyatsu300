@@ -3,7 +3,9 @@ class EnsokusController < ApplicationController
 
   # 遠足一覧画面
   # Userの全遠足結果を取得
-  def index; end
+  def index
+    @ensokus = current_user.ensokus.all
+  end
 
   # ログイン後のtop画面
   # 新規遠足作成のボタンを置く
