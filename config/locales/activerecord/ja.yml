@@ -8,3 +8,9 @@ ja:
         email: 'めーるあどれす'
         password: 'ぱすわーど'
         password_confirmation: 'ぱすわーど(かくにん)'
+  enums:
+    user:
+      status:
+        selecting: 'せんたくちゅう'
+        close: 'ひとにみせない'
+        open: 'ひとにみせる'
