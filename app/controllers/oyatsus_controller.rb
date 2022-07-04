@@ -10,6 +10,10 @@ class OyatsusController < ApplicationController
   private
 
   def check_ensoku
-    redirect_to new_users_ensoku_path if @ensoku.blank?
+    if params[:ensoku].present?
+      @ensoku = Ensoku.find(params[:ensoku])
+    else
+      redirect_to new_users_ensoku_path
+    end
   end
 end
