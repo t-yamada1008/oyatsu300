@@ -10,7 +10,10 @@ ja:
         password_confirmation: 'ぱすわーど(かくにん)'
   enums:
     user:
+      general: '一般'
+      admin: '管理者'
+    ensoku:
       status:
-        selecting: 'せんたくちゅう'
+        selecting: 'とちゅう'
         close: 'ひとにみせない'
         open: 'ひとにみせる'

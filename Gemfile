@@ -31,6 +31,7 @@ gem 'sorcery', '~> 0.16.3'
 
 # Japanese localization
 gem 'rails-i18n'
+gem 'enum_help'
 
 # Frontend
 # bootstrap
