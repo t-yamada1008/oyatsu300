@@ -1,14 +1,7 @@
-div.container
-  div.row
-    div.col
-      p のこりのおこづかい:
-      = ensoku.purse
-    div.col
-      p こめんと:
-      = ensoku.comment
-    div.col
-      p すてーたす:
-      = ensoku.status
-    div.col
-      p えらんだおやつのかず
-      = ensoku.baskets.count
+tr
+  th.align-middle scope='row'
+    = ensoku_counter + 1
+  td.align-middle = ensoku.comment.blank? ? t('.no_comment') : ensoku.comment
+  td.align-middle = ensoku.purse
+  td.align-middle = ensoku.status_i18n
+  td.align-middle = link_to t('.edit'), '#', class: 'btn btn-sm btn-outline-light'

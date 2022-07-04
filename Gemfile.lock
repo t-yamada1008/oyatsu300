@@ -123,6 +123,8 @@ GEM
       dry-core (~> 0.5, >= 0.5)
       dry-initializer (~> 3.0)
       dry-schema (~> 1.8, >= 1.8.0)
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.10.0)
     faker (2.20.0)
       i18n (>= 1.8.11, < 2)
@@ -375,6 +377,7 @@ DEPENDENCIES
   bullet
   byebug
   config
+  enum_help
   faker
   font-awesome-sass
   html2slim

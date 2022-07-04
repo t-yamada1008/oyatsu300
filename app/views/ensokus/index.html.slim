@@ -1,5 +1,15 @@
 - content_for :title
 div.main-wrapper.main-bg.main-bg-img
-  div.main-inner-text
+  div.main-inner-text.p-5
     h1.mt-3.mb-3.font-weight-normal = t('.title')
-    = render @ensokus
+    div.table-responsive-lg
+      table.table
+        thead
+          tr
+            th scope='col' = t('.number')
+            th scope='col' = t('.comment')
+            th scope='col' = t('.purse')
+            th scope='col' = t('.status')
+            th scope='col' = t('.edit')
+        tbody
+          = render @ensokus

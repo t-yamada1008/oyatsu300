@@ -1,6 +1,16 @@
 ja:
   ensokus:
+    index:
+      title: 'えらんだおやつ'
+      comment: 'ひとこと'
+      number: 'ばんごう'
+      purse: 'のこったおこづかい'
+      status: 'じょうたい'
+      edit: 'こうしんする？'
     new:
       title: '遠足のおやつは300円まで！'
-      choose_anew: 'あたらしくえらぶ'
-      choose_from_a_series: 'つづきからえらぶ'
+      new: 'あたらしくえらぶ'
+      continue: 'つづきからえらぶ'
+    ensoku:
+      no_comment: 'のーこめんと'
+      edit: 'こうしん'
