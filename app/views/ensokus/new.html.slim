@@ -5,8 +5,8 @@ div.main-wrapper.main-bg.main-bg-img
     // = link_to
     h1.mt-3.mb-3.font-weight-normal = t('.title')
     div
-      = link_to t('choose_anew'), users_ensokus_path, method: :post,  class: 'btn btn-outline-light mt-3 btn-lg'
+      = link_to t('.new'), users_ensokus_path, method: :post,  class: 'btn btn-outline-light mt-3 btn-lg'
     - if current_user.ensokus.present?
       div
-        = link_to t('.choose_from_a_series'), users_ensokus_path, class: 'btn btn-outline-light mt-3 btn-lg'
+        = link_to t('.continue'), users_ensokus_path, class: 'btn btn-outline-light mt-3 btn-lg'
     = render 'shared/how_to_play'
