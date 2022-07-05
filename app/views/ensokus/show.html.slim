@@ -25,4 +25,4 @@ div.main-wrapper.main-bg.main-bg-img
     div
       = link_to t('.index'), users_ensokus_path, class: 'btn btn-light btn-lg'
     div.mt-5
-      = link_to t('.delete'), users_ensokus_path, class: 'btn btn-danger btn-sm', data: {confirm: t('.really')}
+      = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: t('.really')}

@@ -19,7 +19,8 @@ ja:
       edit: 'せっていへんこう'
       again: 'えらびなおす'
       index: 'いちらんにもどる'
-      delete: 'さくじょする'
+      delete: 'けしちゃう'
+      really: 'ほんとうにだいじょうぶ？'
     edit:
       title: 'えらんだおやつのせっていへんこう'
       comment: 'こめんとしてね！'
@@ -29,6 +30,8 @@ ja:
     update:
       success: 'こうしんしたよ！'
       failure: 'こうしんしっぱい。もう一度ためしてみてね。'
+    destroy:
+      success: 'けしたよ'
     ensoku:
       no_comment: 'のーこめんと'
       see: 'みる'
