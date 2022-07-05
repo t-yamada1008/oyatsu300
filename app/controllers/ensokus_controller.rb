@@ -31,6 +31,11 @@ class EnsokusController < ApplicationController
     end
   end
 
+  def destroy
+    @ensoku.destroy!
+    redirect_to users_ensokus_path, success: t('.success')
+  end
+
   private
 
   def set_ensoku
@@ -40,5 +45,4 @@ class EnsokusController < ApplicationController
   def ensoku_params
     params.require(:ensoku).permit(:comment, :status)
   end
-
 end
