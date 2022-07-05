@@ -6,11 +6,18 @@ ja:
       number: 'ばんごう'
       purse: 'のこったおこづかい'
       status: 'じょうたい'
-      edit: 'こうしんする？'
+      show: 'しょうさい'
+      edit: 'つづきからえらぶ'
     new:
       title: '遠足のおやつは300円まで！'
       new: 'あたらしくえらぶ'
       continue: 'つづきからえらぶ'
+    show:
+      title: 'えらんだおやつ(しょうさい)'
+      choosed_oyatsu: 'えらんだおやつ'
+      nothing_choosed: 'なにもえらんでないよ。えらぼう！'
+      edit: 'えらびなおす'
     ensoku:
       no_comment: 'のーこめんと'
-      edit: 'こうしん'
+      see: 'みる'
+      edit: 'えらびなおす'
