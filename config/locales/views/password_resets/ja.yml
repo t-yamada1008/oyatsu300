@@ -1,0 +1,17 @@
+ja:
+  password_resets:
+    new:
+      title: 'ぱすわーどりせっと'
+      email: 'とうろくしてるめーるあどれす'
+      submit: 'りせっとめーるをおくる'
+    create:
+      send: 'めーるをおくったよ！'
+    edit:
+      title: 'ぱすわーどさいとうろく'
+    update:
+      sucess: 'ぱすわーどをこうしんしたよ！'
+    form:
+      email: 'ふりーあどれすでいいよ'
+      password: 'わすれないように'
+      password_confirmation: 'かくにんしよう'
+      submit: 'さいとうろく'
