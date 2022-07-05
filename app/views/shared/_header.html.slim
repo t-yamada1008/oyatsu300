@@ -16,6 +16,8 @@ header
           = render 'shared/toggle'
       - else
         div.col.text-end
-          = link_to 'ろぐいん', root_path, class: 'btn btn-outline-light mx-3'
-          = link_to 'しんきとうろく', new_user_path, class: 'btn btn-outline-light'
+          - unless current_page?(root_path)
+            = link_to 'ろぐいん', root_path, class: 'btn btn-outline-light mx-3'
+          - unless current_page?(new_users_path)
+            = link_to 'しんきとうろく', new_users_path, class: 'btn btn-outline-light'
 
