@@ -7,9 +7,10 @@ div.main-wrapper.main-bg.main-bg-img
         thead
           tr
             th scope='col' = t('.number')
-            th scope='col' = t('.comment')
-            th scope='col' = t('.purse')
-            th scope='col' = t('.status')
+            th scope='col' = Ensoku.human_attribute_name(:comment)
+            th scope='col' = Ensoku.human_attribute_name(:purse)
+            th scope='col' = Ensoku.human_attribute_name(:status)
+            th scope='col' = t('.show')
             th scope='col' = t('.edit')
         tbody
           = render @ensokus

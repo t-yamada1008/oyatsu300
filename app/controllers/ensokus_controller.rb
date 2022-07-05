@@ -1,5 +1,6 @@
 class EnsokusController < ApplicationController
   before_action :require_login
+  before_action :set_ensoku, only: %i[show edit]
 
   # 遠足一覧画面
   # Userの全遠足結果を取得
@@ -15,5 +16,15 @@ class EnsokusController < ApplicationController
   def create
     @ensoku = current_user.ensokus.create
     redirect_to choose_oyatsu_path(ensoku: @ensoku)
+  end
+
+  def show; end
+
+  def edit; end
+
+  private
+
+  def set_ensoku
+    @ensoku = Ensoku.find(params[:id])
   end
 end

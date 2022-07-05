@@ -1,0 +1,21 @@
+- content_for :title
+div.main-wrapper.main-bg.main-bg-img
+  div.main-inner-text
+    h1.mt-3.mb-3.font-weight-normal = t('.title')
+    section.columuns.mb-3
+      div.column
+        h2 = "#{Ensoku.human_attribute_name(:comment)}:"
+        h3 = @ensoku.comment.blank? ? t('.no_comment') : @ensoku.comment
+      div.column
+        h2 = "#{Ensoku.human_attribute_name(:purse)}:"
+        h3 = @ensoku.purse
+      div.column
+        h2 = "#{Ensoku.human_attribute_name(:status)}:"
+        h3 = @ensoku.status_i18n
+      div.column
+        h2 = "#{t('.choosed_oyatsu')}:"
+        - if @ensoku.basket.present?
+          = render 'choosed_oyatsu', basket: @ensoku.basket
+        - else
+          h3 = t('.nothing_choosed')
+    = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light btn-lg' 

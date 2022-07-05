@@ -8,6 +8,10 @@ ja:
         email: 'めーるあどれす'
         password: 'ぱすわーど'
         password_confirmation: 'ぱすわーど(かくにん)'
+      ensoku:
+        comment: 'こめんと'
+        purse: 'のこりのおこづかい'
+        status: 'こうかいすてーたす'
   enums:
     user:
       general: '一般'
