@@ -1,6 +1,6 @@
 class EnsokusController < ApplicationController
   before_action :require_login
-  before_action :set_ensoku, only: %i[show edit]
+  before_action :set_ensoku, only: %i[show edit update destroy]
 
   # 遠足一覧画面
   # Userの全遠足結果を取得
@@ -22,9 +22,23 @@ class EnsokusController < ApplicationController
 
   def edit; end
 
+  def update
+    if @ensoku.update(ensoku_params)
+      redirect_to @ensoku, success: t('.success')
+    else
+      flash.now[:danger] = t('.failure')
+      render 'edit'
+    end
+  end
+
   private
 
   def set_ensoku
     @ensoku = Ensoku.find(params[:id])
   end
+
+  def ensoku_params
+    params.require(:ensoku).permit(:comment, :status)
+  end
+
 end
