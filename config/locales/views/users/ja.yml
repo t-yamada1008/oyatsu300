@@ -1,4 +1,12 @@
 ja:
   users:
+    new:
+      title: 'しんきとうろく'
+    form:
+      name: 'にっくねーむ'
+      email: 'ふりーあどれすでいいよ'
+      password: 'わすれないように'
+      password_confirmation: 'かくにんしよう'
+      login: 'とうろく'
     update:
-      success: こうしんしました！
+      success: 'こうしんしました！'
