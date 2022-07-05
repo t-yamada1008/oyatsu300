@@ -4,3 +4,11 @@ ja:
       title: 'まいぺーじ'
       update: 'こうしんする'
       see_choosed_oyatsu: 'えらんだおやつをみる'
+    edit:
+      title: 'ゆーざーじょうほうこうしん'
+    form:
+      name: 'にっくねーむ'
+      email: 'ふりーあどれすでいいよ'
+      password: 'わすれないように'
+      password_confirmation: 'かくにんしよう'
+      submit: 'こうしん'
