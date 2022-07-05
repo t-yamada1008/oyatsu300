@@ -11,7 +11,7 @@ class Ensoku < ApplicationRecord
 
   enum status: {
     selecting: 0,
-    colse: 1,
+    close: 1,
     open: 2
   }
 end

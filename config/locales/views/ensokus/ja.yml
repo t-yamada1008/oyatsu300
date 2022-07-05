@@ -7,7 +7,7 @@ ja:
       purse: 'のこったおこづかい'
       status: 'じょうたい'
       show: 'しょうさい'
-      edit: 'つづきからえらぶ'
+      again: 'つづきからえらぶ'
     new:
       title: '遠足のおやつは300円まで！'
       new: 'あたらしくえらぶ'
@@ -16,8 +16,23 @@ ja:
       title: 'えらんだおやつ(しょうさい)'
       choosed_oyatsu: 'えらんだおやつ'
       nothing_choosed: 'なにもえらんでないよ。えらぼう！'
-      edit: 'えらびなおす'
+      edit: 'せっていへんこう'
+      again: 'えらびなおす'
+      index: 'いちらんにもどる'
+      delete: 'けしちゃう'
+      really: 'ほんとうにだいじょうぶ？'
+    edit:
+      title: 'えらんだおやつのせっていへんこう'
+      comment: 'こめんとしてね！'
+      status: 'すてーたす'
+      submit: 'こうしん'
+      show: 'しょうさいにもどる'
+    update:
+      success: 'こうしんしたよ！'
+      failure: 'こうしんしっぱい。もう一度ためしてみてね。'
+    destroy:
+      success: 'けしたよ'
     ensoku:
       no_comment: 'のーこめんと'
       see: 'みる'
-      edit: 'えらびなおす'
+      again: 'えらびなおす'

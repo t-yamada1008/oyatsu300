@@ -8,9 +8,9 @@ div.main-wrapper.main-bg.main-bg-img
           tr
             th scope='col' = t('.number')
             th scope='col' = Ensoku.human_attribute_name(:comment)
-            th scope='col' = Ensoku.human_attribute_name(:purse)
             th scope='col' = Ensoku.human_attribute_name(:status)
+            th scope='col' = Ensoku.human_attribute_name(:purse)
             th scope='col' = t('.show')
-            th scope='col' = t('.edit')
+            th scope='col' = t('.again')
         tbody
           = render @ensokus
