@@ -1,12 +1,10 @@
 - content_for :title
 div.main-wrapper.main-bg.main-bg-img
   div.main-inner-text
-    // TODO: ロゴ画像
-    // = link_to
     h1.mt-3.mb-3.font-weight-normal = t('.title')
-    div
-      = link_to t('.new'), users_ensokus_path, method: :post,  class: 'btn btn-outline-light mt-3 btn-lg'
+    div.mt-3
+      = link_to t('.new'), users_ensokus_path, method: :post,  class: 'btn btn-outline-light btn-lg'
     - if current_user.ensokus.present?
-      div
-        = link_to t('.continue'), users_ensokus_path, class: 'btn btn-outline-light mt-3 btn-lg'
+      div.mt-3
+        = link_to t('.continue'), users_ensokus_path, class: 'btn btn-outline-light btn-lg'
     = render 'shared/how_to_play'

@@ -3,5 +3,7 @@ ja:
     new:
       title: '遠足のおやつは300円まで！'
     create:
-      success: 'ろぐいんしたよ。'
-      failure: 'ろぐいんしっぱい！もういちどためしてみてね。'
+      success: 'ろぐいんしたよ'
+      failure: 'ろぐいんしっぱい！もういちどためしてみてね'
+    destroy:
+      logout: 'ろぐあうとしたよ'

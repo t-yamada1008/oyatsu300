@@ -3,12 +3,12 @@ div.main-wrapper.main-bg.main-bg-img
   div.main-inner-text
     h1.mt-3.mb-3.font-weight-normal = t('.title')
     section.columns.mb-3
-      div.column.mb-3
-        h2 = User.human_attribute_name(:name) + ':'
+      div.column
+        h2 = "#{User.human_attribute_name(:name)}:"
         h3 = "#{current_user.name}"
-      div.column.mb-3
-        h2 = User.human_attribute_name(:email) + ':'
+      div.column
+        h2 = "#{User.human_attribute_name(:email)}:"
         h3 = "#{current_user.email}"
-      = link_to t('.update'), edit_my_page_path, class: 'btn btn-outline-light'
+      = link_to t('.update'), edit_my_page_path, class: 'btn btn-outline-light mt-3'
     div
       = link_to t('.see_choosed_oyatsu'), users_ensokus_path, class: 'btn btn-outline-light'
