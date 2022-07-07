@@ -55,10 +55,6 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   width: 100%;
   text-align: center;
   color: white;
-
-  @media screen and (max-width: 767px) {
-    font-size: 2.0rem;
-  }
 }
 
 // navbarの背景色を変更
