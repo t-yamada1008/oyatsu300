@@ -35,8 +35,8 @@
 yarn-debug.log*
 .yarn-integrity
 
-# スクレイピングした画像は対象外とする
-#/app/assets/images/download_images
+# DS_Storeをあらかじめ弾く。
+.DS_Store
 
 # ctagsファイルを除外する
 tags
