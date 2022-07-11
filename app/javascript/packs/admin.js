@@ -8,4 +8,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require("admin-lte");
+import("~admin-lte/node_modules/bootstrap/dist/js/bootstrap.bundle.min");
+import("~admin-lte/dist/js/adminlte.min");
