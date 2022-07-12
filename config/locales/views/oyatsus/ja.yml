@@ -1,6 +1,9 @@
 ja:
   oyatsus:
     index:
-      title: おやつをえらぶ
-      no_result: みつからないよ！
-      seach_again: もういちど、けんさくしてみてね。
+      title: 'おやつをえらぶ'
+      no_result: 'みつからないよ！'
+      seach_again: 'もういちど、けんさくしてみてね。'
+    search_form:
+      word: 'おやつのなまえをいれてね'
+      submit: 'しらべる'
