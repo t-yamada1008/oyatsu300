@@ -16,5 +16,5 @@ Turbolinks.start()
 ActiveStorage.start()
 
 // ---end---
-require("bootstrap");
-require("@fortawesome/fontawesome-free")
+import "bootstrap/dist/js/bootstrap.min";
+import "@fortawesome/fontawesome-free/js/all.min"
