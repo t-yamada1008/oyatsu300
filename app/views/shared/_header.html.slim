@@ -3,6 +3,7 @@ header
     div.container-fluid.row
       // = image_tag "preset_images/banana.png", size: '60x60'
       div.col
+        = image_tag "logo_transparent.png", size: '60x60'
         = link_to t('.title'), root_path, class: 'navbar-brand'
       - if logged_in?
         - if current_page?(choose_oyatsu_path)

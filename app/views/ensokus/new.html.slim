@@ -1,7 +1,8 @@
 - content_for :title
 div.main-wrapper.main-bg.main-bg-img
   div.main-inner-text
-    h1.mt-3.mb-3.font-weight-normal = t('.title')
+    = image_tag "logo_transparent.png", size: '300x300'
+    h1.mb-3.font-weight-normal = t('.title')
     div.mt-3
       = link_to t('.new'), users_ensokus_path, method: :post,  class: 'btn btn-outline-light btn-lg'
     - if current_user.ensokus.present?
