@@ -1,0 +1,10 @@
+div.col
+  = link_to basket_path(@ensoku.basket_find(oyatsu)),
+    method: :delete,
+    #remote: true,
+    id: "js-card-for-oyatsu-minus-#{oyatsu.id}",
+    'data-card-id': oyatsu.id,
+    'data-oyatsu-name': oyatsu.name,
+    type: 'button',
+    class: 'btn btn-outline-dark btn-minus'
+    i.fa-solid.fa-minus
