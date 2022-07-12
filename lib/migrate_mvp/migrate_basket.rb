@@ -1,4 +1,10 @@
 module MigrateMvp::MigrateBasket
+  # 重複コードが多いのでリファクタリングが必要
+
+  # 事前にpg_dmupで出力したデータを整形して用意する。
+  # pg_dump -a -t baskets ensoku_no_oyatsu_ha_300_yen_made_development > baskets.sql
+  # baskets.sqlを整形してmvp_baskets_data.txtを作成。
+
   def migrate_basket_user
     f = File.open("#{Rails.root}/lib/migrate_mvp/mvp_baskets_data.txt", 'r')
     f.each_with_index do |l, i|

@@ -1,4 +1,7 @@
-div.basket_info
+div.col
+  div.basket_info
   = link_to '#', class: 'link-light'
     i.fa-solid.fa-basket-shopping
-    |  おかいけい
+    = " #{t('.register')}"
+div.col
+  = "#{t('.purse')}:#{@ensoku.purse} 円"

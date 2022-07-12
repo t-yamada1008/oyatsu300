@@ -1,0 +1,21 @@
+function plusClick(){
+  msg = this.dataset.oyatsuName + "をふやしたよ！";
+  alert(msg);
+}
+
+function minusClick(){
+  msg = this.dataset.oyatsuName + "をへらしたよ！";
+  alert(msg);
+}
+
+window.addEventListener('DOMContentLoaded', function(){
+  var plus_targets = document.querySelectorAll(".btn-plus")
+  plus_targets.forEach(function(target, i){
+    target.addEventListener('click', plusClick);
+  });
+
+  var minus_targets = document.querySelectorAll(".btn-minus")
+  minus_targets.forEach(function(target, i){
+    target.addEventListener('click', minusClick);
+  });
+});
