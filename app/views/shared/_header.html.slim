@@ -1,19 +1,8 @@
 header
-  nav.navbar.navbar-expand-lg.navbar-dark
+  nav.navbar.navbar-dark
     div.container-fluid.row
-      // = image_tag "preset_images/banana.png", size: '60x60'
-      div.col
-        = link_to t('.title'), root_path, class: 'navbar-brand'
       - if logged_in?
-        - if current_page?(choose_oyatsu_path)
-          = render 'oyatsus/search_form', q: @q, url: choose_oyatsu_path
-          = render 'baskets/basket_submit'
-        div.col.text-end
-          = render 'shared/toggle'
+        = render 'shared/login_header'
       - else
-        div.col.text-end
-          - unless current_page?(root_path)
-            = link_to t('.login'), root_path, class: 'btn btn-outline-light mx-3'
-          - unless current_page?(new_users_path)
-            = link_to t('.new_registration'), new_users_path, class: 'btn btn-outline-light'
+        = render 'shared/logout_header'
 
