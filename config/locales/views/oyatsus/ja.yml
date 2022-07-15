@@ -4,6 +4,9 @@ ja:
       title: 'おやつをえらぶ'
       no_result: 'みつからないよ！'
       seach_again: 'もういちど、けんさくしてみてね。'
+      yen: 'えん'
     search_form:
       word: 'おやつのなまえをいれてね'
       submit: 'しらべる'
+    oyatsu:
+      yen: 'えん'

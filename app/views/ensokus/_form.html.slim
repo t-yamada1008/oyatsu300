@@ -1,0 +1,11 @@
+section.form-box.border
+  = form_with model: ensoku, method: :patch, local: true do |f|
+    - if ensoku.errors.any?
+      = render 'shared/error_messages', object: f.object
+    div.form-group
+      h5 = f.label :comment, Ensoku.human_attribute_name(:comment)
+      = f.text_field :comment, class: 'form-control', placeholder: t('.comment')
+    div.form-group
+      h5 = f.label :status, Ensoku.human_attribute_name(:status)
+      = f.select :status, Ensoku.statuses_i18n.invert, class: 'form-control', placeholder: t('.ensoku')
+    = f.submit t('.submit'), class: 'btn btn-light'

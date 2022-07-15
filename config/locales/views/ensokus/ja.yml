@@ -7,34 +7,39 @@ ja:
       purse: 'のこったおこづかい'
       status: 'じょうたい'
       show: 'しょうさい'
-      again: 'つづきからえらぶ'
+      rechoose: 'えらびなおす'
     new:
       title: '遠足のおやつは300円まで！'
       new: 'あたらしくえらぶ'
       continue: 'つづきからえらぶ'
     show:
-      title: 'えらんだおやつ(しょうさい)'
+      title: 'えらんだおやつ！'
       choosed_oyatsu: 'えらんだおやつ'
       nothing_choosed: 'なにもえらんでないよ。えらぼう！'
       edit: 'せっていへんこう'
-      again: 'えらびなおす'
-      index: 'いちらんにもどる'
       delete: 'けしちゃう'
       really: 'ほんとうにだいじょうぶ？'
     edit:
-      title: 'えらんだおやつのせっていへんこう'
+      title: 'おやつをかくにん！'
       comment: 'こめんとしてね！'
       status: 'すてーたす'
       submit: 'こうしん'
-      show: 'しょうさいにもどる'
+      rechoose: 'えらびなおす'
     update:
       success: 'こうしんしたよ！'
       failure: 'こうしんしっぱい。もう一度ためしてみてね。'
     destroy:
-      success: 'けしたよ'
+      success: 'けしたよー'
     ensoku:
       no_comment: 'のーこめんと'
       see: 'みる'
-      again: 'えらびなおす'
+      again: 'そうする'
     okozukai:
       purse: 'のこり'
+      yen: 'えん'
+    data:
+      rechoose: 'えらびなおす'
+      index: 'いちらんにもどる'
+      yen: 'えん'
+    form:
+      submit: 'おっけー！'
