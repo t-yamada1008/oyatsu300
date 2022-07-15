@@ -57,6 +57,11 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   color: white;
 }
 
+.center-and-white {
+  text-align: center;
+  color: white;
+}
+
 // navbarの背景色を変更
 header .navbar-dark{
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);

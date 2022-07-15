@@ -4,13 +4,14 @@ div.col-4.col-lg-2.mb-4 id="oyatsu-id-#{oyatsu.id}"
       = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}", class: 'img-fluid'
     div.card-body.card-body-style
       h5.card-text = oyatsu.name
-    ul.list-group.list-group-flush
-      li.list-group-item = "#{oyatsu.price}円"
-    div.card-footer
-      div.row
-         - if @ensoku.basket_oyatsu_exists?(oyatsu)
-           = render 'oyatsus/minus_button', oyatsu: oyatsu
-         = render 'oyatsus/plus_button', oyatsu: oyatsu
+    - if current_page?(choose_oyatsu_path)
+      ul.list-group.list-group-flush
+        li.list-group-item = "#{oyatsu.price} #{t('.yen')}"
+      div.card-footer
+        div.row
+           - if @ensoku.basket_oyatsu_exists?(oyatsu)
+             = render 'oyatsus/minus_button', oyatsu: oyatsu
+           = render 'oyatsus/plus_button', oyatsu: oyatsu
 
 //    header.modal-card-head
       p.modal-card-title.has-text-centered #{oyatsu.name}

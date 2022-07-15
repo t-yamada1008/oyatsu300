@@ -1,28 +1,12 @@
-- content_for :title
-div.main-wrapper.main-bg.main-bg-img
-  div.main-inner-text
-    h1.mt-3.mb-3.font-weight-normal = t('.title')
-    div.columuns.mb-3
-      div.column
-        h2 = "#{Ensoku.human_attribute_name(:comment)}:"
-        h3 = @ensoku.comment.blank? ? t('.no_comment') : @ensoku.comment
-      div.column
-        h2 = "#{Ensoku.human_attribute_name(:status)}:"
-        h3 = @ensoku.status_i18n
-      div.column
-        = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light btn-lg'
-    div.columuns.mb-3
-      h2 = "#{t('.choosed_oyatsu')}:"
-      - if @ensoku.baskets.present?
-        = render partial: 'choosed_oyatsu', collection: @ensoku.baskets, as: :basket
-      - else
-        h3 = t('.nothing_choosed')
-      div
-        h2 = "#{Ensoku.human_attribute_name(:purse)}:"
-        h3 = @ensoku.purse
-      div
-        = link_to t('.again'), choose_oyatsu_path(ensoku: @ensoku), class: 'btn btn-outline-light btn-lg'
-    div
-      = link_to t('.index'), users_ensokus_path, class: 'btn btn-light btn-lg'
-    div.mt-5
-      = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: t('.really')}
+- content_for :title, t('.title')
+div.main-wrapper.oyatsus-bg.main-bg-img
+  div.container
+    div.row
+      div.col.mt-3.mb-3.center-and-white
+        h1.font-weight-normal = t('.title')
+        = render 'data', ensoku: @ensoku
+    div.row
+      - if @ensoku.basket_oyatsus
+        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus, as: :oyatsu
+      div.col.mt-3.mb-3.center-and-white
+        div = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-outline-danger btn-sm', data: {confirm: t('.really')}

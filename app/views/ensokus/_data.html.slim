@@ -1,0 +1,8 @@
+div.mt-3.mb-1 = "#{Ensoku.human_attribute_name(:comment)}:"
+h3 = ensoku.comment.blank? ? t('.no_comment') : ensoku.comment
+div.mt-3.mb-1= "#{Ensoku.human_attribute_name(:status)}:"
+h3 = ensoku.status_i18n
+div.mt-3.mb-1 = "#{Ensoku.human_attribute_name(:purse)}:"
+h3 = "#{ensoku.purse} #{t('.yen')}"
+div.mt-3.mb-3 = link_to t('.rechoose'), choose_oyatsu_path(ensoku: ensoku), class: 'btn btn-outline-light'
+div.mb-3 = link_to t('.index'), users_ensokus_path, class: 'btn btn-outline-light'
