@@ -3,6 +3,8 @@
 - if @oyatsus.present?
   div.main-wrapper.oyatsus-bg.main-bg-img
     div.container
+      - if flash[:notice]
+        = flash[:notice]
       div.row
         = render @oyatsus
       = paginate @oyatsus
