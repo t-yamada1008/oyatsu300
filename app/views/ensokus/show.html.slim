@@ -13,8 +13,8 @@ div.main-wrapper.main-bg.main-bg-img
         = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light btn-lg'
     div.columuns.mb-3
       h2 = "#{t('.choosed_oyatsu')}:"
-      - if @ensoku.basket.present?
-        = render 'choosed_oyatsu', basket: @ensoku.basket
+      - if @ensoku.baskets.present?
+        = render partial: 'choosed_oyatsu', collection: @ensoku.baskets, as: :basket
       - else
         h3 = t('.nothing_choosed')
       div
