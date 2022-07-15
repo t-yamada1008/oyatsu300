@@ -17,15 +17,40 @@ class Ensoku < ApplicationRecord
     open: 2
   }
 
+  OKOZUKAI = 300
+
+  # 遠足に紐づくバスケットに指定したおやつを入れる
   def basket_in(oyatsu)
+    # おこづかいよりおやつの値段が少なかったらfalse
     basket_oyatsus << oyatsu
   end
 
+  # 遠足に紐づくバスケットに指定したおやつが入っているか
   def basket_oyatsu_exists?(oyatsu)
     baskets.where(oyatsu_id: oyatsu).exists?
   end
 
+  # 遠足に紐づくバスケットから指定したおやつのデータを一つ取得する
+  # バスケットからおやつを削除するとき用
   def basket_find(oyatsu)
     baskets.find_by(oyatsu_id: oyatsu)
+  end
+
+  # 遠足に紐づくバスケットの合計金額を取得
+  def basket_price_sum
+    arr = []
+    basket_oyatsus.each do |bo|
+      arr.push bo.price
+    end
+    arr.sum
+  end
+
+  def purse_under_zero?
+    purse.negative? || purse.zero?
+  end
+
+  def update_purse
+    result = OKOZUKAI - basket_price_sum
+    update(purse: result)
   end
 end
