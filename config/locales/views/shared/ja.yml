@@ -2,3 +2,9 @@ ja:
   shared:
     logout_header:
       login: 'ろぐいん'
+    toggle:
+      mypage: 'まいぺーじ'
+      choose_oyatsu: 'おやつをえらぶ'
+      logout: 'ろぐあうと'
+    footer:
+      site_name: '©遠足のおやつは300円まで！'

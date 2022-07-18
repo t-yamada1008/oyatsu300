@@ -10,10 +10,10 @@ button.navbar-toggler[
 div#navbarSupportedContent.collapse.navbar-collapse.justify-content-right
   ul.navbar-nav
     li.nav-item
-      = link_to "まいぺーじ: #{current_user.name}", my_page_path, class: 'nav-link'
+      = link_to "#{t('.mypage')}: #{current_user.name}", my_page_path, class: 'nav-link'
     li.nav-item
-      = link_to 'おやつをえらぶ', new_users_ensoku_path, class: 'nav-link'
+      = link_to t('.choose_oyatsu'), new_users_ensoku_path, class: 'nav-link'
     //li.nav-item
       = link_to 'みんなのおやつ', users_path, class: 'nav-link'
     li.nav-item
-      = link_to 'ろぐあうと', logout_path, method: 'delete', class: 'nav-link'
+      = link_to t('.logout'), logout_path, method: 'delete', class: 'nav-link'
