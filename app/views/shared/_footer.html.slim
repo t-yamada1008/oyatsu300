@@ -1,11 +1,11 @@
 / TODO: リンクの追加
 footer.footer.mt-auto.text-lg-start
-  section.d-flex.justify-content-center.p-4
+  //section.d-flex.justify-content-center.p-4
     div
       = link_to '#', id: 'twitter', class: 'link-light'
         i.fa-brands.fa-twitter
         | おうえんする！
-  section
+  //section
     div.text-center
       div.row
         div.col
@@ -13,5 +13,5 @@ footer.footer.mt-auto.text-lg-start
         div.col
           = link_to 'おといあわせ(さくしゃのTwitter)', '#', class: 'link-light'
   section
-    div.text-center.p-4
-      = link_to '©遠足のおやつは300円まで', '#', class: 'link-light'
+    div.center-and-white.p-4
+      h5 = t('.site_name')
