@@ -2,11 +2,11 @@
 div.main-wrapper.oyatsus-bg.main-bg-img
   div.container
     div.row
-      div.col.mt-3.mb-3.center-and-white
-        h1.font-weight-normal = t('.title')
+      div.col.mt-3.mb-3
+        h1.font-weight-normal.center-and-white = t('.title')
         = render 'data', ensoku: @ensoku
     div.row
       - if @ensoku.basket_oyatsus
         = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus, as: :oyatsu
-      div.col.mt-3.mb-3.center-and-white
-        div = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-outline-danger btn-sm', data: {confirm: t('.really')}
+    div.col.mt-3.mb-3.center-and-white
+      div = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-outline-danger btn-sm', data: {confirm: t('.really')}
