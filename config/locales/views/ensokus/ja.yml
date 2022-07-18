@@ -17,6 +17,9 @@ ja:
       choosed_oyatsu: 'えらんだおやつ'
       nothing_choosed: 'なにもえらんでないよ。えらぼう！'
       edit: 'せっていへんこう'
+      rechoose: 'えらびなおす'
+      index: 'いちらんにもどる'
+      please_choose: 'おやつをえらんでね！'
       delete: 'けしちゃう'
       really: 'ほんとうにだいじょうぶ？'
     edit:
@@ -38,8 +41,7 @@ ja:
       purse: 'のこり'
       yen: 'えん'
     data:
-      rechoose: 'えらびなおす'
-      index: 'いちらんにもどる'
       yen: 'えん'
+      no_comment: 'のーこめんと'
     form:
       submit: 'おっけー！'
