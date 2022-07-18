@@ -22,17 +22,14 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import "./oyatsus.scss";
 @import "./ensokus.scss";
 
+
 .main-wrapper {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 .main-bg {
-  height: calc(100vh - 134px);
+  height: 100vh;
   position: relative;
   background-size: cover;
 }
@@ -50,8 +47,6 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 .main-inner-text {
   position: absolute;
-  //top: 50%;
-  //left: 50%;
   width: 100%;
   text-align: center;
   color: white;
@@ -62,9 +57,17 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   color: white;
 }
 
-// navbarの背景色を変更
-header .navbar-dark{
-  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+// ヘッダー要素
+.header {
+  height: 1rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  // navbarの背景色を変更
+  .navbar-dark{
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  }
 }
 .navbar-expand-lg .navbar-collapse {
     justify-content: right;
@@ -80,9 +83,10 @@ header .navbar-dark{
   color: $light;
 }
 
-// footerの背景色を変更
-footer {
+// フッター要素
+.footer {
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  text-align: center;
 }
 
 // _reboot.scssに対処できないため!importantで指定

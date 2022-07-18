@@ -7,3 +7,9 @@ ja:
       failure: 'ろぐいんしっぱい！もういちどためしてみてね'
     destroy:
       logout: 'ろぐあうとしたよ'
+    login_form:
+      email: 'めーるあどれす'
+      password: 'ぱすわーど'
+      submit: 'ろぐいん'
+      new_registration: 'しんきとうろく'
+      forgot_password: 'ぱすわーどわすれちゃった'

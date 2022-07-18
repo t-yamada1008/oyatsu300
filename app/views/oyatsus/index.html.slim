@@ -3,11 +3,16 @@
 - if @oyatsus.present?
   div.main-wrapper.oyatsus-bg.main-bg-img
     div.container
+      div.mt-3.mb-3
+        = render 'oyatsus/search_form', q: @q, url: choose_oyatsu_path(ensoku: @ensoku)
       div.row
         = render @oyatsus
       = paginate @oyatsus
 - else
   div.main-wrapper.main-bg.main-bg-img
     div.main-inner-text
-      h1.mt-3.mb-3.font-weight-normal = t('.no_result')
-      h3.mt-3.mb-3.font-weight-normal = t('.seach_again')
+      div.container
+        div.mx-3
+          = render 'oyatsus/search_form', q: @q, url: choose_oyatsu_path(ensoku: @ensoku)
+        h1.mt-3.mb-3.font-weight-normal = t('.no_result')
+        h3.mt-3.mb-3.font-weight-normal = t('.seach_again')
