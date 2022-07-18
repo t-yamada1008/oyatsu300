@@ -1,17 +1,15 @@
-div.col-2
+div.col
   div.row
-    div.col-4
+    div.col
       = link_to root_path, class: 'navbar-brand'
         = image_tag "logo_transparent.png", size: '60x60'
-    div.col-8.d-flex.justify-content-center.align-items-center
+    div.col.d-flex.justify-content-center.align-items-center
       - if current_page?(choose_oyatsu_path)
         = render 'ensokus/okozukai'
-div.col-8
-  - if current_page?(choose_oyatsu_path)
-    div
-      = render 'oyatsus/search_form', q: @q, url: choose_oyatsu_path(ensoku: @ensoku)
-div.col-1.d-flex.justify-content-center.align-items-center
-  - if current_page?(choose_oyatsu_path)
-    = render 'baskets/submit'
-div.col-1.text-end
-  = render 'shared/toggle'
+div.col
+  div.row
+    div.col.d-flex.justify-content-center.align-items-center
+      - if current_page?(choose_oyatsu_path)
+        = render 'baskets/submit'
+    div.col.text-end
+      = render 'shared/toggle'
