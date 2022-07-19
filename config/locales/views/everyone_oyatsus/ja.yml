@@ -1,0 +1,14 @@
+ja:
+  everyone_oyatsus:
+    index:
+      title: 'みんなのおやつ'
+      show: 'みる？'
+    ensoku:
+      see: 'みてあげる'
+      no_comment: 'のーこめんと'
+    show:
+      title: "%{item}のおやつ"
+      everyone_oyatsu: 'みんなのおやつにもどる'
+    data:
+      no_comment: 'のーこめんと'
+      yen: 'えん'
