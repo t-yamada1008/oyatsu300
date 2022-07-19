@@ -11,6 +11,6 @@ class EveryoneOyatsusController < ApplicationController
   def set_ensoku
     # 公開ステータスがopen出ない場合、indexにredirect
     @ensoku = Ensoku.find(params[:id])
-    redirect_to everyone_oyatsu_path  unless @ensoku.status == 'open'
+    redirect_to everyone_oyatsus_path  unless @ensoku.status == 'open'
   end
 end
