@@ -2,15 +2,19 @@
 div.main-wrapper.main-bg.main-bg-img
   div.main-inner-text.px-5
     h1.mt-3.mb-3.font-weight-normal = t('.title')
-    div.table-responsive.text-nowrap
-      table.table
-        thead
-          tr
-            th scope='col' = t('.number')
-            th scope='col' = Ensoku.human_attribute_name(:comment)
-            th scope='col' = Ensoku.human_attribute_name(:status)
-            th scope='col' = Ensoku.human_attribute_name(:purse)
-            th scope='col' = t('.show')
-            th scope='col' = t('.rechoose')
-        tbody
-          = render @ensokus
+    - if @ensokus.present?
+      div.table-responsive.text-nowrap
+        table.table
+          thead
+            tr
+              th scope='col' = t('.number')
+              th scope='col' = Ensoku.human_attribute_name(:comment)
+              th scope='col' = Ensoku.human_attribute_name(:status)
+              th scope='col' = Ensoku.human_attribute_name(:purse)
+              th scope='col' = t('.show')
+              th scope='col' = t('.rechoose')
+          tbody
+              = render @ensokus
+    - else
+      h3 = t('.please_choose_oyatsu')
+      = link_to t('.choose_oyatsu'), new_users_ensoku_path, class: 'nav-link'

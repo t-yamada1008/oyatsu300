@@ -8,6 +8,8 @@ ja:
       status: 'じょうたい'
       show: 'しょうさい'
       rechoose: 'えらびなおす'
+      please_choose_oyatsu: 'おやつをえらんでね！'
+      choose_oyatsu: 'おやつをえらぶ'
     new:
       title: '遠足のおやつは300円まで！'
       new: 'あたらしくえらぶ'

@@ -5,6 +5,8 @@ ja:
     toggle:
       mypage: 'まいぺーじ'
       choose_oyatsu: 'おやつをえらぶ'
+      choosed_oyatsu: 'えらんだおやつ'
+      everyone_oyatsu: 'みんなのおやつ'
       logout: 'ろぐあうと'
     footer:
       site_name: '©遠足のおやつは300円まで！'
