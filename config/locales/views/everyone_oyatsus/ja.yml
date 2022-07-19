@@ -3,6 +3,8 @@ ja:
     index:
       title: 'みんなのおやつ'
       show: 'みる？'
+      no_open: 'きみがいちばんのりだ！'
+      choose_oyatsu: 'おやつをえらぶ'
     ensoku:
       see: 'みてあげる'
       no_comment: 'のーこめんと'

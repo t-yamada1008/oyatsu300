@@ -2,13 +2,17 @@
 div.main-wrapper.main-bg.main-bg-img
   div.main-inner-text.px-5
     h1.mt-3.mb-3.font-weight-normal = t('.title')
-    div.table-responsive.text-nowrap
-      table.table
-        thead
-          tr
-            th scope='col' = User.human_attribute_name(:name)
-            th scope='col' = Ensoku.human_attribute_name(:comment)
-            th scope='col' = Ensoku.human_attribute_name(:purse)
-            th scope='col' = t('.show')
-        tbody
-          = render partial: 'everyone_oyatsus/ensoku', collection: @ensokus, as: :ensoku
+    - @ensokus.puresent?
+      div.table-responsive.text-nowrap
+        table.table
+          thead
+            tr
+              th scope='col' = User.human_attribute_name(:name)
+              th scope='col' = Ensoku.human_attribute_name(:comment)
+              th scope='col' = Ensoku.human_attribute_name(:purse)
+              th scope='col' = t('.show')
+          tbody
+            = render partial: 'everyone_oyatsus/ensoku', collection: @ensokus, as: :ensoku
+    - else
+      h3 = t('.no_open')
+      = link_to t('.choose_oyatsu'), new_users_ensoku_path, class: 'nav-link'
