@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
+gem 'rails', '~> 6.1', '>= 6.1.6.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -73,7 +73,7 @@ group :development, :test do
   gem 'nokogiri', '~> 1.13', '>= 1.13.6'
 
 # 環境設定用gem
-  gem 'config'
+#  gem 'config', github: 'railsconfig/config'
 end
 
 group :development do

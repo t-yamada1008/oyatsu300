@@ -17,4 +17,4 @@ ActiveStorage.start()
 
 // ---end---
 import "bootstrap/dist/js/bootstrap.min";
-import "@fortawesome/fontawesome-free/js/all.min"
+import "@fortawesome/fontawesome-free/js/all.min";
