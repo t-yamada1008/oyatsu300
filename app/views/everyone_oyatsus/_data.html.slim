@@ -1,0 +1,6 @@
+div.card.card-wrapper.box-shadow.text-center
+  div.card-body.card-result-style
+    div.mt-3.mb-1 = "#{Ensoku.human_attribute_name(:comment)}:"
+    h3 = ensoku.comment.blank? ? t('.no_comment') : ensoku.comment
+    div.mt-3.mb-1 = "#{Ensoku.human_attribute_name(:purse)}:"
+    h3 = "#{ensoku.purse} #{t('.yen')}"

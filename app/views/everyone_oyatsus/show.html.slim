@@ -1,0 +1,10 @@
+- content_for :title, t('.title', item: @ensoku.user.name)
+div.main-wrapper.oyatsus-bg.main-bg-img
+  div.container
+    div.row
+      div.col.mt-3.mb-3
+        h1.font-weight-normal.center-and-white = t('.title', item: @ensoku.user.name)
+        div.d-flex.justify-content-center = render 'data', ensoku: @ensoku
+        div.mb-3.text-center = link_to t('.everyone_oyatsu'), everyone_oyatsus_path, class: 'btn btn-outline-light'
+    div.row
+      = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus, as: :oyatsu

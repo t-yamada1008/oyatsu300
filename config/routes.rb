@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete  'logout',         to: 'user_sessions#destroy'
   get     '/choose_oyatsu', to: 'oyatsus#index'
 
-  resource :users, only: %i[index new create] do
+  resource :users, only: %i[new create] do
     resources :ensokus, shallow: true  do
       resources :baskets, only: %i[create destroy], shallow: true
     end
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resource :my_page, only: %i[show edit update]
   resources :password_resets, only: %i[new create edit update]
+  resources :everyone_oyatsus, only: %i[index show]
 
   namespace :admin do
     root              to: 'dashboards#index'

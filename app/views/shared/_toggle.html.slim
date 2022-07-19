@@ -13,7 +13,9 @@ div#navbarSupportedContent.collapse.navbar-collapse.justify-content-right
       = link_to "#{t('.mypage')}: #{current_user.name}", my_page_path, class: 'nav-link'
     li.nav-item
       = link_to t('.choose_oyatsu'), new_users_ensoku_path, class: 'nav-link'
-    //li.nav-item
-      = link_to 'みんなのおやつ', users_path, class: 'nav-link'
+    li.nav-item
+      = link_to t('.choosed_oyatsu'), users_ensokus_path, class: 'nav-link'
+    li.nav-item
+      = link_to t('.everyone_oyatsu'), everyone_oyatsus_path, class: 'nav-link'
     li.nav-item
       = link_to t('.logout'), logout_path, method: 'delete', class: 'nav-link'
