@@ -5,6 +5,7 @@ div.main-wrapper.oyatsus-bg.main-bg-img
       div.col.mt-3.mb-3
         h1.font-weight-normal.center-and-white = t('.title')
         div.d-flex.justify-content-center = render 'data', ensoku: @ensoku
+        div.mb-3.text-center = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light'
         div.mb-3.text-center = link_to t('.rechoose'), choose_oyatsu_path(ensoku: @ensoku), class: 'btn btn-outline-light'
         div.mb-3.text-center = link_to t('.index'), users_ensokus_path, class: 'btn btn-outline-light'
     div.row
