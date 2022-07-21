@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_08_053158) do
+ActiveRecord::Schema.define(version: 2022_07_21_041443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_07_08_053158) do
   end
 
   create_table "ensokus", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.integer "purse", default: 300, null: false
     t.string "comment"
     t.integer "status", default: 0, null: false
