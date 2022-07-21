@@ -1,6 +1,6 @@
 ja:
   shared:
-    logout_header:
+    header:
       login: 'ろぐいん'
     toggle:
       mypage: 'まいぺーじ'
