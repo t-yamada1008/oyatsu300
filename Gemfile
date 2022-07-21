@@ -72,8 +72,8 @@ group :development, :test do
   # scraping
   gem 'nokogiri', '~> 1.13', '>= 1.13.6'
 
-# 環境設定用gem
-#  gem 'config', github: 'railsconfig/config'
+  # 環境設定用gem
+  gem 'config', '~> 4.0'
 end
 
 group :development do
