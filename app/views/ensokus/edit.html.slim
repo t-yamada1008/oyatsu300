@@ -1,14 +1,15 @@
 - content_for :title, t('.title')
 - if @ensoku.basket_oyatsus
-  div.main-wrapper.oyatsus-bg.main-bg-img
+  div.main-wrapper.main-bg.main-bg-img
     div.container
       div.row
-        div.col.mt-3.mb-3.center-and-white
-          h1.font-weight-normal = t('.title')
-          = render 'form', ensoku: @ensoku
-          = link_to t('.rechoose'), choose_oyatsu_path(ensoku: @ensoku), class: 'btn btn-outline-light mt-3'
+        div.col.mt-3.mb-3
+          h1.font-weight-normal.center-and-white.mb-3 = t('.title')
+          = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus, as: :oyatsu
+          div.text-center = link_to t('.rechoose'), choose_oyatsu_path(ensoku: @ensoku), class: 'btn btn-outline-light mt-3'
       div.row
-        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus, as: :oyatsu
+        div.col.center-and-white
+          = render 'edit_form', ensoku: @ensoku
 - else
   div.main-wrapper.main-bg.main-bg-img
     div.main-inner-text

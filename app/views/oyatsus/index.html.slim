@@ -1,7 +1,7 @@
 - content_for :title, t('.title')
 = javascript_pack_tag 'oyatsus/card'
 - if @oyatsus.present?
-  div.main-wrapper.oyatsus-bg.main-bg-img
+  div.main-wrapper.main-bg.main-bg-img
     div.container
       div.mt-3.mb-3
         = render 'oyatsus/search_form', q: @q, url: choose_oyatsu_path(ensoku: @ensoku)

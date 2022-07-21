@@ -9,14 +9,20 @@ button.navbar-toggler[
   span.navbar-toggler-icon
 div#navbarSupportedContent.collapse.navbar-collapse.justify-content-right
   ul.navbar-nav
-    li.nav-item
-      = link_to "#{t('.mypage')}: #{current_user.name}", my_page_path, class: 'nav-link'
-    li.nav-item
-      = link_to t('.choose_oyatsu'), new_ensoku_path, class: 'nav-link'
-    - if current_user.ensokus.present?
+    - if logged_in?
       li.nav-item
-        = link_to t('.choosed_oyatsu'), ensokus_path, class: 'nav-link'
-    li.nav-item
-      = link_to t('.everyone_oyatsu'), everyone_oyatsus_path, class: 'nav-link'
-    li.nav-item
-      = link_to t('.logout'), logout_path, method: 'delete', class: 'nav-link'
+        = link_to "#{t('.mypage')}: #{current_user.name}", my_page_path, class: 'nav-link'
+      li.nav-item
+        = link_to t('.choose_oyatsu'), new_ensoku_path, class: 'nav-link'
+      - if current_user.ensokus.present?
+        li.nav-item
+          = link_to t('.choosed_oyatsu'), ensokus_path, class: 'nav-link'
+      li.nav-item
+         = link_to t('.everyone_oyatsu'), everyone_oyatsus_path, class: 'nav-link'
+      li.nav-item
+        = link_to t('.logout'), logout_path, method: 'delete', class: 'nav-link'
+    - else
+      li.nav-item
+         = link_to t('.everyone_oyatsu'), everyone_oyatsus_path, class: 'nav-link'
+      li.nav-item
+        = link_to t('.login'), logout_path, method: 'delete', class: 'nav-link'

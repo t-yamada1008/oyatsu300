@@ -12,27 +12,3 @@ div.col-4.col-lg-2.mb-4 id="oyatsu-id-#{oyatsu.id}"
            - if @ensoku.basket_oyatsu_exists?(oyatsu)
              = render 'oyatsus/minus_button', oyatsu: oyatsu
            = render 'oyatsus/plus_button', oyatsu: oyatsu
-
-//    header.modal-card-head
-      p.modal-card-title.has-text-centered #{oyatsu.name}
-      button.delete aria-label='close'
-    section.modal-card-body.has-text-centered
-      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}"
-      p.modal-card-title.has-text-centered #{oyatsu.price}円
-    footer.modal-card-foot
-      - if oyatsu.name == 'バナナ'
-        p.modal-card-title.has-text-centered バナナはおやつにふくまれないよ！
-      - else
-        div.container
-          = form_with model: Basket.new, url: user_baskets_path(oyatsu.id), method: 'post', class: 'has-text-centered',  local: true do |f|
-            div.field
-              label.label.has-text-left
-                = f.label :quantity, 'いくつ買う？'
-              div.control
-                = f.text_field :quantity, id: 'quantity', class: 'input is-round is-half'
-            div.field
-              div.control
-                = f.hidden_field :oyatsu_id, value: oyatsu.id
-            div.field
-              div.control
-                = f.submit 'カゴにいれる', class: 'button is-link is-round'

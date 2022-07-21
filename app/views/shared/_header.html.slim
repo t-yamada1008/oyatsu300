@@ -13,9 +13,6 @@ header.header
         div.row
           div.col.d-flex.justify-content-center.align-items-center
             - if current_page?(choose_oyatsu_path)
-              = render 'baskets/submit'
+              = render 'baskets/register'
           div.col.text-end
-            - if logged_in?
-              = render 'shared/toggle'
-            - else
-              = link_to t('.login'), root_path, class: 'btn btn-outline-light'
+            = render 'shared/toggle'
