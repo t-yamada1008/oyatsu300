@@ -1,6 +1,0 @@
-div.col
-  = link_to root_path, class: 'navbar-brand'
-    = image_tag "logo_transparent.png", size: '60x60'
-div.col.text-end
-  - unless current_page?(root_path)
-    = link_to t('.login'), root_path, class: 'btn btn-outline-light'
