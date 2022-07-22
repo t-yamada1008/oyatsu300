@@ -3,9 +3,9 @@ div.main-wrapper.main-bg.main-bg-img
   div.main-inner-text
     = image_tag "logo_transparent.png", size: '300x300'
     h1.mb-3.font-weight-normal = t('.title')
-    div.mt-3
-      = link_to t('.new'), ensokus_path, method: :post,  class: 'btn btn-outline-light btn-lg'
+    div.mt-3 = link_to t('.new'), ensokus_path, method: :post, class: 'btn btn-outline-light btn-lg'
+    - if session[:ensoku_id].present?
+      div.mt-3 = link_to t('.continue'), choose_oyatsu_path(session[:ensoku]), class: 'btn btn-outline-light btn-lg'
     - if logged_in? && current_user.ensokus.present?
-      div.mt-3
-        = link_to t('.continue'), ensokus_path, class: 'btn btn-outline-light btn-lg'
+      div.mt-3 = link_to t('.index'), ensokus_path, class: 'btn btn-outline-light btn-lg'
     div.mt-5 = render 'shared/how_to_play'

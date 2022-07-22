@@ -26,11 +26,12 @@ class OyatsusController < ApplicationController
   end
 
   def set_ensoku
-    if params[:ensoku].present?
-      @ensoku = Ensoku.find(params[:ensoku])
-    # 検索時にsearch_form_forでparamsを渡せないのでhiddenで渡す
-    elsif params[:q][:ensoku].present?
-      @ensoku = Ensoku.find(params[:q][:ensoku])
+    # セッション情報がある場合
+    if session[:ensoku_id].present?
+      @ensoku = Ensoku.find(session[:ensoku_id])
+    # セッション情報がない場合
+    elsif params[:ensoku].preset?
+      @ensoku = Ensoku.find(:ensoku)
     else
       redirect_to new_ensoku_path
     end

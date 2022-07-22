@@ -1,6 +1,6 @@
 class EnsokusController < ApplicationController
   before_action :set_ensoku, only: %i[show edit update destroy]
-  before_action :check_request, only: %i[edit update destroy]
+  before_action :check_request, only: %i[show edit update destroy]
 
   # 遠足一覧画面
   # Userの全遠足結果を取得
@@ -15,13 +15,19 @@ class EnsokusController < ApplicationController
   # 新規遠足作成
   def create
     @ensoku = Ensoku.create
+    # ログインしない場合のためにsessionを登録
+    session.clear if session.present?
+    session[:ensoku_id] = @ensoku.id
     redirect_to choose_oyatsu_path(ensoku: @ensoku)
   end
 
+  # おかし選択結果
   def show; end
 
+  # 選択結果のステータス編集
   def edit; end
 
+  # 選択結果のステータス更新
   def update
     if @ensoku.update(ensoku_params)
       redirect_to @ensoku, success: t('.success')
