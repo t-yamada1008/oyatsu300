@@ -1,6 +1,6 @@
 class Ensoku < ApplicationRecord
   has_many :baskets, dependent: :destroy
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :basket_oyatsus, through: :baskets, source: :oyatsu
 
   validates :purse, presence: true, numericality: {
@@ -8,7 +8,6 @@ class Ensoku < ApplicationRecord
     greater_than_or_equal_to: 0,
     less_than_or_equal_to: 300
   }
-  validates :comment, length: { maximum: 65_535 }
   validates :comment, length: { maximum: 65_535 }
 
   enum status: {

@@ -1,12 +1,12 @@
 ja:
   shared:
-    logout_header:
-      login: 'ろぐいん'
+    header:
     toggle:
       mypage: 'まいぺーじ'
       choose_oyatsu: 'おやつをえらぶ'
       choosed_oyatsu: 'えらんだおやつ'
       everyone_oyatsu: 'みんなのおやつ'
+      login: 'ろぐいん'
       logout: 'ろぐあうと'
     footer:
       site_name: '©遠足のおやつは300円まで！'

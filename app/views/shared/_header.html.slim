@@ -1,8 +1,18 @@
 header.header
   nav.navbar.navbar-dark
     div.container-fluid.row
-      - if logged_in?
-        = render 'shared/login_header'
-      - else
-        = render 'shared/logout_header'
-
+      div.col
+        div.row
+          div.col
+            = link_to root_path, class: 'navbar-brand'
+              = image_tag "logo_transparent.png", size: '60x60'
+          div.col.d-flex.justify-content-center.align-items-center
+            - if current_page?(choose_oyatsu_path)
+              = render 'ensokus/okozukai'
+      div.col
+        div.row
+          div.col.d-flex.justify-content-center.align-items-center
+            - if current_page?(choose_oyatsu_path)
+              = render 'baskets/register'
+          div.col.text-end
+            = render 'shared/toggle'

@@ -19,17 +19,19 @@ ja:
       choosed_oyatsu: 'えらんだおやつ'
       nothing_choosed: 'なにもえらんでないよ。えらぼう！'
       edit: 'せっていへんこう'
+      twitter: 'ついーとする'
       rechoose: 'えらびなおす'
       index: 'いちらんにもどる'
       please_choose: 'おやつをえらんでね！'
-      delete: 'けしちゃう'
-      really: 'ほんとうにだいじょうぶ？'
+      new_registry: 'かいいんとうろく'
     edit:
-      title: 'おやつをかくにん！'
+      title: 'これでいい？'
       comment: 'こめんとしてね！'
       status: 'すてーたす'
       submit: 'こうしん'
       rechoose: 'えらびなおす'
+      delete: 'けしちゃう'
+      really: 'ほんとうにだいじょうぶ？'
     update:
       success: 'こうしんしたよ！'
       failure: 'こうしんしっぱい。もう一度ためしてみてね。'
@@ -45,6 +47,6 @@ ja:
     data:
       yen: 'えん'
       no_comment: 'のーこめんと'
-    form:
+    edit_form:
       submit: 'おっけー！'
       comment: 'こめんとしてね'

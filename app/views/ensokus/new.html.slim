@@ -4,8 +4,8 @@ div.main-wrapper.main-bg.main-bg-img
     = image_tag "logo_transparent.png", size: '300x300'
     h1.mb-3.font-weight-normal = t('.title')
     div.mt-3
-      = link_to t('.new'), users_ensokus_path, method: :post,  class: 'btn btn-outline-light btn-lg'
-    - if current_user.ensokus.present?
+      = link_to t('.new'), ensokus_path, method: :post,  class: 'btn btn-outline-light btn-lg'
+    - if logged_in? && current_user.ensokus.present?
       div.mt-3
-        = link_to t('.continue'), users_ensokus_path, class: 'btn btn-outline-light btn-lg'
-    = render 'shared/how_to_play'
+        = link_to t('.continue'), ensokus_path, class: 'btn btn-outline-light btn-lg'
+    div.mt-5 = render 'shared/how_to_play'

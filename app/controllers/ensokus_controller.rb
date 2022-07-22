@@ -1,6 +1,6 @@
 class EnsokusController < ApplicationController
-  before_action :require_login
   before_action :set_ensoku, only: %i[show edit update destroy]
+  before_action :check_request, only: %i[edit update destroy]
 
   # 遠足一覧画面
   # Userの全遠足結果を取得
@@ -8,13 +8,13 @@ class EnsokusController < ApplicationController
     @ensokus = current_user.ensokus.all
   end
 
-  # ログイン後のtop画面
+  # top画面
   # 新規遠足作成のボタンを置く
   def new; end
 
   # 新規遠足作成
   def create
-    @ensoku = current_user.ensokus.create
+    @ensoku = Ensoku.create
     redirect_to choose_oyatsu_path(ensoku: @ensoku)
   end
 
@@ -31,9 +31,10 @@ class EnsokusController < ApplicationController
     end
   end
 
+  # 削除後は新規遠足作成画面に遷移
   def destroy
     @ensoku.destroy!
-    redirect_to users_ensokus_path, success: t('.success')
+    redirect_to new_ensoku_path, success: t('.success')
   end
 
   private
@@ -44,5 +45,21 @@ class EnsokusController < ApplicationController
 
   def ensoku_params
     params.require(:ensoku).permit(:comment, :status)
+  end
+
+  # リファラを参照
+  def check_request
+    referer = request.referer
+    # URL直打ち対策
+    if referer.blank?
+      if logged_in?
+        redirect_to new_ensoku_path
+      else
+        redirect_to root_path
+      end
+      return
+    end
+    # リファラ制御
+    redirect_to new_ensoku_path unless referer.include?(root_path) || referer.include?(choose_oyatsu_path(@ensoku))
   end
 end
