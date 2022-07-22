@@ -10,4 +10,4 @@ div.main-wrapper.main-bg.main-bg-img
           h2.mt-3.mb-1= "#{User.human_attribute_name(:email)}:"
           h3 = "#{current_user.email}"
       div.mb-3 = link_to t('.update'), edit_my_page_path, class: 'btn btn-outline-light mt-3'
-      div = link_to t('.see_choosed_oyatsu'), users_ensokus_path, class: 'btn btn-outline-light'
+      div = link_to t('.see_choosed_oyatsu'), ensokus_path, class: 'btn btn-outline-light'

@@ -24,5 +24,6 @@ div.main-wrapper.main-bg.main-bg-img
         - if logged_in?
           div.mb-3.text-center = link_to t('.index'), ensokus_path, class: 'btn btn-outline-light'
         - else
-        div.center-and-white.mb-3 = render 'shared/registry_merit'
-        div.mb-3.text-center = link_to t('.new_registry'), '#', class: 'btn btn-outline-light'
+          div.center-and-white.mb-3 = render 'shared/registry_merit'
+          div.mb-3.text-center = link_to t('.new_registry'), new_users_path, class: 'btn btn-outline-light'
+          div.mb-3.text-center = link_to t('.login'), login_path, class: 'btn btn-outline-light'
