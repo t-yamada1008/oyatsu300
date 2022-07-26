@@ -68,7 +68,8 @@
 
 // ページネーション
 .pagination {
-  justify-content: center;
+  // 無限スクロール導入につき、廃止
+  visibility: hidden;
 }
 
 .page-item .page-link {
