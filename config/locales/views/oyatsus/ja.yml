@@ -8,5 +8,5 @@ ja:
     search_form:
       word: 'おやつのなまえをいれてね'
       submit: 'しらべる'
-    oyatsu:
+    oyatsu_purchase:
       yen: 'えん'

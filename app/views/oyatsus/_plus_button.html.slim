@@ -1,10 +1,6 @@
-div.col
-  = link_to ensoku_baskets_path(@ensoku, oyatsu_id: oyatsu),
-    method: :post,
-    #remote: true,
-    id: "js-card-for-oyatsu-plus-#{oyatsu.id}",
-    'data-card-id': oyatsu.id,
-    'data-oyatsu-name': oyatsu.name,
-    type: 'button',
-    class: 'btn btn-outline-dark btn-plus'
-    i.fa-solid.fa-plus
+= link_to ensoku_baskets_path(@ensoku, oyatsu_id: oyatsu),
+  method: :post,
+  remote: true,
+  type: 'button',
+  class: 'btn btn-outline-dark btn-plus'
+  i.fa-solid.fa-plus

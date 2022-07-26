@@ -7,7 +7,7 @@ div.main-wrapper.main-bg.main-bg-img
     div.my-3
       - if @oyatsus.present?
         div.oyatsus_field.jscroll
-          div.row
+          div.row#oyatsus
             = render @oyatsus
           = paginate @oyatsus
       - else

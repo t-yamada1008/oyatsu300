@@ -1,17 +1,9 @@
-div.col-4.col-lg-2.mb-4 id="oyatsu-id-#{oyatsu.id}"
+div.col-4.col-lg-2.mb-4
   div.card.card-wrapper.box-shadow.h-100.text-center
-    - if oyatsu.oyatsu_count(@ensoku).positive?
-      h5
-        span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-danger = oyatsu.oyatsu_count(@ensoku)
-    div.card-img-top
-      = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}", class: 'img-fluid'
+    span id = "oyatsu-id-#{oyatsu.id}-badge" = render 'badge', oyatsu: oyatsu
+    div.card-img-top = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}", class: 'img-fluid'
     div.card-body.card-body-style
       h5.card-text = oyatsu.name
-    - if request.path.include?(choose_oyatsu_path)
-      ul.list-group.list-group-flush
-        li.list-group-item = "#{oyatsu.price} #{t('.yen')}"
-      div.card-footer
-        div.row
-           - if @ensoku.basket_oyatsu_exists?(oyatsu)
-             = render 'oyatsus/minus_button', oyatsu: oyatsu
-           = render 'oyatsus/plus_button', oyatsu: oyatsu
+    div.card-footer id  = "oyatsu-id-#{oyatsu.id}-footer"
+      - if request.path.include?(choose_oyatsu_path)
+        = render 'oyatsu_purchase', oyatsu: oyatsu
