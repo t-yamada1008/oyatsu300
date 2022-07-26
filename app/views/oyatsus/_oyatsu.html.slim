@@ -4,7 +4,7 @@ div.col-4.col-lg-2.mb-4 id="oyatsu-id-#{oyatsu.id}"
       = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}", class: 'img-fluid'
     div.card-body.card-body-style
       h5.card-text = oyatsu.name
-    - if current_page?(choose_oyatsu_path)
+    - if request.path.include?(choose_oyatsu_path)
       ul.list-group.list-group-flush
         li.list-group-item = "#{oyatsu.price} #{t('.yen')}"
       div.card-footer
