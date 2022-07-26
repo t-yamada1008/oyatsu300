@@ -1,1 +1,3 @@
-$("#oyatsu-id-<%= @oyatsu.id %>").html("<%= j(render 'oyatsus/oyatsu', oyatsu: @oyatsu) %>");
+$("#oyatsu-id-<%= @oyatsu.id %>-badge").html("<%= j(render 'oyatsus/badge', oyatsu: @oyatsu) %>");
+$("#oyatsu-id-<%= @oyatsu.id %>-footer").html("<%= j(render 'oyatsus/oyatsu_purchase', oyatsu: @oyatsu) %>");
+$("#okozukai").html("<%= j(render 'ensokus/okozukai') %>");

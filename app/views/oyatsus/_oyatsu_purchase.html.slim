@@ -1,0 +1,8 @@
+  div.row.mb-1
+    div.col = "#{oyatsu.price} #{t('.yen')}"
+  div.row
+    - if @ensoku.basket_oyatsu_exists?(oyatsu)
+      div.col
+        span  = render 'oyatsus/minus_button', oyatsu: oyatsu
+    div.col
+      span = render 'oyatsus/plus_button', oyatsu: oyatsu
