@@ -46,6 +46,7 @@ class EnsokusController < ApplicationController
   private
 
   def set_ensoku
+    binding.pry
     @ensoku = Ensoku.find(params[:id])
   end
 
