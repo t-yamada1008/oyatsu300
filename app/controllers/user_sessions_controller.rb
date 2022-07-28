@@ -8,7 +8,6 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      binding.pry
       set_ensoku_user if session[:ensoku_id].present?
       redirect_back_or_to ensokus_path, success: t('.success')
     else
