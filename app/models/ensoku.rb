@@ -44,10 +44,12 @@ class Ensoku < ApplicationRecord
     arr.sum
   end
 
+  # おこずかいが0以下になるかチェック
   def purse_under_zero?
     purse.negative? || purse.zero?
   end
 
+  # おこずかいを更新
   def update_purse
     result = OKOZUKAI - basket_price_sum
     update(purse: result)

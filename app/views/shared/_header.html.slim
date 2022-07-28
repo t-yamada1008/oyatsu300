@@ -5,7 +5,7 @@ header.header
         div.row
           div.col
             = link_to root_path, class: 'navbar-brand'
-              = image_tag "logo_transparent.png", size: '60x60'
+              = image_tag "logo_transparent.png", size: '50x50'
           div.col.d-flex.justify-content-center.align-items-center
             - if request.path.include?(choose_oyatsu_path)
               div#okozukai = render 'ensokus/okozukai'
