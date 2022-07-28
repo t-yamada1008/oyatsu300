@@ -1,9 +1,9 @@
 div.col-4.col-lg-2.mb-4
   div.card.card-wrapper.box-shadow.h-100.text-center
-    span id = "oyatsu-id-#{oyatsu.id}-badge" = render 'badge', oyatsu: oyatsu
+    span id = "oyatsu-id-#{oyatsu.id}-badge" = render 'oyatsus/badge', oyatsu: oyatsu
     div.card-img-top = image_tag "download_images/#{oyatsu.genre}/#{oyatsu.image_url.split('/').last}", class: 'img-fluid'
     div.card-body.card-body-style
       h5.card-text = oyatsu.name
-    div.card-footer id  = "oyatsu-id-#{oyatsu.id}-purchase"
-      - if request.path.include?(choose_oyatsu_path)
+    - if request.path.include?(choose_oyatsu_path)
+      div.card-footer id  = "oyatsu-id-#{oyatsu.id}-purchase"
         = render 'oyatsu_purchase', oyatsu: oyatsu

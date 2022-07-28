@@ -7,7 +7,7 @@
           h1 = t('.title')
           h2 = render 'okozukai'
       div.row
-        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus, as: :oyatsu
+        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
       div.row
         div.col.center-and-white
           = link_to t('.rechoose'), choose_oyatsu_path(ensoku: @ensoku), class: 'btn btn-outline-light mt-3'

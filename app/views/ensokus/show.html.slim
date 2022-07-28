@@ -6,7 +6,7 @@ div.main-wrapper.main-bg.main-bg-img
         h1.font-weight-normal.center-and-white = t('.title')
     div.row
       - if @ensoku.basket_oyatsus.present?
-        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus, as: :oyatsu
+        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
       - else
         div.col
           h2.font-weight-normal.center-and-white = t('.please_choose')

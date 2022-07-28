@@ -44,6 +44,11 @@ class Ensoku < ApplicationRecord
     arr.sum
   end
 
+  # 遠足に紐づくバスケットのおかしの種類をまとめたものを取得
+  def basket_oyatsus_group
+    basket_oyatsus.group(:id)
+  end
+
   # おこずかいが0以下になるかチェック
   def purse_under_zero?
     purse.negative? || purse.zero?
