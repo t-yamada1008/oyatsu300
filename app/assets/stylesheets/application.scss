@@ -26,6 +26,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 .main-wrapper {
   display: flex;
   align-items: center;
+  padding-top: 80px;
 }
 
 .main-bg {
@@ -69,11 +70,13 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 // ヘッダー要素
 .header {
-  height: 100px;
+  height: 80px;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 9999;
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+
   // navbarの背景色を変更
   .navbar-dark{
     background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
@@ -110,8 +113,10 @@ a {
 }
 
 .alert {
+  display: relative;
+  margin-top: 80px;
+  margin-bottom: 0px!important;
   text-align: center;
-  margin-bottom: 0!important;
 }
 
 .form-box {
