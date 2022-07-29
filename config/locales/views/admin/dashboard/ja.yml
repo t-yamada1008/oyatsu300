@@ -2,4 +2,6 @@ ja:
   admin:
     dashboards:
       index:
+        title: 'ダッシュボード'
+        usage: '管理者画面のトップページです。管理画面をサイドバーから選択してください。'
         not_authorized: '管理者アカウントじゃないよ'

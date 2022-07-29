@@ -1,2 +1,5 @@
-h1 Admin::DashBoards#index
-p Find me in app/views/admin/dash_boards/index.html.slim
+= content_for(:title, t('.title'))
+.container-fluid
+  .row
+    h1 = t('.title')
+    p = t('.usage')
