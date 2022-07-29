@@ -6,3 +6,5 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         login: 'ログイン'
+      create:
+        success: '管理画面にログインしました'
