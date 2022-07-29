@@ -1,0 +1,12 @@
+ja:
+  admin:
+    shared:
+      navbar:
+        logout: 'ログアウト'
+      sidebar:
+        user_name: 'ユーザー名'
+        users_index: 'ユーザー管理'
+        ensokus_index: '遠足管理'
+        oyatsus_index: 'おやつ管理'
+      footer:
+        site_name: '©遠足のおやつは300円まで！'
