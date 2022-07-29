@@ -1,0 +1,10 @@
+nav.navbar.navbar-expand.navbar-white.navbar-light
+  // Left navbar links
+  ul.navbar-nav.mr-auto
+    li.nav-item
+      = link_to "#", class: "nav-link", 'data-widget': "pushmenu", role: "button"
+        i.fas.fa-bars
+  // Right navbar links
+  ul.navbar-nav.ml-auto
+    li.nav-item
+      = link_to t('.logout'), admin_logout_path, class: 'nav-link', method: :delete

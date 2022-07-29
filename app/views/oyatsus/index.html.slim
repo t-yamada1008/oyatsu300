@@ -1,7 +1,7 @@
 - content_for :title, t('.title')
 div.main-wrapper.main-bg.main-bg-img
   div.container
-    div.mt-2.mb-4
+    div.my-4
       = render 'oyatsus/search_form', q: @q, url: choose_oyatsu_path(ensoku: @ensoku)
     div.my-3
       - if @oyatsus.present?
