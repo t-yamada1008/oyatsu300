@@ -20,4 +20,5 @@ import 'jquery'
 import 'jscroll'
 import 'bootstrap'
 import '@fortawesome/fontawesome-free'
+
 import './oyatsus/scroll'

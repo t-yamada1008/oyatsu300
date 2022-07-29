@@ -2,5 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@import 'admin-lte/plugins/fontawesome-free/css/all.min.css';
-@import 'admin-lte/dist/css/adminlte.css';
+// from starter.html
+// Google Font: Source Sans Pro
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback";
+// Font Awesome Icons
+@import "admin-lte/plugins/fontawesome-free/css/all.min";
+// Theme style
+@import "admin-lte/dist/css/adminlte.min";
