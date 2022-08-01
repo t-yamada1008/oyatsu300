@@ -1,0 +1,24 @@
+- content_for(:title, t('.title'))
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 = t('.title')
+      .text-right.mb-3
+        = link_to t('.edit'), edit_admin_user_path(@user), class: 'btn btn-success mx-3'
+        = link_to t('.delete'), admin_user_path(@user), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger'
+      table.table.table-bordered.bg-white
+        tr
+          th[scope="row"] = User.human_attribute_name(:id)
+          td = @user.id
+        tr
+          th[scope="row"] = User.human_attribute_name(:email)
+          td = @user.email
+        tr
+          th[scope="row"] = User.human_attribute_name(:role)
+          td = @user.role_i18n
+        tr
+          th[scope="row"] = User.human_attribute_name(:name)
+          td = @user.name
+        tr
+          th[scope="row"] = User.human_attribute_name(:created_at)
+          td = l @user.created_at, format: :long
