@@ -28,13 +28,19 @@ crumb :admin_root do
   link t('.admin_root'), admin_root_path
 end
 
-# User List
+# Users List
 crumb :admin_users do
   link t('admin.users.index.title'), admin_users_path
 end
 
-# User
-crumb :admin_user do |admin_user|
-  link admin_user.name, admin_user_path(admin_user)
+# User show
+crumb :admin_user do |user|
+  link user.name, admin_user_path(user)
+  parent :admin_users
+end
+
+# User edit
+crumb :edit_admin_user do |user|
+  link admin_user.name, edit_admin_user_path(admin_user)
   parent :admin_users
 end

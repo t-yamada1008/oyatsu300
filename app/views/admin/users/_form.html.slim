@@ -1,0 +1,19 @@
+= form_with model: user, url: admin_user_path(user), local: true do |f|
+  - if user.errors.any?
+    = render 'shared/error_messages', object: f.object
+  div.form-group
+    = f.label :name, User.human_attribute_name(:name)
+    = f.text_field :name,  class: 'form-control', placeholder: t('.name')
+  div.form-group
+    = f.label :email, User.human_attribute_name(:email)
+    = f.email_field :email, class: 'form-control', placeholder: t('.email')
+  div.form-group
+    = f.label :password, User.human_attribute_name(:password)
+    = f.password_field :password, class: 'form-control', placeholder: t('.password')
+  div.form-group
+    = f.label :password_confirmation, User.human_attribute_name(:password_confirmation)
+    = f.password_field :password_confirmation, class: 'form-control', placeholder: t('.password_confirmation')
+  div.form-group
+    = f.label :role, User.human_attribute_name(:role)
+    = f.select :role, User.roles_i18n.invert, {}, class: 'form-control'
+  div.text-center = f.submit t('.submit'), class: 'btn btn-primary'
