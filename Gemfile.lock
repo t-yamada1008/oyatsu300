@@ -136,6 +136,9 @@ GEM
       sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gretel (4.4.0)
+      actionview (>= 5.1, < 7.1)
+      railties (>= 5.1, < 7.1)
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
@@ -379,6 +382,7 @@ DEPENDENCIES
   enum_help
   faker
   font-awesome-sass
+  gretel
   html2slim
   jbuilder (~> 2.7)
   kaminari

@@ -15,7 +15,8 @@ html
       = render 'admin/shared/navbar'
       = render 'admin/shared/sidebar'
       div.content-wrapper
-        div.content-header
+        div.content-header.text-right.mx-3
+          = breadcrumbs pretext: t('.you_are_here'), separator: ' &rsaquo; '
         div.content
           = render 'shared/flash_message'
           = yield
