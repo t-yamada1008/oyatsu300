@@ -14,12 +14,12 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
         li.nav-item
           = link_to admin_users_path, class: "nav-link #{active_if('admin/users')}"
             i.nav-icon.far.fa-user
-            = t('.users_index')
+            p = t('.users_index')
         li.nav-item
           = link_to admin_ensokus_path, class: "nav-link #{active_if('admin/ensokus')}"
             i.nav-icon.fas.fa-bus
-            = t('.ensokus_index')
+            p = t('.ensokus_index')
         li.nav-item
           = link_to admin_oyatsus_path, class: "nav-link #{active_if('admin/oyatsus')}"
             i.nav-icon.fas.fa-cookie-bite
-            = t('.oyatsus_index')
+            p = t('.oyatsus_index')
