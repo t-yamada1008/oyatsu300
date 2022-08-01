@@ -3,6 +3,12 @@ ja:
     users:
       index:
         title: 'ユーザー一覧'
+        new_registry: 'ユーザー新規登録'
+      new:
+        title: 'ユーザー新規作成'
+      create:
+        success: 'ユーザーの作成に成功しました'
+        failure: 'ユーザーの作成に失敗しました'
       show:
         title: 'ユーザー詳細'
       edit:

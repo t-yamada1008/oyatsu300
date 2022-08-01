@@ -3,6 +3,9 @@
 .container.mb-5.pt-2
   h1 = t('.title')
   .row
+    .col-md-12.mb-3.mx-2
+      = link_to t('.new_registry'), new_admin_user_path, class: 'btn btn-primary'
+  .row
     .col-md-12.mb-3
       = render 'search_form'
   .row

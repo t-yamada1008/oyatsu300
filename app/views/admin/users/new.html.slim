@@ -1,2 +1,7 @@
-h1 Admin::Users#new
-p Find me in app/views/admin/users/new.html.slim
+- content_for(:title, t('.title'))
+- breadcrumb :new_admin_user
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 = t('.title')
+      = render 'form', user: @user, url: admin_users_path
