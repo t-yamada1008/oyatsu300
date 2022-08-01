@@ -10,12 +10,13 @@ ja:
       update:
         success: 'ユーザーの更新に成功しました'
         failure: 'ユーザーの更新に失敗しました'
-      delete:
-        delte_confirm: '本当にユーザーを削除しますか？'
+      destroy:
+        success: 'ユーザーの削除に成功しました'
       user:
         show: '詳細'
         edit: '編集'
         delete: '削除'
+        delete_confirm: '本当にユーザーを削除しますか？'
       form:
         name: '名前'
         email: 'メールアドレス'
