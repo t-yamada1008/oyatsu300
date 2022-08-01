@@ -5,6 +5,8 @@ ja:
         title: 'ユーザー一覧'
       show:
         title: 'ユーザー詳細'
+      delete:
+        delte_confirm: '本当にユーザーを削除しますか？'
       user:
         show: '詳細'
         edit: '編集'
