@@ -10,14 +10,14 @@ html
     = stylesheet_link_tag 'admin', media: 'all'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload'
-  body.hold-transition.sidebar-mini.layout-fixed
-  div.wrapper
-    = render 'admin/shared/navbar'
-    = render 'admin/shared/sidebar'
-    div.content-wrapper
-      div.content-header
-      div.content
-        = render 'shared/flash_message'
-        = yield
-    = render 'admin/shared/footer'
+  body.hold-transition.sidebar-mini.sidebar-collapse.fixed
+    div.wrapper
+      = render 'admin/shared/navbar'
+      = render 'admin/shared/sidebar'
+      div.content-wrapper
+        div.content-header
+        div.content
+          = render 'shared/flash_message'
+          = yield
+      = render 'admin/shared/footer'
 
