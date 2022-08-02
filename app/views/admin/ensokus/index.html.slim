@@ -1,0 +1,25 @@
+- content_for(:title, t('.title'))
+- breadcrumb :admin_ensokus, @ensokus
+.container.mb-5.pt-2
+  h1 = t('.title')
+  .row
+    .col-md-12.mb-3
+      = render 'search_form'
+  .row
+    .col-md-12
+      table.table.table-striped.text-center
+        thead
+          tr
+            th[scope="col"] = Ensoku.human_attribute_name(:id)
+            th[scope="col"] = t('admin.ensokus.common.user_name')
+            th[scope="col"] = t('admin.ensokus.common.purse')
+            th[scope="col"] = t('admin.ensokus.common.comment')
+            th[scope="col"] = t('admin.ensokus.common.status')
+            th[scope="col"] = Ensoku.human_attribute_name(:created_at)
+            th[scope="col"]
+            th[scope="col"]
+            th[scope="col"]
+        tbody
+          = render @ensokus
+  .row
+    .col-md-12 = paginate @ensokus

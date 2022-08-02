@@ -29,6 +29,11 @@ class Ensoku < ApplicationRecord
     baskets.where(oyatsu_id: oyatsu).exists?
   end
 
+  # 遠足に紐づくバスケットに指定したおやつがいくつ入っているか
+  def basket_oyatsu_count(oyatsu)
+    baskets.where(oyatsu_id: oyatsu).count
+  end
+
   # 遠足に紐づくバスケットから指定したおやつのデータを一つ取得する
   # バスケットからおやつを削除するとき用
   def basket_find(oyatsu)
@@ -58,5 +63,10 @@ class Ensoku < ApplicationRecord
   def update_purse
     result = OKOZUKAI - basket_price_sum
     update(purse: result)
+  end
+
+  # 遠足に紐づくユーザー名を取得
+  def user_name
+    user.present? ? user.name : ''
   end
 end

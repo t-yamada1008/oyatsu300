@@ -23,11 +23,13 @@
 # folder are loaded and reloaded automatically when you change them, just like
 # this file (`config/breadcrumbs.rb`).
 
+# --- root ---
 # admin root crumb
 crumb :admin_root do
   link t('.admin_root'), admin_root_path
 end
 
+# --- user ---
 # users index
 crumb :admin_users do
   link t('admin.users.index.title'), admin_users_path
@@ -49,4 +51,16 @@ end
 crumb :edit_admin_user do |user|
   link admin_user.name, edit_admin_user_path(admin_user)
   parent :admin_users
+end
+
+# --- ensoku ---
+# ensoku_index
+crumb :admin_ensokus do
+  link t('admin.ensokus.index.title'), admin_ensokus_path
+end
+
+# ensoku show
+crumb :admin_ensoku do |ensoku|
+  link ensoku.id, admin_ensoku_path(ensoku)
+  parent :admin_ensokus
 end

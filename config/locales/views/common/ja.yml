@@ -1,0 +1,10 @@
+ja:
+  admin:
+    common:
+      button:
+        show: '詳細'
+        edit: '編集'
+        delete: '削除'
+      search_form:
+        search_word: '検索する単語を入力'
+        unspecified: '未選択'

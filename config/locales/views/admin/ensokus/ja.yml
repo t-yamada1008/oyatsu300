@@ -1,0 +1,15 @@
+ja:
+  admin:
+    ensokus:
+      common:
+        user_name: 'ユーザー名'
+        purse: '残高'
+        comment: 'コメント'
+        status: '公開ステータス'
+      index:
+        title: '遠足一覧'
+      show:
+        title: '遠足詳細'
+        info: '基本情報'
+        choosed_oyatsu: '選択したおやつ'
+        oyatsu_count: '数量'
