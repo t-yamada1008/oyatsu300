@@ -1,0 +1,10 @@
+= form_with model: ensoku, url: url, local: true do |f|
+  - if ensoku.errors.any?
+    = render 'shared/error_messages', object: f.object
+  div.form-group
+    = f.label :comment, t('admin.ensokus.common.comment')
+    = f.text_field :comment, class: 'form-control', placeholder: t('admin.ensokus.common.comment')
+  div.form-group
+    = f.label :status, Ensoku.human_attribute_name(:status)
+    = f.select :status, Ensoku.statuses_i18n.invert, {}, class: 'form-control'
+  div.text-center = f.submit t('.submit'), class: 'btn btn-primary'

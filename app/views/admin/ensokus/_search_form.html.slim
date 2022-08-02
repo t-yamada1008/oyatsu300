@@ -1,0 +1,9 @@
+= search_form_for @q, url: admin_ensokus_path do |f|
+  .row
+    .form-inline.align-items-center.mx-auto
+      .col-auto
+        = f.search_field :user_name_cont, class: 'form-control', placeholder: t('admin.common.search_form.search_word')
+      .col-auto
+        = f.select :status_eq, Ensoku.statuses_i18n.invert.map{|key, value| [key, Ensoku.statuses[value]]}, { include_blank: t('admin.common.search_form.unspecified') }, { class: 'form-control mr-1' }
+      .col-auto
+        = f.submit class: 'btn btn-primary'

@@ -1,6 +1,9 @@
 ja:
   admin:
     users:
+      common:
+        user_name: 'ユーザー名'
+        email: 'メールアドレス'
       index:
         title: 'ユーザー一覧'
         new_registry: 'ユーザー新規登録'
@@ -19,16 +22,8 @@ ja:
       destroy:
         success: 'ユーザーの削除に成功しました'
       user:
-        show: '詳細'
-        edit: '編集'
-        delete: '削除'
         delete_confirm: '本当にユーザーを削除しますか？'
       form:
-        name: '名前'
-        email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード(確認)'
         submit: '登録'
-      search_form:
-        search_word: '検索する単語を入力'
-        unspecified: '未選択'

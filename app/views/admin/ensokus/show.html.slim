@@ -1,0 +1,41 @@
+- content_for(:title, t('.title'))
+- breadcrumb :admin_ensoku, @ensoku
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 = t('.title')
+      .text-right.mb-3
+        = link_to t('admin.common.button.edit'), edit_admin_ensoku_path(@ensoku), class: 'btn btn-success mx-3'
+        = link_to t('admin.common.button.delete'), admin_ensoku_path(@ensoku), method: :delete, data: { confirm: t('admin.ensokus.ensoku.delete_confirm') }, class: 'btn btn-danger'
+      h5 = t('.info')
+      table.table.table-bordered.bg-white
+        tr
+          th[scope="row"] = Ensoku.human_attribute_name(:id)
+          td = @ensoku.id
+        tr
+          th[scope="row"] = t('admin.ensokus.common.user_name')
+          td = @ensoku.user_name
+        tr
+          th[scope="row"] = t('admin.ensokus.common.purse')
+          td = @ensoku.purse
+        tr
+          th[scope="row"] = t('admin.ensokus.common.comment')
+          td = @ensoku.comment
+        tr
+          th[scope="row"] = t('admin.ensokus.common.status')
+          td = @ensoku.status_i18n
+        tr
+          th[scope="row"] = Ensoku.human_attribute_name(:created_at)
+          td = l @ensoku.created_at, format: :long
+      h5 = t('.choosed_oyatsu')
+      - if @ensoku.basket_oyatsus.exists?
+        table.table.table-borderd.text-center.bg-white
+          thead
+            tr
+              th[scope='col'] = Oyatsu.human_attribute_name(:id)
+              th[scope='col'] = Oyatsu.human_attribute_name(:name)
+              th[scope='col'] = t('.oyatsu_count')
+          tbody
+            = render partial: 'oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
+      - else
+        div.text-center = t('.nothing_choosed')

@@ -2,16 +2,16 @@
   - if user.errors.any?
     = render 'shared/error_messages', object: f.object
   div.form-group
-    = f.label :name, User.human_attribute_name(:name)
-    = f.text_field :name,  class: 'form-control', placeholder: t('.name')
+    = f.label :name, t('admin.users.common.user_name')
+    = f.text_field :name,  class: 'form-control', placeholder: t('admin.users.common.user_name')
   div.form-group
-    = f.label :email, User.human_attribute_name(:email)
-    = f.email_field :email, class: 'form-control', placeholder: t('.email')
+    = f.label :email, t('admin.users.common.email')
+    = f.email_field :email, class: 'form-control', placeholder: t('admin.users.common.email')
   div.form-group
-    = f.label :password, User.human_attribute_name(:password)
+    = f.label :password, t('.password')
     = f.password_field :password, class: 'form-control', placeholder: t('.password')
   div.form-group
-    = f.label :password_confirmation, User.human_attribute_name(:password_confirmation)
+    = f.label :password_confirmation, t('.password_confirmation')
     = f.password_field :password_confirmation, class: 'form-control', placeholder: t('.password_confirmation')
   div.form-group
     = f.label :role, User.human_attribute_name(:role)

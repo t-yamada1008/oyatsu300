@@ -12,13 +12,17 @@ ja:
         id: 'ID'
         role: '権限'
         created_at: '作成日'
-        show: '確認'
-        edit: '編集'
-        delte: '削除'
       ensoku:
         comment: 'こめんと'
         purse: 'のこりのおこづかい'
         status: 'こうかいすてーたす'
+        # 管理画面用
+        id: 'ID'
+        created_at: '作成日'
+      oyatsu:
+        # 管理画面用
+        id: 'ID'
+        name: '名前'
   enums:
     user:
       role:

@@ -1,0 +1,7 @@
+- content_for(:title, t('.title'))
+- breadcrumb :admin_ensoku, @ensoku
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 = t('.title')
+      = render 'form', ensoku: @ensoku, url: admin_ensoku_path(@ensoku)
