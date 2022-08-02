@@ -1,10 +1,12 @@
 ja:
   admin:
     users:
+      common:
+        user_name: 'ユーザー名'
+        email: 'メールアドレス'
       index:
         title: 'ユーザー一覧'
         new_registry: 'ユーザー新規登録'
-        user_name: 'ユーザー名'
       new:
         title: 'ユーザー新規作成'
       create:
@@ -22,8 +24,6 @@ ja:
       user:
         delete_confirm: '本当にユーザーを削除しますか？'
       form:
-        name: '名前'
-        email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード(確認)'
         submit: '登録'
