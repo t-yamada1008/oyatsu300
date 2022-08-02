@@ -3,6 +3,6 @@ tr
   td = user.name
   td = user.role_i18n
   td = l user.created_at, format: :long
-  td = link_to t('.show'), admin_user_path(user), class: 'btn btn-info'
-  td = link_to t('.edit'), edit_admin_user_path(user), class: 'btn btn-success'
-  td = link_to t('.delete'), admin_user_path(user), method: :delete, data: { confirm: t('.delete_confirm') }, class: 'btn btn-danger'
+  td = link_to t('admin.common.button.show'), admin_user_path(user), class: 'btn btn-info'
+  td = link_to t('admin.common.button.edit'), edit_admin_user_path(user), class: 'btn btn-success'
+  td = link_to t('admin.common.button.delete'), admin_user_path(user), method: :delete, data: { confirm: t('.delete_confirm') }, class: 'btn btn-danger'
