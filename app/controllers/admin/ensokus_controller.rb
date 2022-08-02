@@ -29,4 +29,8 @@ class Admin::EnsokusController < Admin::BaseController
   def set_ensoku
     @ensoku = Ensoku.find(params[:id])
   end
+
+  def ensoku_params
+    params.require(:ensoku).permit(:comment, :statsus)
+  end
 end
