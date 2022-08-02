@@ -8,14 +8,22 @@ ja:
         email: 'めーるあどれす'
         password: 'ぱすわーど'
         password_confirmation: 'ぱすわーど(かくにん)'
+        # 管理画面用
+        id: 'ID'
+        role: '権限'
+        created_at: '作成日'
+        show: '確認'
+        edit: '編集'
+        delte: '削除'
       ensoku:
         comment: 'こめんと'
         purse: 'のこりのおこづかい'
         status: 'こうかいすてーたす'
   enums:
     user:
-      general: '一般'
-      admin: '管理者'
+      role:
+        general: '一般'
+        admin: '管理者'
     ensoku:
       status:
         selecting: 'とちゅう'

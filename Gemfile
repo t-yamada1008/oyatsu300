@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # --- Add Gems ---
+# --- All Enviroments ---
 # login
 gem 'sorcery', '~> 0.16.3'
 
@@ -53,10 +54,14 @@ gem 'mini_magick', '~> 4.11'
 
 # rails6.1.5対処
 gem 'net-smtp'
-# ついでに以下の2つも追加しておく方が良さそう
+# ついでに以下の2つも追加しておく方が良さそうとのこと
 gem 'net-imap'
 gem 'net-pop'
 
+# 管理者画面用パンくずリスト
+gem 'gretel'
+
+# --- Development and Test ---
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -76,6 +81,7 @@ group :development, :test do
   gem 'config', '~> 4.0'
 end
 
+# --- Development ---
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'

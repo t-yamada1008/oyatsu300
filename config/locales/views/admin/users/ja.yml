@@ -1,0 +1,34 @@
+ja:
+  admin:
+    users:
+      index:
+        title: 'ユーザー一覧'
+        new_registry: 'ユーザー新規登録'
+      new:
+        title: 'ユーザー新規作成'
+      create:
+        success: 'ユーザーの作成に成功しました'
+        failure: 'ユーザーの作成に失敗しました'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        title: 'ユーザー編集'
+      update:
+        success: 'ユーザーの更新に成功しました'
+        failure: 'ユーザーの更新に失敗しました'
+      destroy:
+        success: 'ユーザーの削除に成功しました'
+      user:
+        show: '詳細'
+        edit: '編集'
+        delete: '削除'
+        delete_confirm: '本当にユーザーを削除しますか？'
+      form:
+        name: '名前'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード(確認)'
+        submit: '登録'
+      search_form:
+        search_word: '検索する単語を入力'
+        unspecified: '未選択'

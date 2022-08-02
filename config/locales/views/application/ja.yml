@@ -1,0 +1,5 @@
+ja:
+  admin:
+    layouts:
+      application:
+        you_are_here: '現在位置: '
