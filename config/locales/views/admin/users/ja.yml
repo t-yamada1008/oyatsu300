@@ -4,6 +4,7 @@ ja:
       index:
         title: 'ユーザー一覧'
         new_registry: 'ユーザー新規登録'
+        user_name: 'ユーザー名'
       new:
         title: 'ユーザー新規作成'
       create:
