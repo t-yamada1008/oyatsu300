@@ -23,6 +23,8 @@ ja:
         # 管理画面用
         id: 'ID'
         name: '名前'
+        price: '価格'
+        created_at: '作成日'
   enums:
     user:
       role:

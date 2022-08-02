@@ -64,3 +64,28 @@ crumb :admin_ensoku do |ensoku|
   link ensoku.id, admin_ensoku_path(ensoku)
   parent :admin_ensokus
 end
+
+# --- oyatsu ---
+# oyatsus index
+crumb :admin_oyatsus do
+  link t('admin.oyatsus.index.title'), admin_oyatsus_path
+end
+
+# oyatsu new
+crumb :new_admin_oyatsu do
+  link t('admin.oyatsus.new.title'), new_admin_oyatsu_path
+  parent :admin_oyatsus
+end
+
+# oyatsu show
+crumb :admin_oyatsu do |oyatsu|
+  link oyatsu.name, admin_oyatsu_path(oyatsu)
+  parent :admin_oyatsus
+end
+
+# oyatsu edit
+crumb :edit_admin_oyatsu do |oyatsu|
+  link admin_oyatsu.name, edit_admin_oyatsu_path(admin_oyatsu)
+  parent :admin_oyatsus
+end
+

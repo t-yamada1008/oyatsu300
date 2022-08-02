@@ -1,0 +1,10 @@
+ja:
+  admin:
+    oyatsus:
+      common:
+        yen: '円'
+      index:
+        title: 'おやつ一覧'
+        new_registry: '新規作成'
+      show:
+        title: 'おやつ詳細'
