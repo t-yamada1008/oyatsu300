@@ -21,3 +21,6 @@ Metrics/AbcSize:
 
 ClassAndModuleChildren:
   EnforcedStyle: compact
+
+MethodLength:
+  Max: 20
