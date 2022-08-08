@@ -8,3 +8,12 @@ ja:
         new_registry: '新規作成'
       show:
         title: 'おやつ詳細'
+      edit:
+        title: 'おやつ編集'
+      update:
+        success: 'おやつ情報を更新しました。'
+        failure: 'おやつ情報の更新に失敗しました。'
+      destroy:
+        success: '遠足の削除に成功しました。'
+      form:
+        submit: '登録'
