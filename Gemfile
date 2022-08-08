@@ -49,8 +49,8 @@ gem 'kaminari'
 gem 'ransack'
 
 # Image
-# gem 'carrierwave', '~> 2.2', '>= 2.2.2'
-gem 'mini_magick', '~> 4.11'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # rails6.1.5対処
 gem 'net-smtp'

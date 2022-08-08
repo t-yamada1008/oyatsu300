@@ -81,6 +81,14 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     byebug (11.1.3)
+    carrierwave (2.2.2)
+      activemodel (>= 5.0.0)
+      activesupport (>= 5.0.0)
+      addressable (~> 2.6)
+      image_processing (~> 1.1)
+      marcel (~> 1.0.0)
+      mini_mime (>= 0.1.3)
+      ssrf_filter (~> 1.0)
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
     config (4.0.0)
@@ -144,6 +152,9 @@ GEM
       hpricot
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -310,6 +321,8 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
     ruby-progressbar (1.11.0)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -341,6 +354,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    ssrf_filter (1.0.7)
     strscan (3.0.3)
     temple (0.8.2)
     thor (1.2.1)
@@ -378,6 +392,7 @@ DEPENDENCIES
   binding_of_caller
   bullet
   byebug
+  carrierwave
   config (~> 4.0)
   enum_help
   faker
@@ -388,7 +403,7 @@ DEPENDENCIES
   kaminari
   letter_opener_web
   listen (~> 3.3)
-  mini_magick (~> 4.11)
+  mini_magick
   net-imap
   net-pop
   net-smtp
