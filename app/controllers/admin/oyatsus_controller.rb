@@ -46,6 +46,6 @@ class Admin::OyatsusController < Admin::BaseController
   end
 
   def oyatsu_params
-    params.require(:oyatsu).permit(:name, :email, :password, :password_confirmation, :role)
+    params.require(:oyatsu).permit(:name, :price, :oyatsu_image)
   end
 end
