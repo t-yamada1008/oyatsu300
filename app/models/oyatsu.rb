@@ -1,5 +1,6 @@
 # おやつモデル
 class Oyatsu < ApplicationRecord
+  mount_uploader :oyatsu_image, OyatsuImageUploader
   include Scraping::Yaokin
 
   has_many :baskets
