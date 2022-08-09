@@ -7,7 +7,7 @@ require 'fileutils'
 module Scraping::DownloadImage
   # 読み込み確認用メソッド
   def check_download_image
-    p 'DownloadImageの読み込みOK'
+    logger.info 'DownloadImageの読み込みOK'
   end
 
   # スクレイピングにて取得した画像URLを全てダウンロードする
@@ -27,20 +27,23 @@ module Scraping::DownloadImage
   # ダウンロードメソッド
   def download_image(image_url, file_path)
     # image_urlもしくはファイルが存在する場合はダウンロードしない
-    return 'ファイルが存在します' if File.exist?(file_path)
+    if File.exist?(file_path)
+      logger.warn 'ファイルが存在します'
+      return
+    end
 
     # いらないかもだけど念の為対象URLへの負荷対策としてsleepを仕込んでおく
     sleep 1
     begin
-      p image_url
-      p file_path
+      logger.info image_url
+      logger.info  file_path
       File.open(file_path, 'w+b') do |f|
         URI.parse(image_url).open do |u|
           f.write(u.read)
         end
       end
     rescue NoMethodError => e
-      p  e.message
+      logger.error e.message
     end
   end
 

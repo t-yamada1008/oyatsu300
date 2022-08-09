@@ -16,7 +16,7 @@ module Scraping::Yaokin
 
   # 確認用スクリプト
   def check_scraping_yaokin
-    p '読み込めてるよ！'
+    logger.info '読み込めてるよ！'
   end
 
   # やおきんのおかしデータを取得する
@@ -101,7 +101,7 @@ module Scraping::Yaokin
       # 商品イメージののファイル名を取得
       item_data[:oyatsu_image] = item_data[:image_url].split('/').last
 
-      p item_data
+      logger.info item_data
       item.push item_data
     end
     item
