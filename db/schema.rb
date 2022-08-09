@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_02_111833) do
+ActiveRecord::Schema.define(version: 2022_08_08_122122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2022_08_02_111833) do
 
   create_table "oyatsus", force: :cascade do |t|
     t.string "name", null: false
-    t.string "genre", null: false
     t.integer "price", null: false
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
