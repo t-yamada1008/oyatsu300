@@ -22,3 +22,5 @@ ja:
         success: 'おやつ情報の削除に成功しました。'
       form:
         submit: '登録'
+      oyatsu:
+        delete_confirm: '本当に削除しますか？'
