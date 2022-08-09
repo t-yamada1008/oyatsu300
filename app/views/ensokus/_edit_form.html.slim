@@ -4,11 +4,11 @@ section.form-box
       = render 'shared/error_messages', object: f.object
     - if logged_in?
       div.form-group
-        h5 = f.label :comment, Ensoku.human_attribute_name(:comment)
+        h3 = f.label :comment, Ensoku.human_attribute_name(:comment)
         = f.text_field :comment, class: 'form-control', placeholder: t('.comment')
       div.form-group
-        h5 = f.label :status, Ensoku.human_attribute_name(:status)
-        = f.select :status, Ensoku.statuses_i18n.invert, class: 'form-control', placeholder: t('.ensoku')
+        h3 = f.label :status, Ensoku.human_attribute_name(:status)
+        = f.select :status, Ensoku.statuses_i18n.invert, {}, {class: 'form-select'}
     - else
       div.form-group
         = f.hidden_field :comment, class: 'form-control', value: 'no_comment'
@@ -16,5 +16,5 @@ section.form-box
         = f.hidden_field :status, class: 'form-control', value: 'close'
     = f.submit t('.submit'), class: 'btn btn-light'
   - if logged_in?
-    div.mt-3.mb-3.center-and-white
+    div.mt-3.mb-3.text-center
       div = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-outline-danger btn-sm', data: {confirm: t('.really')}
