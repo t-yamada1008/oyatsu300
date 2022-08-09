@@ -23,6 +23,10 @@ ja:
         # 管理画面用
         id: 'ID'
         name: '名前'
+        genre: 'ジャンル'
+        price: '価格'
+        oyatsu_image: 'おやつ画像'
+        created_at: '作成日'
   enums:
     user:
       role:

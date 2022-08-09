@@ -1,0 +1,15 @@
+= form_with model: oyatsu, url: url, local: true do |f|
+  - if oyatsu.errors.any?
+    = render 'shared/error_messages', object: f.object
+  div.form-group
+    = f.label :name, Oyatsu.human_attribute_name(:name)
+    = f.text_field :name,  class: 'form-control', placeholder: Oyatsu.human_attribute_name(:name)
+  div.form-group
+    = f.label :price, Oyatsu.human_attribute_name(:price)
+    = f.text_field :price,  class: 'form-control', placeholder: Oyatsu.human_attribute_name(:price)
+  div.form-group
+    = f.label :oyatsu_image, Oyatsu.human_attribute_name(:oyatsu_image)
+    = f.file_field :oyatsu_image, class: 'form-control', accept: 'image/*'
+    = f.hidden_field :oyatsu_image_cache
+  div.my-3 = image_tag image_path(oyatsu), id: 'preview', size: '200x200'
+  div.text-center = f.submit t('.submit'), class: 'btn btn-primary'

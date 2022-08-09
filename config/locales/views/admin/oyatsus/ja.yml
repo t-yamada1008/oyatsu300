@@ -1,0 +1,26 @@
+ja:
+  admin:
+    oyatsus:
+      common:
+        yen: '円'
+      index:
+        title: 'おやつ一覧'
+        new_registry: '新規作成'
+      new:
+        title: 'おやつ新規作成'
+      create:
+        success: 'おやつ情報を作成しました。'
+        failure: 'おやつ情報の作成に失敗しました。'
+      show:
+        title: 'おやつ詳細'
+      edit:
+        title: 'おやつ編集'
+      update:
+        success: 'おやつ情報を更新しました。'
+        failure: 'おやつ情報の更新に失敗しました。'
+      destroy:
+        success: 'おやつ情報の削除に成功しました。'
+      form:
+        submit: '登録'
+      oyatsu:
+        delete_confirm: '本当に削除しますか？'

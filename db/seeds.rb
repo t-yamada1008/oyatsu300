@@ -8,16 +8,6 @@
 
 include Scraping::Yaokin
 
-# バナナをDBに保存する
-Oyatsu.find_or_create_by!(
-  name: 'バナナ'
-) do |oyatsu|
-  oyatsu.name = 'バナナ'
-  oyatsu.genre = 'banana'
-  oyatsu.price = 100
-  oyatsu.image_url = "#{Rails.root}/app/assets/images/preset_images/banana.png"
-end
-
 # おやつデータをDBに保存する
 item = Oyatsu.new.yaokin_oyatsu
 p item
@@ -26,7 +16,6 @@ item.each do |i|
     name: i[:name]
   ) do |oyatsu|
     oyatsu.name = i[:name]
-    oyatsu.genre = i[:genre]
     oyatsu.price = i[:price]
     oyatsu.image_url = i[:image_url]
   end
