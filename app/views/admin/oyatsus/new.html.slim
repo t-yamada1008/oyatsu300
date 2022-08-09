@@ -1,2 +1,7 @@
-h1 Admin::Oyatsus#new
-p Find me in app/views/admin/oyatsus/new.html.slim
+- content_for(:title, t('.title'))
+- breadcrumb :new_admin_oyatsu
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 = t('.title')
+      = render 'form', oyatsu: @oyatsu, url: admin_oyatsus_path

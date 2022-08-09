@@ -6,6 +6,11 @@ ja:
       index:
         title: 'おやつ一覧'
         new_registry: '新規作成'
+      new:
+        title: 'おやつ新規作成'
+      create:
+        success: 'おやつ情報を作成しました。'
+        failure: 'おやつ情報の作成に失敗しました。'
       show:
         title: 'おやつ詳細'
       edit:
@@ -14,6 +19,6 @@ ja:
         success: 'おやつ情報を更新しました。'
         failure: 'おやつ情報の更新に失敗しました。'
       destroy:
-        success: '遠足の削除に成功しました。'
+        success: 'おやつ情報の削除に成功しました。'
       form:
         submit: '登録'
