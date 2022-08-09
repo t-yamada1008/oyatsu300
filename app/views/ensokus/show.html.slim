@@ -1,15 +1,15 @@
 - content_for :title, t('.title')
-div.main-wrapper.main-bg.main-bg-img
-  div.container
+div.main-wrapper.main-bg
+  div.container.main-text
     div.row
       div.col.mt-3.mb-3
-        h1.font-weight-normal.center-and-white = t('.title')
+        h1.= t('.title')
     div.row
       - if @ensoku.basket_oyatsus.present?
         = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
       - else
         div.col
-          h2.font-weight-normal.center-and-white = t('.please_choose')
+          h2.font-weight-normal.text-center = t('.nothing_choosed')
     div.row
       div.col.mt-3
         div.mb-3.text-center = link_to '#', class: 'btn btn-outline-light'
@@ -18,12 +18,12 @@ div.main-wrapper.main-bg.main-bg-img
         div.mb-3.text-center = link_to t('.rechoose'), choose_oyatsu_path(ensoku: @ensoku), class: 'btn btn-outline-light'
         - if logged_in?
           div.d-flex.justify-content-center = render 'data', ensoku: @ensoku
-          div.mb-3.text-center = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light'
+          div.my-3.text-center = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light'
     div.row
       div.col
         - if logged_in?
           div.mb-3.text-center = link_to t('.index'), ensokus_path, class: 'btn btn-outline-light'
         - else
-          div.center-and-white.mb-3 = render 'shared/registry_merit'
+          div.mb-3.text-center = render 'shared/registry_merit'
           div.mb-3.text-center = link_to t('.new_registry'), new_users_path, class: 'btn btn-outline-light'
           div.mb-3.text-center = link_to t('.login'), login_path, class: 'btn btn-outline-light'
