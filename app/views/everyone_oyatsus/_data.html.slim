@@ -1,6 +1,10 @@
-div.card.card-wrapper.box-shadow.text-center
-  div.card-body.card-result-style
-    div.mt-3.mb-1 = "#{Ensoku.human_attribute_name(:comment)}:"
-    h3 = ensoku.comment.blank? ? t('.no_comment') : ensoku.comment
-    div.mt-3.mb-1 = "#{Ensoku.human_attribute_name(:purse)}:"
-    h3 = "#{ensoku.purse} #{t('.yen')}"
+div.table-responsive.text-nowrap
+  table.table.table-striped
+    thead
+      tr
+        th scope='col' = Ensoku.human_attribute_name(:comment)
+        th scope='col' = Ensoku.human_attribute_name(:purse)
+    tbody.table-light
+      tr
+        th = ensoku.comment.blank? ? t('.no_comment') : ensoku.comment
+        th = "#{ensoku.purse} #{t('.yen')}"

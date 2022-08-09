@@ -1,13 +1,17 @@
 - content_for :title, t('.title')
-div.main-wrapper.main-bg.main-bg-img
+div.main-wrapper.main-bg
   div.main-inner-text
     div.container
       h1.mt-3.mb-3.font-weight-normal = t('.title')
-      div.card.card-wrapper.box-shadow.text-center.text-black
-        div.card-body.card-result-style
-          h2.mt-3.mb-1 = "#{User.human_attribute_name(:name)}:"
-          h3 = "#{current_user.name}"
-          h2.mt-3.mb-1= "#{User.human_attribute_name(:email)}:"
-          h3 = "#{current_user.email}"
+      div.table-responsive.text-nowrap
+        table.table.table-striped
+          thead
+            tr
+              th scope='col' = User.human_attribute_name(:name)
+              th scope='col' = User.human_attribute_name(:email)
+          tbody.table-light
+            tr.text-center
+              th = "#{current_user.name}"
+              th = "#{current_user.email}"
       div.mb-3 = link_to t('.update'), edit_my_page_path, class: 'btn btn-outline-light mt-3'
       div = link_to t('.see_choosed_oyatsu'), ensokus_path, class: 'btn btn-outline-light'

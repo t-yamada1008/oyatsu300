@@ -1,10 +1,10 @@
 - content_for :title
-div.main-wrapper.main-bg.main-bg-img
+div.main-wrapper.main-bg
   div.main-inner-text.px-5
     h1.mt-3.mb-3.font-weight-normal = t('.title')
     - if @ensokus.present?
       div.table-responsive.text-nowrap
-        table.table
+        table.table.table-striped
           thead
             tr
               th scope='col' = t('.number')
@@ -13,7 +13,7 @@ div.main-wrapper.main-bg.main-bg-img
               th scope='col' = Ensoku.human_attribute_name(:purse)
               th scope='col' = t('.show')
               th scope='col' = t('.rechoose')
-          tbody
+          tbody.table-light
               = render @ensokus
     - else
       h3 = t('.please_choose_oyatsu')
