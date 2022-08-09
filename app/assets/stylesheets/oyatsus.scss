@@ -2,19 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.oyatsus-bg {
-  position: relative;
-  background-size: cover;
-  padding-top: 10vh;
-  min-height: 100vh;
-}
-
-.oyatsus-bg:before {
-  content: '';
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.65);
-}
-
 .card-wrapper {
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   display: flex;
