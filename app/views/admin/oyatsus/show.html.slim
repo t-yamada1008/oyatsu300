@@ -7,7 +7,7 @@
       .text-right.mb-3
         = link_to t('admin.common.button.edit'), edit_admin_oyatsu_path(@oyatsu), class: 'btn btn-success mx-3'
         = link_to t('admin.common.button.delete'), admin_oyatsu_path(@oyatsu), method: :delete, data: { confirm: t('admin.oyatsus.oyatsu.delete_confirm') }, class: 'btn btn-danger'
-      div.text-center.mb-3 = image_tag "download_images/#{@oyatsu.genre}/#{@oyatsu.image_url.split('/').last}", class: 'img-fluid'
+      div.text-center.mb-3 = image_tag image_path(@oyatsu), class: 'img-fluid'
       table.table.table-bordered.bg-white
         tr
           th[scope="row"] = Oyatsu.human_attribute_name(:id)
