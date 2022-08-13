@@ -20,4 +20,6 @@ item.each do |i|
     oyatsu.image_url = i[:image_url]
   end
 end
-item.download_all_images
+
+# Development環境用
+#item.download_all_images
