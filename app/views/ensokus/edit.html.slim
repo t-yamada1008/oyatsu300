@@ -6,12 +6,10 @@
         div.col.mt-3.mb-3.main-text
           h1 = t('.title')
           h2 = render 'okozukai'
-      div.row
-        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
-      div.row
-        div.col.main-text
           = link_to t('.rechoose'), choose_oyatsu_path(ensoku: @ensoku), class: 'btn btn-outline-light mt-3'
           = render 'edit_form', ensoku: @ensoku
+      div.row
+        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
 - else
   div.main-wrapper.main-bg
     div.main-inner-text
