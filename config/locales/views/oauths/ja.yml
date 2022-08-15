@@ -1,0 +1,5 @@
+ja:
+  oauths:
+    callback:
+      login_success: "%{item}でろぐいんしたよ"
+      login_cancel: "%{item}でのろぐいんをきゃんせるしたよ"
