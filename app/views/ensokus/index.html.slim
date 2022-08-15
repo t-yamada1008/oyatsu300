@@ -16,5 +16,5 @@ div.main-wrapper.main-bg
           tbody.table-light
               = render @ensokus
     - else
-      h3 = t('.please_choose_oyatsu')
-      = link_to t('.choose_oyatsu'), new_users_ensoku_path, class: 'nav-link'
+      h2.my-3 = t('.please_choose_oyatsu')
+      = link_to t('.choose_oyatsu'), new_ensoku_path, class: 'btn btn-outline-light'

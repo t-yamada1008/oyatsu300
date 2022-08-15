@@ -1,7 +1,7 @@
 ja:
   user_sessions:
     new:
-      title: '遠足のおやつは300円まで！'
+      title: 'えんそくのおやつは300えんまで！'
     create:
       success: 'ろぐいんしたよ'
       failure: 'ろぐいんしっぱい！もういちどためしてみてね'

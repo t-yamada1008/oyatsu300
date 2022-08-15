@@ -1,5 +1,9 @@
 ja:
   shared:
+    ogp:
+      base_title: 'えんそくのおやつは300えんまで！'
+      base_title_admin: 'おやつ300管理画面'
+      base_description: '300えんでおやつをえらぼう！'
     header:
     toggle:
       mypage: 'まいぺーじ'
@@ -9,4 +13,4 @@ ja:
       login: 'ろぐいん'
       logout: 'ろぐあうと'
     footer:
-      site_name: '©遠足のおやつは300円まで！'
+      site_name: '©えんそくのおやつは300えんまで！'

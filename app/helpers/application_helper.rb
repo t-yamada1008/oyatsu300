@@ -2,16 +2,23 @@ module ApplicationHelper
   # ページタイトル設定
   def page_title(page_title = '', admin: false)
     base_title = if admin
-                   'おやつ300管理画面'
+                   t('.base_title_admin')
                  else
-                   '遠足のおやつは300円まで'
+                   t('.base_title')
                  end
     page_title.empty? ? base_title : "#{page_title} | #{base_title}"
   end
 
-  # コントローラのパスを取得し、一致するする場合はactiveを返す
-  def active_if(path)
-    path == controller_path ? 'active' : ''
+  # OGP: 画像
+  def og_image(page_image = '')
+    base_image = "#{Rails.root}/assets/images/logo_transparent.png"
+    page_image.empty? ? base_image : page_image
+  end
+
+  # OGP: 説明
+  def og_description(page_description = '')
+    base_description = t('.base_description')
+    page_description.empty? ? base_description : page_description
   end
 
   # 画像ファイル呼び出し
@@ -23,5 +30,10 @@ module ApplicationHelper
     else
       oyatsu.oyatsu_image.url
     end
+  end
+
+  # コントローラのパスを取得し、一致するする場合はactiveを返す
+  def active_if(path)
+    path == controller_path ? 'active' : ''
   end
 end
