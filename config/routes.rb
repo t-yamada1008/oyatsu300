@@ -2,10 +2,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
-  root                      'ensokus#new'
-  get     'login',          to: 'user_sessions#new'
-  post    'login',          to: 'user_sessions#create'
-  delete  'logout',         to: 'user_sessions#destroy'
+  root                        'ensokus#new'
+  get     'login',            to: 'user_sessions#new'
+  post    'login',            to: 'user_sessions#create'
+  delete  'logout',           to: 'user_sessions#destroy'
+  post    "oauth/callback",   to: "oauths#callback"
+  get     "oauth/callback",   to: "oauths#callback" # for use with Github, Facebook
+  get     "oauth/:provider",  to: "oauths#oauth", as: :auth_at_provider
+
   get     '/choose_oyatsu', to: 'oyatsus#index'
 
   resource :users, only: %i[new create]

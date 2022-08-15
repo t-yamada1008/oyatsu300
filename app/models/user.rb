@@ -1,7 +1,10 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+
   has_many :ensokus
   has_many :baskets
+  has_one :authentication, dependent: :destroy
+  accepts_nested_attributes_for :authentication
 
   validates :name, presence: true, length: { maximum: 128 }
   validates :email, uniqueness: true, presence: true

@@ -1,7 +1,10 @@
 section.form-box.border
-  // TODO: twitterログイン
-  //div.twitter-box
+  div.twitter-box
     p.border-bottom ツイッターログイン
+    = link_to auth_at_provider_path(provider: :twitter), class: 'btn btn-outline-light mb-3'
+      i.fa-brands.fa-twitter
+      |  Twitter
+    p.border-bottom メールアドレスから
   = form_with url: login_path, local: true do |f|
     div.form-group
       = f.label :email, User.human_attribute_name(:email)
