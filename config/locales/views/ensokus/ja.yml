@@ -11,7 +11,7 @@ ja:
       please_choose_oyatsu: 'おやつをえらんでね！'
       choose_oyatsu: 'おやつをえらぶ'
     new:
-      title: '遠足のおやつは300円まで！'
+      title: 'えんそくのおやつは300えんまで！'
       new: 'あたらしくえらぶ'
       continue: 'つづきからえらぶ'
       index: 'えらんだおやつをみる'
@@ -26,6 +26,9 @@ ja:
       please_choose: 'おやつをえらんでね！'
       new_registry: 'かいいんとうろく'
       login: 'ろぐいん'
+      tweet_text: '300えんでおやつをえらんだよ！きみもえらぼう！！'
+      hashtag1: 'えんそくのおやつは300えんまで'
+      hashtag2: 'おやつ300'
     edit:
       title: 'これでいい？'
       comment: 'こめんとしてね！'
@@ -34,7 +37,7 @@ ja:
       rechoose: 'えらびなおす'
       really: 'ほんとうにだいじょうぶ？'
     update:
-      success: 'こうしんしたよ！'
+      success: 'できたよー！'
       failure: 'こうしんしっぱい。もう一度ためしてみてね。'
     destroy:
       success: 'けしたよー'
