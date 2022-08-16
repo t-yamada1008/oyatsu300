@@ -1,0 +1,5 @@
+ja:
+  layouts:
+    application:
+      base_title: 'えんそくのおやつは300えんまで！'
+      base_title_admin: 'おやつ300管理画面'
