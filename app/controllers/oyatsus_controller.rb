@@ -30,7 +30,7 @@ class OyatsusController < ApplicationController
     if session[:ensoku_id].present?
       @ensoku = Ensoku.find(session[:ensoku_id])
     # セッション情報がない場合
-    elsif params[:ensoku].preset?
+    elsif params[:ensoku].present?
       @ensoku = Ensoku.find(:ensoku)
     else
       redirect_to new_ensoku_path
