@@ -61,6 +61,9 @@ gem 'net-pop'
 # 管理者画面用パンくずリスト
 gem 'gretel'
 
+# 環境設定用gem
+gem 'config', '~> 4.0'
+
 # --- Development and Test ---
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -76,9 +79,6 @@ group :development, :test do
 
   # scraping
   gem 'nokogiri', '~> 1.13', '>= 1.13.6'
-
-  # 環境設定用gem
-  gem 'config', '~> 4.0'
 end
 
 # --- Development ---
