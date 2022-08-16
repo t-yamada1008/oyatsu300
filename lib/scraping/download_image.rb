@@ -16,7 +16,7 @@ module Scraping::DownloadImage
     oyatsu.each do |o|
       # 管理画面からアップロードしたデータは除外
       if o[:image_url].present?
-        file_path = create_file_path(o[:image_url], o[:id])
+        file_path = create_file_path(o[:image_url])
         download_image(o[:image_url], file_path)
       end
     end
@@ -36,7 +36,7 @@ module Scraping::DownloadImage
     sleep 1
     begin
       logger.info image_url
-      logger.info  file_path
+      logger.info file_path
       File.open(file_path, 'w+b') do |f|
         URI.parse(image_url).open do |u|
           f.write(u.read)
@@ -47,11 +47,11 @@ module Scraping::DownloadImage
     end
   end
 
-  def create_file_path(image_url, oyatsu_id)
+  def create_file_path(image_url)
     # ファイルの保存先はassetsとする
     # carrierwaveのアップローダーとの画像の扱いはview側で判断
     file_name = image_url.split('/').last.to_s
-    dir_path = "#{Rails.root}/app/assets/images/downloads/oyatsu/oyatsu_image/#{oyatsu_id}"
+    dir_path = "#{Rails.root}/app/assets/images"
     FileUtils.mkdir_p dir_path unless Dir.exist?(dir_path)
     "#{dir_path}/#{file_name}"
   end
