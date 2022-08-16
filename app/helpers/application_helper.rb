@@ -26,7 +26,7 @@ module ApplicationHelper
     # スクレイピングデータがあるときはそっちを優先
     # スクレイピングデータがない場合はアップロード機能から呼び出し
     if oyatsu.image_url.present?
-      "downloads/oyatsu/oyatsu_image/#{oyatsu.id}/#{oyatsu.image_url.split('/').last}"
+      "#{Rails.root}/assets/images/downloads/oyatsu/oyatsu_image/#{oyatsu.id}/#{oyatsu.image_url.split('/').last}"
     else
       oyatsu.oyatsu_image.url
     end
