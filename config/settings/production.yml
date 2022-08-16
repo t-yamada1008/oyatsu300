@@ -1,4 +1,4 @@
 default_url_options:
   host: 'https://oyatsu300.herokuapp.com/'
 twitter:
-  callback_url: 'https://oyatsu300.herokuapp.com/users/auth/twitter/callback'
+  callback_url: 'https://oyatsu300.herokuapp.com/oauth/callback?provider=twitter'
