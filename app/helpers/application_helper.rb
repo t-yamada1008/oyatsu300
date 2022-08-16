@@ -11,7 +11,7 @@ module ApplicationHelper
 
   # OGP: 画像
   def og_image(page_image = '')
-    base_image = "logo_transparent.png"
+    base_image = asset_path('logo_transparent.png')
     page_image.empty? ? base_image : page_image
   end
 
@@ -26,7 +26,7 @@ module ApplicationHelper
     # スクレイピングデータがあるときはそっちを優先
     # スクレイピングデータがない場合はアップロード機能から呼び出し
     if oyatsu.image_url.present?
-      "downloads/oyatsu/oyatsu_image/#{oyatsu.id}/#{oyatsu.image_url.split('/').last}"
+      asset_path("downloads/oyatsu/oyatsu_image/#{oyatsu.id}/#{oyatsu.image_url.split('/').last}")
     else
       oyatsu.oyatsu_image.url
     end
