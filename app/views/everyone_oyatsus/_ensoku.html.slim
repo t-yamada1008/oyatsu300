@@ -1,5 +1,5 @@
 tr
-  td.align-middle = ensoku.user.name
+  td.align-middle = ensoku.user.name.blank? ? t('.tokumei') : ensoku.user.name
   td.align-middle = ensoku.comment.blank? ? t('.no_comment') : ensoku.comment
   td.align-middle = ensoku.purse
   td.align-middle = link_to t('.see'), everyone_oyatsu_path(ensoku.id), class: 'btn btn-sm btn-outline-dark'

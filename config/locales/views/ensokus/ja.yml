@@ -42,6 +42,7 @@ ja:
     destroy:
       success: 'けしたよー'
     ensoku:
+      tokumei: 'とくめいきぼう'
       no_comment: 'のーこめんと'
       see: 'みる'
       again: 'そうする'
