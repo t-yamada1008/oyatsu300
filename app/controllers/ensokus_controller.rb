@@ -29,6 +29,7 @@ class EnsokusController < ApplicationController
 
   # 選択結果のステータス更新
   def update
+    @ensoku.user_id = current_user.id if logged_in?
     if @ensoku.update(ensoku_params)
       redirect_to @ensoku, success: t('.success')
     else
