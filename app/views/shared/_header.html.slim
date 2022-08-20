@@ -7,12 +7,12 @@ header.header
             = link_to root_path, class: 'navbar-brand'
               = image_tag "logo_transparent.png", size: '50x50'
           div.col.d-flex.justify-content-center.align-items-center
-            - if request.path.include?(choose_oyatsu_path)
+            - if request.path.include?(oyatsus_path)
               div#okozukai = render 'ensokus/okozukai'
       div.col
         div.row
           div.col.d-flex.justify-content-center.align-items-center
-            - if request.path.include?(choose_oyatsu_path)
+            - if request.path.include?(oyatsus_path)
               = render 'baskets/register'
           div.col.text-end
             = render 'shared/toggle'

@@ -18,7 +18,7 @@ class EnsokusController < ApplicationController
     # ログインしない場合のためにsessionを登録
     session.clear if session.present?
     session[:ensoku_id] = @ensoku.id
-    redirect_to choose_oyatsu_path(ensoku: @ensoku)
+    redirect_to oyatsus_path(ensoku: @ensoku)
   end
 
   # おかし選択結果
@@ -67,6 +67,6 @@ class EnsokusController < ApplicationController
       return
     end
     # リファラ制御
-    redirect_to new_ensoku_path unless referer.include?(root_path) || referer.include?(choose_oyatsu_path(@ensoku))
+    redirect_to new_ensoku_path unless referer.include?(root_path) || referer.include?(oyatsus_path(@ensoku))
   end
 end
