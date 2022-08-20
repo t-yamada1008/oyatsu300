@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   get     "oauth/callback",   to: "oauths#callback" # for use with Github, Facebook
   get     "oauth/:provider",  to: "oauths#oauth", as: :auth_at_provider
 
-  get     '/choose_oyatsu', to: 'oyatsus#index'
-
   resource :users, only: %i[new create]
   resources :ensokus do
     resources :baskets, only: %i[create destroy], shallow: true
+  end
+  resources :oyatsus, only: %i[index] do
+    resources :reviews
   end
 
   resource :my_page, only: %i[show edit update]

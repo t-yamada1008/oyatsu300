@@ -10,3 +10,6 @@ ja:
       submit: 'しらべる'
     oyatsu_purchase:
       yen: 'えん'
+    oyatsu:
+      review: 'ひょうかする'
+      show_review: 'ひょうかをみる'

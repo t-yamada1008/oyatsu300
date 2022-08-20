@@ -1,0 +1,20 @@
+ja:
+  reviews:
+    new:
+      title: "%{item}のひょうかさくせい"
+    create:
+      success: 'ひょうかをかいたよ！'
+      failure: 'しっぱい！もういちどためしてね！'
+    show:
+      title: "%{item}のひょうか"
+      edit: 'へんしゅうする'
+      see_choosed_oyatsu: 'えらんだおやつをみる'
+    edit:
+      title: "%{item}のへんしゅう"
+    update:
+      success: 'ひょうかをこうしんしたよ！'
+      failure: 'しっぱい！もういちどためしてね！'
+    form:
+      comment: 'ひょうかしてみよう'
+      submit: 'こうかいする'
+      attention: '※こうかいされるよ！きをつけてね'

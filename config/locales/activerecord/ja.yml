@@ -27,6 +27,8 @@ ja:
         price: '価格'
         oyatsu_image: 'おやつ画像'
         created_at: '作成日'
+      review:
+        comment: 'こめんと'
   enums:
     user:
       role:

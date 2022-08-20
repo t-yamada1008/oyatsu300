@@ -1,0 +1,7 @@
+- content_for :title
+div.main-wrapper.main-bg
+  div.main-inner-text
+    div.container
+      h1.mb-3.font-weight-normal = t('.title', item: @oyatsu.name)
+      = image_tag image_path(@oyatsu)
+      = render 'form'

@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :baskets
   has_one :authentication, dependent: :destroy
   accepts_nested_attributes_for :authentication
+  has_many :reviews
 
   validates :name, presence: true, length: { maximum: 128 }
   validates :email, uniqueness: true, presence: true

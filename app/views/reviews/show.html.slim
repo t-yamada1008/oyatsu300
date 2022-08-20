@@ -1,0 +1,19 @@
+- content_for :title
+div.main-wrapper.main-bg
+  div.main-inner-text
+    div.container
+      h1.mb-3.font-weight-normal = t('.title', item: @review.oyatsu.name)
+      = image_tag image_path(@oyatsu)
+      div.table-responsive.text-nowrap
+        table.table.table-striped
+          thead
+            tr
+              th scope='col' = Review.human_attribute_name(:comment)
+          tbody.table-light
+            tr.text-center
+              th = "#{@review.comment}"
+      div.mb-3 = link_to t('.edit'), edit_oyatsu_review_path(@oyatsu, @review), class: 'btn btn-outline-light mt-3'
+      / #TODO レビューをdeleteしたらえらんだおやつ一覧に戻れるようにする
+      /div.mb-3 = link_to t('.delete'), __path(@oyatsu, @review), class: 'btn btn-outline-light mt-3'
+      / #TODO えらんだおやつ一覧に戻れるようにする
+      /div = link_to t('.see_choosed_oyatsu'), _path, class: 'btn btn-outline-light'

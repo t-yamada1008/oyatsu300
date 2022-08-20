@@ -1,0 +1,18 @@
+- content_for :title
+div.main-wrapper.main-bg
+  div.main-inner-text.px-5
+    h1.mt-3.mb-3.font-weight-normal = t('.title')
+    - if @reviews.present?
+      div.table-responsive.text-nowrap
+        table.table.table-striped
+          thead
+            tr
+              th scope='col' = User.human_attribute_name(:name)
+              th scope='col' = Ensoku.human_attribute_name(:comment)
+              th scope='col' = Ensoku.human_attribute_name(:purse)
+              th scope='col' = t('.show')
+          tbody.table-light
+            = render partial: 'everyone_oyatsus/ensoku', collection: @ensokus, as: :ensoku
+    - else
+      h2 = t('.no_reviews')
+      = link_to t('.choose_oyatsu'), new_ensoku_path, class: 'btn btn-outline-light'

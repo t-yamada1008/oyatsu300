@@ -4,6 +4,13 @@ div.col-4.col-lg-2.mb-4
     div.card-img-top = image_tag image_path(oyatsu), class: 'img-fluid'
     div.card-body.card-body-style
       h5.card-text = oyatsu.name
-    - if request.path.include?(choose_oyatsu_path)
+    - if request.path.include?(oyatsus_path)
       div.card-footer id  = "oyatsu-id-#{oyatsu.id}-purchase"
         = render 'oyatsu_purchase', oyatsu: oyatsu
+    /- if logged_in?
+      div.card-footer
+        - if oyatsu.current_user_review(current_user).present?
+          = link_to t('.show_review'), oyatsu_review_path(oyatsu, oyatsu.current_user_review(current_user).id), class: 'btn btn-outline-dark'
+        - else
+          = link_to t('.review'), new_oyatsu_review_path(oyatsu), class: 'btn btn-outline-dark'
+
