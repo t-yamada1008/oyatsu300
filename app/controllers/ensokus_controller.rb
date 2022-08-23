@@ -8,17 +8,21 @@ class EnsokusController < ApplicationController
     @ensokus = current_user.ensokus.all
   end
 
-  # top画面
-  # 新規遠足作成のボタンを置く
+  # 選択結果の作成画面
   def new; end
 
-  # 新規遠足作成
+  # セッション情報から遠足を新規作成
   def create
-    @ensoku = Ensoku.create
-    # ログインしない場合のためにsessionを登録
-    session.clear if session.present?
-    session[:ensoku_id] = @ensoku.id
-    redirect_to oyatsus_path(ensoku: @ensoku)
+    # トランザクションをかけてensokuとbasketを一括保存
+    ActiveRecord::Base.transaction do
+      # 例外が発生するかもしれない処理
+      # ensokuを作成し保存
+      # ensokuに紐づくoyatsuをbasketに保存
+    end
+      # 例外が発生しなかった場合の処理
+    # redirect_to oyatsus_path, success: t('.success')
+    rescue => e
+      # 例外が発生した場合の処理
   end
 
   # おかし選択結果
@@ -52,21 +56,5 @@ class EnsokusController < ApplicationController
 
   def ensoku_params
     params.require(:ensoku).permit(:comment, :status)
-  end
-
-  # リファラを参照
-  def check_request
-    referer = request.referer
-    # URL直打ち対策
-    if referer.blank?
-      if logged_in?
-        redirect_to new_ensoku_path
-      else
-        redirect_to root_path
-      end
-      return
-    end
-    # リファラ制御
-    redirect_to new_ensoku_path unless referer.include?(root_path) || referer.include?(oyatsus_path(@ensoku))
   end
 end
