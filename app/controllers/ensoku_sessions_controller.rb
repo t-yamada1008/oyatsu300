@@ -1,4 +1,7 @@
 class EnsokuSessionsController < ApplicationController
+  # createでのsession利用時にCSRF保護で弾かれるため追加
+  protect_from_forgery
+
   # top画面
   # 新規遠足作成のボタンを置く
   def new; end
