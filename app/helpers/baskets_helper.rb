@@ -2,7 +2,7 @@
 module BasketsHelper
   # 対象のおやつがセッションに入っているか
   def in_the_session?(oyatsu)
-    session[:oyatsus].find { |f| f[:oyatsu_id] == oyatsu.id }.present?
+    session[:oyatsus].find { |f| f[:oyatsu_id] == oyatsu.id }.present? if session[:oyatsus].present?
   end
 
   # 対象のおやつの個数をセッションから取り出す
