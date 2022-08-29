@@ -3,7 +3,7 @@ ja:
     index:
       title: 'おやつをえらぶ'
       no_result: 'みつからないよ！'
-      seach_again: 'もういちど、けんさくしてみてね。'
+      seach_again: 'もういちどけんさくしてね。'
       yen: 'えん'
     search_form:
       word: 'おやつのなまえをいれてね'
