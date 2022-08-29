@@ -23,22 +23,22 @@ class BasketsController < ApplicationController
     ## おやつ追加チェック
     # セッションにおやつが何も存在しない場合
     if oyatsus_arr.blank?
-      results_arr.push({ oyatsu_id: @oyatsu.id, quantitiy: 1 })
+      results_arr.push({ oyatsu_id: @oyatsu.id, quantity: 1 })
     # oyatsusに@oyatsu.idが含まれていない場合
     elsif oyatsus_arr.find { |f| f[:oyatsu_id] == @oyatsu.id }.blank?
       # 既存のおやつに新規のおやつをpush
-      oyatsus_arr.push({ oyatsu_id: @oyatsu.id, quantitiy: 1 })
+      oyatsus_arr.push({ oyatsu_id: @oyatsu.id, quantity: 1 })
       results_arr = oyatsus_arr
     # oyatsusに@oyatsu.idが含まれている場合
     else
       oyatsus_arr.each do |oyatsu|
         oyatsu_id = oyatsu[:oyatsu_id].to_i
-        quantitiy = if oyatsu_id == @oyatsu.id
-                      oyatsu[:quantitiy].to_i + 1
+        quantity = if oyatsu_id == @oyatsu.id
+                      oyatsu[:quantity].to_i + 1
                     else
-                      oyatsu[:quantitiy].to_i
+                      oyatsu[:quantity].to_i
                     end
-        results_arr.push({ oyatsu_id:, quantitiy: })
+        results_arr.push({ oyatsu_id:, quantity: })
       end
     end
     session[:oyatsus] = results_arr
@@ -50,14 +50,14 @@ class BasketsController < ApplicationController
     oyatsus_arr = session[:oyatsus]
     oyatsus_arr.each do |oyatsu|
       oyatsu_id = oyatsu[:oyatsu_id].to_i
-      quantitiy = oyatsu[:quantitiy].to_i
+      quantity = oyatsu[:quantity].to_i
       # おやつidが一致する場合は計算処理
-      quantitiy -= 1 if oyatsu_id == @oyatsu.id
+      quantity -= 1 if oyatsu_id == @oyatsu.id
       # 0になる場合はresultsにpushしない
-      next if quantitiy.zero?
+      next if quantity.zero?
 
       # 0にならない or おやつidが一致しない場合はpush
-      results_arr.push({ oyatsu_id:, quantitiy: })
+      results_arr.push({ oyatsu_id:, quantity: })
     end
     session[:oyatsus] = results_arr
     # バスケットにおやつの値段を追加

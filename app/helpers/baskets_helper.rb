@@ -6,8 +6,8 @@ module BasketsHelper
   end
 
   # 対象のおやつの個数をセッションから取り出す
-  def quantitiy_of_oyatsu(oyatsu)
+  def quantity_of_oyatsu(oyatsu)
     targeted_oyatsu = session[:oyatsus].find { |f| f[:oyatsu_id] == oyatsu.id }
-    targeted_oyatsu[:quantitiy] if targeted_oyatsu.present?
+    targeted_oyatsu[:quantity] if targeted_oyatsu.present?
   end
 end
