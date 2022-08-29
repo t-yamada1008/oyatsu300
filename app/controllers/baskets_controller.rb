@@ -6,17 +6,20 @@ class BasketsController < ApplicationController
     results_arr = []
     oyatsus_arr = session[:oyatsus]
     purse = session[:purse]
-    @basket_error_message = t('.purse_over')
     ## 金額チェック
     # そもそも残りのおこづかいが0円
     # result_purseでzero?判定するとちょうど残高0円になる場合も弾いてしまうため
-    return @basekt_error_message  if purse.zero?
-
+    if purse.zero?
+      @basket_error_message = t('.purse_over')
+      return
+    end
     # 計算
     result_purse = purse - @oyatsu.price
     # 0円以下だと弾く
-    return @basket_error_message if result_purse.negative?
-
+     if result_purse.negative?
+      @basket_error_message = t('.purse_over')
+      return
+    end
     ## おやつ追加チェック
     # セッションにおやつが何も存在しない場合
     if oyatsus_arr.blank?
