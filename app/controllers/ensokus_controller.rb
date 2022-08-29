@@ -25,6 +25,8 @@ class EnsokusController < ApplicationController
         Basket.create(oyatsu_id: s_oyatsu[:oyatsu_id], ensoku_id: @ensoku.id, quantity: s_oyatsu[:quantity])
       end
     end
+    session[:oyatsus].clear
+    session[:purse].clear
     session[:ensoku] = @ensoku
     redirect_to ensoku_path(@ensoku), success: t('.success')
   end
