@@ -11,17 +11,21 @@ ja:
       please_choose_oyatsu: 'おやつをえらんでね！'
       choose_oyatsu: 'おやつをえらぶ'
     new:
-      title: 'えんそくのおやつは300えんまで！'
-      new: 'あたらしくえらぶ'
-      continue: 'つづきからえらぶ'
-      index: 'えらんだおやつをみる'
+      title: 'これでいい？'
+      comment: 'こめんとしてね！'
+      status: 'すてーたす'
+      submit: 'こうしん'
+      rechoose: 'えらびなおす'
+      really: 'ほんとうにだいじょうぶ？'
+    create:
+      success: 'できたよー！'
     show:
       title: 'えらんだおやつ！'
       choosed_oyatsu: 'えらんだおやつ'
       nothing_choosed: 'なにもえらんでないよ。えらぼう！'
-      edit: 'せっていへんこう'
       twitter: 'ついーとする'
       rechoose: 'えらびなおす'
+      edit: 'せっていへんこう'
       index: 'いちらんにもどる'
       please_choose: 'おやつをえらんでね！'
       new_registry: 'かいいんとうろく'
@@ -30,14 +34,15 @@ ja:
       hashtag1: 'えんそくのおやつは300えんまで'
       hashtag2: 'おやつ300'
     edit:
-      title: 'これでいい？'
+      title: 'しゅうせいするよ'
       comment: 'こめんとしてね！'
       status: 'すてーたす'
       submit: 'こうしん'
       rechoose: 'えらびなおす'
       really: 'ほんとうにだいじょうぶ？'
+      delete: 'けしちゃう'
     update:
-      success: 'できたよー！'
+      success: 'こうしんしたよー！'
       failure: 'こうしんしっぱい。もう一度ためしてみてね。'
     destroy:
       success: 'けしたよー'
@@ -52,7 +57,6 @@ ja:
     data:
       yen: 'えん'
       no_comment: 'のーこめんと'
-    edit_form:
+    form:
       submit: 'おっけー！'
       comment: 'こめんとしてね'
-      delete: 'けしちゃう'

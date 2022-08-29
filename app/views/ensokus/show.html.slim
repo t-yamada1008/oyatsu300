@@ -6,7 +6,6 @@ div.main-wrapper.main-bg
         h1.= t('.title')
         div.my-3.text-center = link_to "https://twitter.com/share?url=#{request.url}/&text=#{t('.tweet_text')}/&hashtags=#{t('.hashtag1')},#{t('.hashtag2')}", class: 'btn btn-outline-info', target: '_blank'
           i.fa-brands.fa-twitter
-
           = " #{t('.twitter')}"
         div.mb-3.text-center = link_to t('.rechoose'), oyatsus_path(ensoku: @ensoku), class: 'btn btn-outline-light'
         - if logged_in?
@@ -14,7 +13,8 @@ div.main-wrapper.main-bg
           div.my-3.text-center = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light'
     div.row
       - if @ensoku.basket_oyatsus.present?
-        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
+        div.row.justify-content-center
+          = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
       - else
         div.col
           h2.font-weight-normal.text-center = t('.nothing_choosed')

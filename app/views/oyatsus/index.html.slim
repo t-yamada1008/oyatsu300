@@ -11,8 +11,7 @@ div.main-wrapper.main-bg
       div.my-4
         = render 'oyatsus/search_form', q: @q, url: oyatsus_path(ensoku: @ensoku)
       div.my-3
-        - if @oyatsus.present?
-          div.oyatsus_field.jscroll
-            div.row#oyatsus
-              = render @oyatsus
-            = paginate @oyatsus
+        div.oyatsus_field.jscroll
+          div.row.justify-content-center
+            = render @oyatsus
+          = paginate @oyatsus

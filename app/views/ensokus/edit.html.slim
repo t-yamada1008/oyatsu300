@@ -7,9 +7,11 @@
           h1 = t('.title')
           h2 = render 'okozukai'
           = link_to t('.rechoose'), oyatsus_path(ensoku: @ensoku), class: 'btn btn-outline-light mt-3'
-          = render 'edit_form', ensoku: @ensoku
+          = render 'form', ensoku: @ensoku
       div.row
         = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
+      div.mt-3.mb-3.text-center
+        div = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-outline-danger btn-sm', data: {confirm: t('.really')}
 - else
   div.main-wrapper.main-bg
     div.main-inner-text
