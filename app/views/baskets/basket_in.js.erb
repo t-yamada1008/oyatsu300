@@ -2,6 +2,7 @@ $("#oyatsu-id-<%= @oyatsu.id %>-badge").html("<%= j(render 'oyatsus/badge', oyat
 $("#oyatsu-id-<%= @oyatsu.id %>-purchase").html("<%= j(render 'oyatsus/oyatsu_purchase', oyatsu: @oyatsu) %>");
 $("#okozukai").html("<%= j(render 'ensokus/okozukai') %>");
 
-<% if session[:basket_error_message].present? %>
-    alert("<%= session[:basket_error_message] %>");
+<% binding.pry %>
+<% if @basket_error_message.present? %>
+    alert("<%= @basket_error_message %>");
 <% end %>
