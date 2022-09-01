@@ -11,8 +11,9 @@ class EnsokuSessionsController < ApplicationController
   def create
     # ensoku_contorllerでオブジェクトを作らずに、セッションを初期化するのみに留める
     # 新しく始めるというボタンを押したらセッションをクリアする。
-    session[:oyatsus].clear if session[:oyatsus].present?
-    session[:ensoku].clear if session[:ensoku].present?
+    # edit からchoose_oyatsuする場合はsessionに情報をつっこむ
+    session[:oyatsus] = nil if session[:oyatsus].present?
+    session[:ensoku] = nil if session[:ensoku].present?
     session[:oyatsus] = []
     session[:purse] = 300
     redirect_to oyatsus_path
