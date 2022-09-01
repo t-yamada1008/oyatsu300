@@ -6,5 +6,10 @@ div.main-wrapper.main-bg
         h1.font-weight-normal = t('.title', item: @ensoku.user.name)
         div.d-flex.justify-content-center = render 'data', ensoku: @ensoku
         div.my-3 = link_to t('.everyone_oyatsu'), everyone_oyatsus_path, class: 'btn btn-outline-light'
-    div.row
+    div.row.justify-content-center
       = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
+    - if logged_in?
+      - if @ensoku.user_id == current_user.id
+        div.row
+          div.col.mt-3.mb-3.main-text
+            div.my-3.text-center = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light'
