@@ -1,3 +1,9 @@
+/ sessionを使ってる際の表示
 - if in_the_session?(oyatsu)
   h5
-    span.badge.bg-danger.rounded-pill.position-absolute.top-0.start-100.translate-middle = quantity_of_oyatsu(oyatsu)
+    span.badge.bg-danger.rounded-pill.position-absolute.top-0.start-100.translate-middle = quantity_oyatsu_session(oyatsu)
+/ sessionが削除されていてensokuインスタンスが存在する場合
+- else
+  h5
+    span.badge.bg-danger.rounded-pill.position-absolute.top-0.start-100.translate-middle = quantity_oyatsu_ensoku(oyatsu)
+
