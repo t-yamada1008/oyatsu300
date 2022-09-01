@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  has_many :ensokus
-  has_many :baskets
+  has_many :ensokus, dependent: :destroy
   has_one :authentication, dependent: :destroy
   accepts_nested_attributes_for :authentication
   has_many :reviews
