@@ -16,7 +16,7 @@ class BasketsController < ApplicationController
     # 計算
     result_purse = purse - @oyatsu.price
     # 0円以下だと弾く
-     if result_purse.negative?
+    if result_purse.negative?
       @basket_error_message = t('.purse_over')
       return
     end
@@ -34,10 +34,10 @@ class BasketsController < ApplicationController
       oyatsus_arr.each do |oyatsu|
         oyatsu_id = oyatsu[:oyatsu_id].to_i
         quantity = if oyatsu_id == @oyatsu.id
-                      oyatsu[:quantity].to_i + 1
-                    else
-                      oyatsu[:quantity].to_i
-                    end
+                     oyatsu[:quantity].to_i + 1
+                   else
+                     oyatsu[:quantity].to_i
+                   end
         results_arr.push({ oyatsu_id:, quantity: })
       end
     end
