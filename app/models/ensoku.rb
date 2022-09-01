@@ -12,8 +12,8 @@ class Ensoku < ApplicationRecord
 
   enum status: {
     selecting: 0,
-    close: 1,
-    open: 2
+    not_published: 1,
+    published: 2
   }
 
   OKOZUKAI = 300

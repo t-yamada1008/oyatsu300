@@ -37,5 +37,5 @@ ja:
     ensoku:
       status:
         selecting: 'とちゅう'
-        close: 'ひとにみせない'
-        open: 'ひとにみせる'
+        not_published: 'ひとにみせない'
+        published: 'ひとにみせる'
