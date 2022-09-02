@@ -8,8 +8,8 @@ ja:
     search_form:
       word: 'おやつのなまえをいれてね'
       submit: 'しらべる'
-      gt: 'ねだん(いじょう)'
-      lt: 'ねだん(いか)'
+      gt: 'ねだん↑'
+      lt: 'ねだん↓'
       price_over50: "50えん↑"
       price_over100: "100えん↑"
       price_over150: "150えん↑"
