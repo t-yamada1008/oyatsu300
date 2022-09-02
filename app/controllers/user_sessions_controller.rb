@@ -8,7 +8,9 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      set_ensoku_user if session[:ensoku_id].present?
+      @ensoku = session[:ensoku] if session[:ensoku].present?
+      # えんそく情報が存在する場合、ensokuにuser_idを追加
+      set_ensoku_user if @ensoku.present?
       redirect_back_or_to ensokus_path, success: t('.success')
     else
       flash.now[:danger] = t('.failure')
@@ -25,8 +27,7 @@ class UserSessionsController < ApplicationController
 
   def set_ensoku_user
     # 遠足のセッション情報が存在する場合、ユーザーと紐付けて登録
-    @ensoku = Ensoku.find(session[:ensoku_id])
     @ensoku.user_id = @user.id
-    @ensoku.save
+    @ensoku.save!
   end
 end

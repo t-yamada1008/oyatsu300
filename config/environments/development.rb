@@ -82,4 +82,6 @@ Rails.application.configure do
   # Loggerの設定を追加
   config.logger = Logger.new('log/development.log')
 
+  # session_storeの記述を追加
+  config.session_store :redis_store, servers: Settings.redis.servers, expire_after: 1.day
 end

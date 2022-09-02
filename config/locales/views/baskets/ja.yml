@@ -2,5 +2,5 @@ ja:
   baskets:
     register:
       register: 'おかいけい'
-    alert:
-      text: 'あれれ、おこずかいがたりないみたい'
+    basket_in:
+      purse_over: 'あれれ、おこずかいがたりないみたい'

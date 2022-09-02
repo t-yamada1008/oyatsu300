@@ -1,11 +1,18 @@
-- content_for :title
-div.main-wrapper.main-bg
-  div.main-inner-text
-    = image_tag "logo_transparent.png", size: '300x300'
-    h1.mb-3.font-weight-normal = t('.title')
-    div.mt-3 = link_to t('.new'), ensokus_path, method: :post, class: 'btn btn-outline-light btn-lg'
-    - if session[:ensoku_id].present?
-      div.mt-3 = link_to t('.continue'), oyatsus_path(session[:ensoku_id]), class: 'btn btn-outline-light btn-lg'
-    - if logged_in? && current_user.ensokus.present?
-      div.mt-3 = link_to t('.index'), ensokus_path, class: 'btn btn-outline-light btn-lg'
-    div.mt-5 = render 'shared/how_to_play'
+- content_for :title, t('.title')
+- if session[:oyatsus].present?
+  div.main-wrapper.main-bg
+    div.container
+      div.row
+        div.col.mt-3.mb-3.main-text
+          h1 = t('.title')
+          h2 = render 'okozukai'
+          = link_to t('.rechoose'), oyatsus_path, class: 'btn btn-outline-light mt-3'
+          = render 'form'
+      div.row.justify-content-center
+        = render partial: 'oyatsus/oyatsu', collection: @oyatsus
+- else
+  div.main-wrapper.main-bg
+    div.main-inner-text
+      h1.mt-3.mb-3.font-weight-normal = t('.no_result')
+      = link_to t('.rechoose'), oyatsus_path, class: 'btn btn-outline-light mt-3'
+

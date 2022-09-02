@@ -6,13 +6,21 @@
         div.col.mt-3.mb-3.main-text
           h1 = t('.title')
           h2 = render 'okozukai'
-          = link_to t('.rechoose'), oyatsus_path(ensoku: @ensoku), class: 'btn btn-outline-light mt-3'
-          = render 'edit_form', ensoku: @ensoku
+          = link_to t('.rechoose'), oyatsus_path(ensoku_id: @ensoku), class: 'btn btn-outline-light mt-3'
+          = render 'form'
+      div.row.justify-content-center
+        / rechooseする前は@ensokuに紐付いたもの
+        / rechooseした後はsession[:oyatsus]の内部に紐付いたもの
+        - if session[:oyatsus].present?
+          = render partial: 'oyatsus/oyatsu', collection: @oyatsus
+        - else
+          = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
       div.row
-        = render partial: 'oyatsus/oyatsu', collection: @ensoku.basket_oyatsus_group, as: :oyatsu
+        div.col.mt-3.mb-3.main-text
+          = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-outline-danger btn-sm', data: {confirm: t('.really')}
 - else
   div.main-wrapper.main-bg
     div.main-inner-text
       h1.mt-3.mb-3.font-weight-normal = t('.no_result')
-      = link_to t('.rechoose'), oyatsus_path(ensoku: @ensoku), class: 'btn btn-outline-light mt-3'
+      = link_to t('.rechoose'), oyatsus_path(ensoku_id: @ensoku), class: 'btn btn-outline-light mt-3'
 

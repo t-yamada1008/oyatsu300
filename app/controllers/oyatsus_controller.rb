@@ -1,39 +1,28 @@
 # Oyatsus Contorller
 class OyatsusController < ApplicationController
-  before_action :check_request, :set_ensoku
+  before_action :set_ensoku
 
   def index
     @q = Oyatsu.ransack(params[:q])
     @oyatsus = @q.result.page(params[:page])
+    set_ensoku_to_session if params[:ensoku_id].present?
   end
 
   private
 
-  # リファラを参照
-  def check_request
-    referer = request.referer
-    # URL直打ち対策
-    if referer.blank?
-      if logged_in?
-        redirect_to new_ensoku_path
-      else
-        redirect_to root_path
-      end
-      return
-    end
-    # リファラ制御
-    redirect_to new_ensoku_path unless referer.include?(root_path) || referer.include?(new_ensoku_path)
+  def set_ensoku
+    @ensoku = Ensoku.find(params[:ensoku_id]) if params[:ensoku_id].present?
   end
 
-  def set_ensoku
-    # セッション情報がある場合
-    if session[:ensoku_id].present?
-      @ensoku = Ensoku.find(session[:ensoku_id])
-    # セッション情報がない場合
-    elsif params[:ensoku].present?
-      @ensoku = Ensoku.find(:ensoku)
-    else
-      redirect_to new_ensoku_path
+  def set_ensoku_to_session
+    session[:ensoku] = @ensoku
+    session[:purse] = @ensoku.purse
+    oyatsus_arr = []
+    oyatsus = @ensoku.baskets
+    oyatsus.each do |oyatsu|
+      oyatsu_hash = { oyatsu_id: oyatsu.oyatsu_id, quantity: oyatsu.quantity }
+      oyatsus_arr.push(oyatsu_hash)
     end
+    session[:oyatsus] = oyatsus_arr
   end
 end

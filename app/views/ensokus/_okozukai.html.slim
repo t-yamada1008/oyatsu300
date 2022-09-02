@@ -1,1 +1,4 @@
-h4.okozukai = "#{t('.purse')}: #{@ensoku.purse} #{t('.yen')}"
+- if session[:purse].present?
+  h4.okozukai = "#{t('.purse')}: #{session[:purse]} #{t('.yen')}"
+- else
+  h4.okozukai = "#{t('.purse')}: #{@ensoku.purse} #{t('.yen')}"

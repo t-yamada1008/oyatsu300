@@ -2,6 +2,5 @@ div.seach
   = search_form_for q, url: url do |f|
     div.input-group
       = f.search_field :name_cont, class: 'form-control', placeholder: t('.word')
-      = f.hidden_field :ensoku, value: @ensoku.id
       div.input-group-append
         = f.submit t(".submit"), class:'btn btn-outline-light'

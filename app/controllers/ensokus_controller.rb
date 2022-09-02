@@ -1,6 +1,6 @@
 class EnsokusController < ApplicationController
   before_action :set_ensoku, only: %i[show edit update destroy]
-  before_action :check_request, only: %i[show edit update destroy]
+  before_action :set_oyatsus, only: %i[new edit]
 
   # 遠足一覧画面
   # Userの全遠足結果を取得
@@ -8,17 +8,37 @@ class EnsokusController < ApplicationController
     @ensokus = current_user.ensokus.all
   end
 
-  # top画面
-  # 新規遠足作成のボタンを置く
-  def new; end
+  # 選択結果の作成画面
+  def new
+    @ensoku = Ensoku.new
+  end
 
-  # 新規遠足作成
+  # セッション情報から遠足を新規作成
   def create
-    @ensoku = Ensoku.create
-    # ログインしない場合のためにsessionを登録
-    session.clear if session.present?
-    session[:ensoku_id] = @ensoku.id
-    redirect_to oyatsus_path(ensoku: @ensoku)
+    # トランザクションをかけてensokuとbasketを一括保存
+    ActiveRecord::Base.transaction do
+      # ensokuを作成し保存
+      purse = session[:purse]
+      @ensoku = if logged_in?
+                  Ensoku.new(ensoku_params)
+                else
+                  @ensoku = Ensoku.new(purse:, status: 1)
+                end
+      if logged_in?
+        @ensoku.user_id = current_user.id
+        @ensoku.purse = purse
+      end
+      @ensoku.save
+      # ensokuに紐づくoyatsuをbasketに保存
+      session_oyatsus = session[:oyatsus]
+      session_oyatsus.each do |s_oyatsu|
+        Basket.create(oyatsu_id: s_oyatsu[:oyatsu_id], ensoku_id: @ensoku.id, quantity: s_oyatsu[:quantity])
+      end
+    end
+    session[:oyatsus] = nil
+    session[:purse] = nil
+    session[:ensoku] = @ensoku
+    redirect_to ensoku_path(@ensoku), success: t('.success')
   end
 
   # おかし選択結果
@@ -29,19 +49,39 @@ class EnsokusController < ApplicationController
 
   # 選択結果のステータス更新
   def update
-    @ensoku.user_id = current_user.id if logged_in?
-    if @ensoku.update(ensoku_params)
-      redirect_to @ensoku, success: t('.success')
-    else
-      flash.now[:danger] = t('.failure')
-      render 'edit'
+    ActiveRecord::Base.transaction do
+      # フォームの更新
+      @ensoku.update(ensoku_params)
+      # セッションの内容を更新
+      # 金額更新
+      purse = session[:purse]
+      @ensoku.update(purse:)
+      # バスケット更新
+      session_oyatsus = session[:oyatsus]
+      session_oyatsus.each do |s_oyatsu|
+        # quantityが0になった場合はレコードを削除
+        # session_oyatsusに入っておらず、@ensoku.basketsに入ってるもの
+        @ensoku.baskets.each do |basket|
+          if basket.oyatsu_id == s_oyatsu[:oyatsu_id]
+            basket.update(quantity: s_oyatsu[:quantity])
+          else
+            basket.delete
+          end
+        end
+      end
+      session[:oyatsus] = nil
+      session[:purse] = nil
     end
+    redirect_to @ensoku, success: t('.success')
+  rescue ActiveRecord::RecordInvalid
+    flash.now[:danger] = t('.failure')
+    render 'edit'
   end
 
   # 削除後は新規遠足作成画面に遷移
   def destroy
     @ensoku.destroy!
-    redirect_to new_ensoku_path, success: t('.success')
+    redirect_to ensokus_path, success: t('.success')
   end
 
   private
@@ -50,23 +90,25 @@ class EnsokusController < ApplicationController
     @ensoku = Ensoku.find(params[:id])
   end
 
-  def ensoku_params
-    params.require(:ensoku).permit(:comment, :status)
+  # 選択されてるおやつだけをset。数量は気にしない。
+  def set_oyatsus
+    session_oyatsus = []
+    if session[:oyatsus].present?
+      session_oyatsus = session[:oyatsus]
+    else
+      @ensoku.baskets.each do |basket|
+        basket_hash = { oyatsu_id: basket[:oyatsu_id], quantity: basket[:quantity] }
+        session_oyatsus.push basket_hash
+      end
+    end
+    oyatsu_id_arr = []
+    session_oyatsus.each do |s_oyatsu|
+      oyatsu_id_arr.push(s_oyatsu[:oyatsu_id])
+    end
+    @oyatsus = Oyatsu.find(oyatsu_id_arr)
   end
 
-  # リファラを参照
-  def check_request
-    referer = request.referer
-    # URL直打ち対策
-    if referer.blank?
-      if logged_in?
-        redirect_to new_ensoku_path
-      else
-        redirect_to root_path
-      end
-      return
-    end
-    # リファラ制御
-    redirect_to new_ensoku_path unless referer.include?(root_path) || referer.include?(oyatsus_path(@ensoku))
+  def ensoku_params
+    params.require(:ensoku).permit(:comment, :status)
   end
 end

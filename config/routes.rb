@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
-  root                        'ensokus#new'
+  root                        'ensoku_sessions#new'
   get     'login',            to: 'user_sessions#new'
   post    'login',            to: 'user_sessions#create'
   delete  'logout',           to: 'user_sessions#destroy'
@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   get     "oauth/:provider",  to: "oauths#oauth", as: :auth_at_provider
 
   resource :users, only: %i[new create]
-  resources :ensokus do
-    resources :baskets, only: %i[create destroy], shallow: true
-  end
+  resources :ensoku_sessions, only: %i[new create]
+  resources :ensokus
+  post    'basket_in',        to: 'baskets#basket_in'
+  delete  'basket_out',       to: 'baskets#basket_out'
   resources :oyatsus, only: %i[index] do
     resources :reviews
   end

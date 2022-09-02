@@ -1,14 +1,17 @@
 - content_for :title, t('.title')
 div.main-wrapper.main-bg
-  div.container
-    div.my-4
-      = render 'oyatsus/search_form', q: @q, url: oyatsus_path(ensoku: @ensoku)
-    div.my-3
-      - if @oyatsus.present?
+  - if @oyatsus.blank?
+    div.main-inner-text
+      div.my-4.container
+        = render 'oyatsus/search_form', q: @q, url: oyatsus_path(ensoku: @ensoku)
+      h1.mt-3.mb-3.font-weight-normal = t('.no_result')
+      h3.mt-3.mb-3.font-weight-normal = t('.seach_again')
+  - else
+    div.container
+      div.my-4
+        = render 'oyatsus/search_form', q: @q, url: oyatsus_path(ensoku: @ensoku)
+      div.my-3
         div.oyatsus_field.jscroll
-          div.row#oyatsus
+          div.row.justify-content-center
             = render @oyatsus
           = paginate @oyatsus
-      - else
-        h1.mt-3.mb-3.font-weight-normal = t('.no_result')
-        h3.mt-3.mb-3.font-weight-normal = t('.seach_again')

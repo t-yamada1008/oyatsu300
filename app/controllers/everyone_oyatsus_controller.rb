@@ -1,7 +1,7 @@
 class EveryoneOyatsusController < ApplicationController
   before_action :set_ensoku, only: %i[show]
   def index
-    @ensokus = Ensoku.where(status: 'open')
+    @ensokus = Ensoku.where(status: 'published')
   end
 
   def show; end
@@ -9,8 +9,8 @@ class EveryoneOyatsusController < ApplicationController
   private
 
   def set_ensoku
-    # 公開ステータスがopen出ない場合、indexにredirect
+    # 公開ステータスがpublishedでない場合、indexにredirect
     @ensoku = Ensoku.find(params[:id])
-    redirect_to everyone_oyatsus_path  unless @ensoku.status == 'open'
+    redirect_to everyone_oyatsus_path unless @ensoku.published?
   end
 end

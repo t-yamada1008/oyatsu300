@@ -1,6 +1,6 @@
 section.form-box
-  = form_with model: ensoku, method: :patch, local: true do |f|
-    - if ensoku.errors.any?
+  = form_with model: @ensoku, local: true do |f|
+    - if @ensoku.errors.any?
       = render 'shared/error_messages', object: f.object
     - if logged_in?
       div.form-group
@@ -15,6 +15,3 @@ section.form-box
       div.form-group
         = f.hidden_field :status, class: 'form-control', value: 'close'
     = f.submit t('.submit'), class: 'btn btn-light'
-  - if logged_in?
-    div.mt-3.mb-3.text-center
-      div = link_to t('.delete'), ensoku_path(@ensoku), method: :delete, class: 'btn btn-outline-danger btn-sm', data: {confirm: t('.really')}

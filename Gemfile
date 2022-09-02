@@ -64,6 +64,10 @@ gem 'gretel'
 # 環境設定用gem
 gem 'config', '~> 4.0'
 
+# redis
+# session管理のみの利用なのでacition-pack
+gem 'redis-actionpack'
+
 # --- Development and Test ---
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

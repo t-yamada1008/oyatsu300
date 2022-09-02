@@ -11,6 +11,7 @@ ja:
     show:
       title: "%{item}のおやつ"
       everyone_oyatsu: 'みんなのおやつにもどる'
+      edit: 'せっていへんこう'
     data:
       no_comment: 'のーこめんと'
       yen: 'えん'
