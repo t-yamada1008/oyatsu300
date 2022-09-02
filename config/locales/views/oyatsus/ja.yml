@@ -3,11 +3,23 @@ ja:
     index:
       title: 'おやつをえらぶ'
       no_result: 'みつからないよ！'
-      seach_again: 'もういちどけんさくしてね。'
+      search_again: 'もういちどけんさくしてね。'
       yen: 'えん'
     search_form:
       word: 'おやつのなまえをいれてね'
       submit: 'しらべる'
+      gt: 'ねだん↑'
+      lt: 'ねだん↓'
+      price_over50: "50えん↑"
+      price_over100: "100えん↑"
+      price_over150: "150えん↑"
+      price_over200: "200えん↑"
+      price_over250: "250えん↑"
+      price_under50: "50えん↓"
+      price_under100: "100えん↓"
+      price_under150: "150えん↓"
+      price_under200: "200えん↓"
+      price_under250: "250えん↓"
     oyatsu_purchase:
       yen: 'えん'
     oyatsu:
