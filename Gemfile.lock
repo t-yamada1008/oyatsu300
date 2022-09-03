@@ -147,6 +147,7 @@ GEM
     gretel (4.4.0)
       actionview (>= 5.1, < 7.1)
       railties (>= 5.1, < 7.1)
+    high_voltage (3.1.2)
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
@@ -408,6 +409,7 @@ DEPENDENCIES
   faker
   font-awesome-sass
   gretel
+  high_voltage (~> 3.1, >= 3.1.2)
   html2slim
   jbuilder (~> 2.7)
   kaminari

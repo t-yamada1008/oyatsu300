@@ -1,12 +1,12 @@
 / TODO: リンクの追加
-footer.footer.mt-auto.text-lg-start
-  //section
+footer.footer
+  section
     div.text-center
       div.row
         div.col
-          = link_to 'りようきやく(おとなむけ)', '#', class: 'link-light'
+          = link_to 'ぷらいばしーぽりしー(おとなむけ)', page_path('privacy_policy'), class: 'link-light'
         div.col
-          = link_to 'おといあわせ(さくしゃのTwitter)', '#', class: 'link-light'
-  section
-    div.p-4.main-text
+          = link_to 'おといあわせ(さくしゃのTwitter)', author_twitter_url, class: 'link-light'
+  section.mt-4
+    div.main-text
       h5 = t('.site_name')
