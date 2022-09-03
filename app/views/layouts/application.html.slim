@@ -3,17 +3,14 @@ html
   head
     title = page_title(yield(:title))
     = favicon_link_tag 'logo_transparent.png'
-    meta charset="utf-8"
-    meta name="viewport" content="width=device-width,initial-scale=1"
-    meta name="twitter:card" content="summary"
+    meta name="twitter:card" content="summary_large_image"
     meta name="twitter:site" content="@moyazine"
-    meta name="twitter:title" content="#{page_title(yield(:title))}"
-    meta name="twitter:description" content="#{og_description(yield(:description))}"
-    meta name="twitter:image" content="#{og_image(yield(:og_image))}"
     meta property="og:title" content="#{page_title(yield(:title))}"
-    meta property="og:description" content="#{og_description(yield(:description))}"
-    meta property="og:image" content="#{og_image(yield(:og_image))}"
     meta property="og:url" content="#{request.url}"
+    meta property="og:description" content="#{og_description}"
+    meta property="og:image" content="#{og_image}"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    meta charset="utf-8"
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
