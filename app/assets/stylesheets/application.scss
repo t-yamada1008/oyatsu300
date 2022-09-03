@@ -43,6 +43,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.65);
+  display: block;
 }
 
 .main-inner-text {
@@ -55,6 +56,11 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 .main-text {
   text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.privacy-policy {
   color: white;
   z-index: 1;
 }
@@ -90,7 +96,8 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 // フッター要素
 .footer {
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
-  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 // _reboot.scssに対処できないため!importantで指定
@@ -154,6 +161,10 @@ thead th {
 
 th {
   font-weight: inherit;
+}
+
+.li-none {
+  list-style: none;
 }
 
 // Twtiiterボタン
