@@ -10,15 +10,13 @@ module ApplicationHelper
   end
 
   # OGP: 画像
-  def og_image(page_image = '')
-    base_image = asset_path('logo_transparent.png')
-    page_image.empty? ? base_image : page_image
+  def og_image
+    "#{Settings.default_url_options.host}#{asset_path('logo_transparent.png')}"
   end
 
   # OGP: 説明
-  def og_description(page_description = '')
-    base_description = t('.base_description')
-    page_description.empty? ? base_description : page_description
+  def og_description
+    t('.base_description')
   end
 
   # 画像ファイル呼び出し
