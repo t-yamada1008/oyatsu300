@@ -68,6 +68,9 @@ gem 'config', '~> 4.0'
 # session管理のみの利用なのでacition-pack
 gem 'redis-actionpack'
 
+# 静的ページ作成
+gem 'high_voltage', '~> 3.1', '>= 3.1.2'
+
 # --- Development and Test ---
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
