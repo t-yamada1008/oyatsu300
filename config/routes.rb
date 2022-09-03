@@ -32,4 +32,8 @@ Rails.application.routes.draw do
     resources :ensokus, only: %i[index show edit update destroy], shallow: true
     resources :oyatsus, shallow: true
   end
+
+  direct :author_twitter do
+    'https://twitter.com/moyazine'
+  end
 end
