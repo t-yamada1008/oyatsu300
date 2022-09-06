@@ -34,6 +34,9 @@ gem 'sorcery', '~> 0.16.3'
 gem 'rails-i18n'
 gem 'enum_help'
 
+# 環境設定用gem
+gem 'config', '~> 4.0'
+
 # Frontend
 # bootstrap
 gem 'slim-rails'
@@ -61,9 +64,6 @@ gem 'net-pop'
 # 管理者画面用パンくずリスト
 gem 'gretel'
 
-# 環境設定用gem
-gem 'config', '~> 4.0'
-
 # redis
 # session管理のみの利用なのでacition-pack
 gem 'redis-actionpack'
@@ -79,6 +79,9 @@ group :development, :test do
   # Test
   gem 'rspec-rails'
   gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'rubocop-rspec', require: false
+
 
   # Debug and Code Formatting for development and test
   gem 'rails-flog', require: 'flog' # コンソールでのSQL整形
