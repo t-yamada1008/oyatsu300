@@ -82,7 +82,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rubocop-rspec', require: false
 
-
   # Debug and Code Formatting for development and test
   gem 'rails-flog', require: 'flog' # コンソールでのSQL整形
   gem 'pry-byebug'
@@ -114,6 +113,11 @@ group :development do
   gem 'better_errors' # railsのエラー画面整形
   gem 'binding_of_caller' # ブラウザ上でirb利用
   gem 'annotate' # schema情報をmodelやrootに記述
+end
+
+group :test do
+  gem 'capybara'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
