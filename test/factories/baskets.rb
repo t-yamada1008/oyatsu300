@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :basket do
-    oyatsu_id { 1 }
+    oyatsu
+    ensoku
     quantity { 1 }
   end
 end
