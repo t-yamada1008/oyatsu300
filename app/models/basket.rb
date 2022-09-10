@@ -5,6 +5,6 @@ class Basket < ApplicationRecord
   with_options presence: true do
     validates :ensoku_id
     validates :oyatsu_id
-    validates :quantity
+    validates :quantity, numericality: { greater_than: 0 }
   end
 end
