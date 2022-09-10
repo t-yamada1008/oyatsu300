@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_22_050734) do
+ActiveRecord::Schema.define(version: 2022_09_10_082502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2022_08_22_050734) do
     t.bigint "oyatsu_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "ensoku_id"
-    t.integer "quantity", default: 0
+    t.bigint "ensoku_id", null: false
+    t.integer "quantity", default: 0, null: false
     t.index ["ensoku_id"], name: "index_baskets_on_ensoku_id"
     t.index ["oyatsu_id"], name: "index_baskets_on_oyatsu_id"
   end
