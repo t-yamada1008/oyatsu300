@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
     expect(user.errors).to be_empty
   end
 
-  it 'is in valid without name' do
+  it 'is invalid without name' do
     user_without_name = build(:user, name: '')
     expect(user_without_name).to be_invalid
     expect(user_without_name.errors[:name]).to eq ['をにゅうりょくしてね']
