@@ -2,6 +2,8 @@ ja:
   users:
     new:
       title: 'しんきとうろく'
+    create:
+      failure: 'とうろくしっぱい。もう一度ためしてみてね。'
     form:
       name: 'にっくねーむ'
       email: 'ふりーあどれすでいいよ'
