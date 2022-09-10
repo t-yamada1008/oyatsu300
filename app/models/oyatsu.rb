@@ -8,7 +8,11 @@ class Oyatsu < ApplicationRecord
   has_many :reviews
 
   validates :name, presence: true, length: { maximum: 100 }
-  validates :price, numericality: { only_integer: true }
+  validates :price, presence: true, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 0,
+    less_than_or_equal_to: 300
+  }
 
   scope :price_over50, -> { where(price: 50..) }
   scope :price_over100, -> { where(price: 100..) }

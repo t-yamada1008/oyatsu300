@@ -16,6 +16,12 @@ Style/FrozenStringLiteralComment:
 Style/Documentation:
   Enabled: false
 
+Style/Lambda:
+  Enabled: false
+
+Layout/SpaceInLambdaLiteral:
+  Enabled: false
+
 Metrics/AbcSize:
   Max: 30
 
