@@ -24,7 +24,7 @@ ja:
       choosed_oyatsu: 'えらんだおやつ'
       nothing_choosed: 'なにもえらんでないよ。えらぼう！'
       twitter: 'ついーとする'
-      rechoose: 'えらびなおす'
+      retry: 'もういちどえらぶ'
       edit: 'せっていへんこう'
       index: 'いちらんにもどる'
       please_choose: 'おやつをえらんでね！'
