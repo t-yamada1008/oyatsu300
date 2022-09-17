@@ -211,6 +211,8 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.16.2)
+    mock_redis (0.33.0)
+      ruby2_keywords
     multi_json (1.15.0)
     multi_xml (0.6.0)
     net-imap (0.2.3)
@@ -449,6 +451,7 @@ DEPENDENCIES
   letter_opener_web
   listen (~> 3.3)
   mini_magick
+  mock_redis
   net-imap
   net-pop
   net-smtp

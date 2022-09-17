@@ -115,9 +115,12 @@ group :development do
   gem 'annotate' # schema情報をmodelやrootに記述
 end
 
+
+# --- Test ---
 group :test do
   gem 'capybara'
   gem 'webdrivers'
+  gem 'mock_redis'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

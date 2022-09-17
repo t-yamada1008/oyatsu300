@@ -4,10 +4,10 @@ div.main-wrapper.main-bg
     div.row
       div.col.my-3
         h1.= t('.title')
-        div.my-3.text-center = link_to "https://twitter.com/share?url=#{request.url}&text=#{t('.tweet_text')}&hashtags=#{t('.hashtag1')},#{t('.hashtag2')}", class: 'btn btn-outline-info', target: '_blank'
+        div.my-3.text-center = link_to "https://twitter.com/share?url=#{request.url}&text=#{t('.tweet_text')}&hashtags=#{t('.hashtag1')},#{t('.hashtag2')}", class: 'btn btn-outline-info', id: 'btn-twitter-share',  target: '_blank'
           i.fa-brands.fa-twitter
           = " #{t('.twitter')}"
-        div.mb-3.text-center = link_to t('.rechoose'), oyatsus_path(ensoku_id: @ensoku), class: 'btn btn-outline-light'
+        div.mb-3.text-center = link_to t('.retry'), root_path, class: 'btn btn-outline-light'
         - if logged_in?
           div.d-flex.justify-content-center = render 'data', ensoku: @ensoku
           div.my-3.text-center = link_to t('.edit'), edit_ensoku_path(@ensoku), class: 'btn btn-outline-light'

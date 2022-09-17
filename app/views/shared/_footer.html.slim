@@ -4,9 +4,9 @@ footer.footer
     div.text-center
       div.row
         div.col
-          = link_to 'ぷらいばしーぽりしー(おとなむけ)', page_path('privacy_policy'), class: 'link-light'
+          = link_to 'ぷらいばしーぽりしー(おとなむけ)', page_path('privacy_policy'), class: 'link-light', id: 'privacy-policy'
         div.col
-          = link_to 'おといあわせ(さくしゃのTwitter)', author_twitter_url, class: 'link-light'
+          = link_to 'おといあわせ(さくしゃのTwitter)', author_twitter_url, class: 'link-light', id: 'contact'
   section.mt-4
     div.main-text
       h5 = t('.site_name')
