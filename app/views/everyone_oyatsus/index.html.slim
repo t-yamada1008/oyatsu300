@@ -15,4 +15,3 @@ div.main-wrapper.main-bg
             = render partial: 'everyone_oyatsus/ensoku', collection: @ensokus, as: :ensoku
     - else
       h2 = t('.no_open')
-      = link_to t('.choose_oyatsu'), new_ensoku_path, class: 'btn btn-outline-light'

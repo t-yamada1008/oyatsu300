@@ -64,6 +64,7 @@ RSpec.configure do |config|
 
   # FactoryBot
   config.include FactoryBot::Syntax::Methods
+  config.include LoginMacros
 
   # session
   config.before(:each) do

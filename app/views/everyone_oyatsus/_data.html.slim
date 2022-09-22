@@ -1,10 +1,9 @@
 div.table-responsive.text-nowrap
+  div.my-3 = render 'ensokus/okozukai'
   table.table.table-striped
     thead
       tr
         th scope='col' = Ensoku.human_attribute_name(:comment)
-        th scope='col' = Ensoku.human_attribute_name(:purse)
     tbody.table-light
       tr
-        th = ensoku.comment.blank? ? t('.no_comment') : ensoku.comment
-        th = "#{ensoku.purse} #{t('.yen')}"
+        th id="everyone-oyatsu-ensoku-id-#{ensoku.id}-comment" = ensoku.comment.blank? ? t('.no_comment') : ensoku.comment
