@@ -32,16 +32,15 @@ RSpec.describe "EnsokuSessions", type: :system do
       end
 
       context 'ヘッダーのトグルボタンに関する挙動' do
-        it 'みんなのおやつに遷移できる' do
+        it 'みんなのおやつが表示される' do
           # rootに遷移
           visit root_path
           # トグルを押すとリンクが表示
           find('.navbar-toggler-icon').click
           expect(page).to have_link 'みんなのおやつ'
           expect(page).to have_link 'ろぐいん'
-          click_link 'みんなのおやつ'
-          expect(current_path).to eq everyone_oyatsus_path
         end
+        # TODO: user_session_specにテスト項目を移動
         it 'ログイン画面に遷移できる' do
           # rootに遷移
           visit root_path
