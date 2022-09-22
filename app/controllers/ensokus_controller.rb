@@ -57,20 +57,22 @@ class EnsokusController < ApplicationController
       purse = session[:purse]
       @ensoku.update(purse:)
       # バスケット更新
-      session_oyatsus = session[:oyatsus]
-      session_oyatsus.each do |s_oyatsu|
-        # quantityが0になった場合はレコードを削除
-        # session_oyatsusに入っておらず、@ensoku.basketsに入ってるもの
-        @ensoku.baskets.each do |basket|
-          if basket.oyatsu_id == s_oyatsu[:oyatsu_id]
-            basket.update(quantity: s_oyatsu[:quantity])
-          else
-            basket.delete
+      if session[:oyatsus].present?
+        session_oyatsus = session[:oyatsus]
+        session_oyatsus.each do |s_oyatsu|
+          # quantityが0になった場合はレコードを削除
+          # session_oyatsusに入っておらず、@ensoku.basketsに入ってるもの
+          @ensoku.baskets.each do |basket|
+            if basket.oyatsu_id == s_oyatsu[:oyatsu_id]
+              basket.update(quantity: s_oyatsu[:quantity])
+            else
+              basket.delete
+            end
           end
         end
+        session[:oyatsus] = nil
+        session[:purse] = nil
       end
-      session[:oyatsus] = nil
-      session[:purse] = nil
     end
     redirect_to @ensoku, success: t('.success')
   rescue ActiveRecord::RecordInvalid
