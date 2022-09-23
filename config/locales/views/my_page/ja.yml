@@ -6,6 +6,9 @@ ja:
       see_choosed_oyatsu: 'えらんだおやつをみる'
     edit:
       title: 'ゆーざーじょうほうこうしん'
+    update:
+      success: 'こうしんしたよ'
+      failure: 'こうしんしっぱい！もういちどためしてみてね'
     form:
       name: 'にっくねーむ'
       email: 'ふりーあどれすでいいよ'
