@@ -3,6 +3,7 @@ ja:
     new:
       title: 'しんきとうろく'
     create:
+      success: 'ろぐいんしたよ'
       failure: 'とうろくしっぱい。もう一度ためしてみてね。'
     form:
       name: 'にっくねーむ'
