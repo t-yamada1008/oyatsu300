@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
       @ensoku = session[:ensoku] if session[:ensoku].present?
       # えんそく情報が存在する場合、ensokuにuser_idを追加
       set_ensoku_user if @ensoku.present?
-      redirect_back_or_to ensokus_path, success: t('.success')
+      redirect_back_or_to root_path, success: t('.success')
     else
       flash.now[:danger] = t('.failure')
       render 'new'
