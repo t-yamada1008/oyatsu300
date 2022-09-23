@@ -67,8 +67,8 @@ RSpec.describe "Users", type: :system do
 
     context '異常系' do
 
-        # email重複用にユーザーを作成
-        let!(:user) { create(:user) }
+      # email重複用にユーザーを作成
+      let!(:user) { create(:user) }
 
       it 'ユーザー登録に失敗する' do
         # rootに遷移
@@ -113,7 +113,6 @@ RSpec.describe "Users", type: :system do
       end
 
       it 'メールアドレスが重複している場合、ユーザー登録に失敗する' do
-
         # rootに遷移
         visit root_path
         # トグルを押すとリンクが表示
