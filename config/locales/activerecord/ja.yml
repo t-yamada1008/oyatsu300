@@ -34,8 +34,8 @@ ja:
         user:
           blank: 'をにゅうりょくしてね'
           taken: 'はすでにつかわれているよ'
-          too_long: "は「%{count}もじ」いかにしてね。"
-          too_short: "は「%{count}もじ」いじょうにしてね。"
+          too_long: "は「%{count}もじ」いかにしてね"
+          too_short: "は「%{count}もじ」いじょうにしてね"
           confirmation: "と%{attribute}のにゅうりょくがあわないよ"
   enums:
     user:

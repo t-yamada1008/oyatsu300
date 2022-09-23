@@ -3,7 +3,8 @@ ja:
     new:
       title: 'しんきとうろく'
     create:
-      failure: 'とうろくしっぱい。もう一度ためしてみてね。'
+      success: 'ろぐいんしたよ'
+      failure: 'とうろくしっぱい。もういちどためしてみてね。'
     form:
       name: 'にっくねーむ'
       email: 'ふりーあどれすでいいよ'
