@@ -40,7 +40,6 @@ RSpec.describe "EnsokuSessions", type: :system do
           expect(page).to have_link 'みんなのおやつ'
           expect(page).to have_link 'ろぐいん'
         end
-        # TODO: user_session_specにテスト項目を移動
         it 'ログイン画面に遷移できる' do
           # rootに遷移
           visit root_path
