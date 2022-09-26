@@ -1,9 +1,9 @@
 / 新規作成か更新かチェック
-- if @ensoku.blank?
-  div#register  = link_to new_ensoku_path, class: "btn btn-outline-light #{ 'disabled' if session[:oyatsus].blank? }"
+- if session[:ensoku].present?
+  div#register  = link_to edit_ensoku_path(session[:ensoku]), class: "btn btn-outline-light #{ 'disabled' if session[:oyatsus].blank? }"
     i.fa-solid.fa-basket-shopping
     = " #{t('.register')}"
 - else
-  div#register  = link_to edit_ensoku_path(@ensoku), class: "btn btn-outline-light #{ 'disabled' if session[:oyatsus].blank? }"
+  div#register  = link_to new_ensoku_path, class: "btn btn-outline-light #{ 'disabled' if session[:oyatsus].blank? }"
     i.fa-solid.fa-basket-shopping
     = " #{t('.register')}"
