@@ -59,16 +59,24 @@ class EnsokusController < ApplicationController
       # バスケット更新
       if session[:oyatsus].present?
         session_oyatsus = session[:oyatsus]
+        # セッション側検索
         session_oyatsus.each do |s_oyatsu|
-          # quantityが0になった場合はレコードを削除
-          # session_oyatsusに入っておらず、@ensoku.basketsに入ってるもの
+          ## 同一おやつがあった場合、数量をアップデート
+          # 既存バスケットをループし、マッチしたら更新
           @ensoku.baskets.each do |basket|
-            if basket.oyatsu_id == s_oyatsu[:oyatsu_id]
-              basket.update(quantity: s_oyatsu[:quantity])
-            else
-              basket.delete
-            end
+            basket.update(quantity: s_oyatsu[:quantity]) if basket.oyatsu_id == s_oyatsu[:oyatsu_id]
           end
+          # @ensoku.basketsに該当おやつを追加する
+          # 条件1: @ensoku.basketsに何も存在しない
+          # 条件2: session_oyatsusに存在し@ensoku.basketsに存在しない場合
+          if @ensoku.baskets.blank? || @ensoku.baskets.find { |o| o.oyatsu_id == s_oyatsu[:oyatsu_id] }.blank?
+            Basket.create(oyatsu_id: s_oyatsu[:oyatsu_id], ensoku_id: @ensoku.id, quantity: s_oyatsu[:quantity])
+          end
+        end
+        # @ensoku.baksets側検索
+        # @ensoku.basketsに存在し、session_oyatsusに存在しない場合、@ensoku.basketsの該当おやつを削除する
+        @ensoku.baskets.each do |basket|
+          Basket.find(basket.id).delete if session_oyatsus.find { |k, v| k[:oyatsu_id] == basket.oyatsu_id }.blank?
         end
         session[:oyatsus] = nil
         session[:purse] = nil
