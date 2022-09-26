@@ -4,4 +4,4 @@ tr
   td.align-middle id="ensoku-index-id-#{ensoku.id}-status" = ensoku.status_i18n
   td.align-middle id="ensoku-index-id-#{ensoku.id}-purse" = ensoku.purse
   td.align-middle id="ensoku-index-id-#{ensoku.id}-see" = link_to t('.see'), ensoku_path(ensoku), class: 'btn btn-sm btn-outline-dark'
-  td.align-middle id="ensoku-index-id-#{ensoku.id}-again" = link_to t('.again'), oyatsus_path(ensoku: ensoku), class: 'btn btn-sm btn-outline-dark'
+  td.align-middle id="ensoku-index-id-#{ensoku.id}-again" = link_to t('.again'), edit_ensoku_path(ensoku), class: 'btn btn-sm btn-outline-dark'
