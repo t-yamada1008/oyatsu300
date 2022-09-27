@@ -29,19 +29,19 @@ RSpec.describe User, type: :model do
   it 'is invalid without password' do
     user_without_password = build(:user, password: '')
     expect(user_without_password).to be_invalid
-    expect(user_without_password.errors[:password]).to eq ["をにゅうりょくしてね", "は「4もじ」いじょうにしてね。"]
+    expect(user_without_password.errors[:password]).to eq ["をにゅうりょくしてね", "は「4もじ」いじょうにしてね"]
   end
 
   it 'is invalid short password' do
     user_short_password = build(:user, password: 's')
     expect(user_short_password).to be_invalid
-    expect(user_short_password.errors[:password]).to eq ["は「4もじ」いじょうにしてね。"]
+    expect(user_short_password.errors[:password]).to eq ["は「4もじ」いじょうにしてね"]
   end
 
   it 'is invalid long password' do
     user_long_password = build(:user, password: '123456789123456789')
     expect(user_long_password).to be_invalid
-    expect(user_long_password.errors[:password]).to eq ["は「16もじ」いかにしてね。"]
+    expect(user_long_password.errors[:password]).to eq ["は「16もじ」いかにしてね"]
   end
 
   it 'is invalid without password_confirmation' do

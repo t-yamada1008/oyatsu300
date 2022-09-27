@@ -8,7 +8,7 @@ ja:
       status: 'じょうたい'
       show: 'しょうさい'
       rechoose: 'えらびなおす'
-      please_choose_oyatsu: 'おやつをえらんでね！'
+      please_choose_oyatsu: 'えらんだおやつがないよ。おやつをえらんでね！'
       choose_oyatsu: 'おやつをえらぶ'
     new:
       title: 'これでいい？'
@@ -24,7 +24,7 @@ ja:
       choosed_oyatsu: 'えらんだおやつ'
       nothing_choosed: 'なにもえらんでないよ。えらぼう！'
       twitter: 'ついーとする'
-      retry: 'もういちどえらぶ'
+      retry: 'もういちどはじめからえらぶ'
       edit: 'せっていへんこう'
       index: 'いちらんにもどる'
       please_choose: 'おやつをえらんでね！'
