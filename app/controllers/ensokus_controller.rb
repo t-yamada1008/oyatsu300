@@ -35,14 +35,17 @@ class EnsokusController < ApplicationController
         Basket.create(oyatsu_id: s_oyatsu[:oyatsu_id], ensoku_id: @ensoku.id, quantity: s_oyatsu[:quantity])
       end
     end
-    session[:oyatsus] = nil
-    session[:purse] = nil
+    # ログイン時に紐付けを行うためにensokuオブジェクトをセッションに格納
     session[:ensoku] = @ensoku
     redirect_to ensoku_path(@ensoku), success: t('.success')
   end
 
   # おかし選択結果
-  def show; end
+  def show
+    # 選択結果表示時にカートの中身を空にする
+    session[:oyatsus] = nil
+    session[:purse] = nil
+  end
 
   # 選択結果のステータス編集
   def edit; end
