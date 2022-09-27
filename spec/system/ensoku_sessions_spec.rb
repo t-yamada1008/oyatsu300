@@ -667,8 +667,8 @@ RSpec.describe "EnsokuSessions", type: :system do
           expect(page).to have_content 'できたよー！'
           # ツイートボタンが表示される
           expect(page).to have_link 'ついーとする'
-          # もういちどえらぶが表示される
-          expect(page).to have_link 'もういちどえらぶ'
+          # もういちどはじめからえらぶが表示される
+          expect(page).to have_link 'もういちどはじめからえらぶ'
           # 選択したおやつが表示される
           # バッジが表示される
           expect(page).to have_selector "#oyatsu-id-#{oyatsu.id}-badge", text: '1'
@@ -705,8 +705,8 @@ RSpec.describe "EnsokuSessions", type: :system do
           expect(page).to have_content 'できたよー！'
           # ツイートボタンが表示される
           expect(page).to have_link 'ついーとする'
-          # もういちどえらぶが表示される
-          expect(page).to have_link 'もういちどえらぶ'
+          # もういちどはじめからえらぶが表示される
+          expect(page).to have_link 'もういちどはじめからえらぶ'
           # 選択したおやつが表示される
           # バッジが表示される
           expect(page).to have_selector "#oyatsu-id-#{oyatsu_50.id}-badge", text: '1'
@@ -744,8 +744,8 @@ RSpec.describe "EnsokuSessions", type: :system do
           expect(page).to have_content 'できたよー！'
           # ツイートボタンが表示される
           expect(page).to have_link 'ついーとする'
-          # もういちどえらぶが表示される
-          expect(page).to have_link 'もういちどえらぶ'
+          # もういちどはじめからえらぶが表示される
+          expect(page).to have_link 'もういちどはじめからえらぶ'
           # 選択したおやつが表示される
           # バッジが表示される
           expect(page).to have_selector "#oyatsu-id-#{oyatsu.id}-badge", text: '3'
@@ -781,7 +781,7 @@ RSpec.describe "EnsokuSessions", type: :system do
           expect(link[:href]).to include 'https://twitter.com/share'
         end
 
-        it '「もういちどえらぶ」ボタンを押下する' do
+        it '「もういちどはじめからえらぶ」ボタンを押下する' do
           # おやつ画面に遷移
           visit root_path
           click_link 'あたらしくえらぶ'
@@ -796,8 +796,8 @@ RSpec.describe "EnsokuSessions", type: :system do
           click_button 'おっけー！'
           # 遠足結果画面に遷移
           expect(current_path).to eq ensoku_path(RSpec.configuration.session[:ensoku])
-          # 「もういちどえらぶ」ボタンを押下
-          click_link 'もういちどえらぶ'
+          # 「もういちどはじめからえらぶ」ボタンを押下
+          click_link 'もういちどはじめからえらぶ'
           expect(current_path).to eq root_path
         end
 
@@ -816,7 +816,7 @@ RSpec.describe "EnsokuSessions", type: :system do
           click_button 'おっけー！'
           # 遠足結果画面に遷移
           expect(current_path).to eq ensoku_path(RSpec.configuration.session[:ensoku])
-          # 「もういちどえらぶ」ボタンを押下
+          # 「もういちどはじめからえらぶ」ボタンを押下
           click_link 'かいいんとうろく'
           expect(current_path).to eq new_users_path
         end
