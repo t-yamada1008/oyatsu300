@@ -64,8 +64,8 @@ RSpec.describe "Ensokus", type: :system do
         expect(page).to have_content 'えらんだおやつ！'
         # ツイートボタンが表示される
         expect(page).to have_link 'ついーとする'
-        # もういちどえらぶが表示される
-        expect(page).to have_link 'もういちどえらぶ'
+        # もういちどはじめからえらぶが表示される
+        expect(page).to have_link 'もういちどはじめからえらぶ'
         ## テーブルが表示される
         # カラムが表示されている
         thead = find('thead')
@@ -97,7 +97,7 @@ RSpec.describe "Ensokus", type: :system do
       xit 'ツイートボタンを押下することでツイートができる' do
       end
 
-      it 'もういちどえらぶボタンから、rootに遷移する' do
+      it 'もういちどはじめからえらぶボタンから、rootに遷移する' do
         login_as(ensoku.user)
         find('.navbar-toggler-icon').click
         click_link 'えらんだおやつ'
@@ -105,8 +105,8 @@ RSpec.describe "Ensokus", type: :system do
         tbody = find('tbody')
         see_link = tbody.find("#ensoku-index-id-#{ensoku.id}-see")
         see_link.click
-        # 「もういちどえらぶ」ボタンを押下
-        click_link 'もういちどえらぶ'
+        # 「もういちどはじめからえらぶ」ボタンを押下
+        click_link 'もういちどはじめからえらぶ'
         expect(current_path).to eq root_path
       end
 
@@ -135,7 +135,6 @@ RSpec.describe "Ensokus", type: :system do
         expect(current_path).to eq edit_ensoku_path(ensoku)
         expect(page).to have_content 'しゅうせいするよ'
       end
-
     end
   end
 
@@ -145,6 +144,7 @@ RSpec.describe "Ensokus", type: :system do
       let!(:ensoku) { create(:ensoku) }
       let!(:oyatsu) { create(:oyatsu) }
       let!(:oyatsu_rechoosed) { create(:oyatsu) }
+      let!(:oyatsu_100) { create(:oyatsu, :y100) }
       let!(:basket) { create(:basket, ensoku: ensoku, oyatsu: oyatsu) }
 
       it 'えらんだおやつ一覧画面から編集画面に遷移する' do
@@ -156,6 +156,118 @@ RSpec.describe "Ensokus", type: :system do
         tbody = find('tbody')
         again_link = tbody.find("#ensoku-index-id-#{ensoku.id}-again")
         again_link.click
+        expect(current_path).to eq edit_ensoku_path(ensoku)
+        expect(page).to have_content 'しゅうせいするよ'
+        # 残高
+        expect(page).to have_selector '.okozukai', text: 'のこり: 290 えん'
+        # 「えらびなおす」リンクが表示されている
+        expect(page).to have_link 'えらびなおす'
+        # コメントフォームが表示されている
+        # コメントフォームに既存のコメントが表示されている
+        expect(page).to have_field 'こめんと', with: ensoku.comment
+        # ステータスフォームが表示されている
+        # 公開ステータスが選択されている
+        expect(page).to have_field 'こうかいすてーたす', with: ensoku.status
+        expect(page).to have_field 'こうかいすてーたす', with: 'selecting'
+        # 「おっけー！」ボタンが表示されている
+        expect(page).to have_button 'おっけー！'
+        # 「けしちゃう」リンクが表示されていない
+        expect(page).to have_link 'けしちゃう'
+        # おやつが表示される
+        # バッジが表示される
+        expect(page).to have_selector "#oyatsu-id-#{oyatsu.id}-badge", text: '1'
+        # おやつ情報が表示される
+        expect(page).to have_selector "#oyatsu-id-#{oyatsu.id}-name", text: oyatsu.name
+        # footerが表示されない
+        expect(page).to have_no_selector ".card-footer"
+      end
+
+      it 'おやつを選んでいる途中で詳細画面に行き、おやつ編集画面に遷移する際に詳細画面と編集画面のおやつが一致する' do
+        # 1回目の詳細画面に遷移
+        login_as(ensoku.user)
+        find('.navbar-toggler-icon').click
+        click_link 'えらんだおやつ'
+        tbody = find('tbody')
+        see_link = tbody.find("#ensoku-index-id-#{ensoku.id}-see")
+        see_link.click
+        ## 1回目の修正画面
+        # せっていへんこうボタンを押下
+        click_link 'せっていへんこう'
+        expect(current_path).to eq edit_ensoku_path(ensoku)
+        expect(page).to have_content 'しゅうせいするよ'
+        # 残高
+        expect(page).to have_selector '.okozukai', text: 'のこり: 290 えん'
+        # 「えらびなおす」リンクが表示されている
+        expect(page).to have_link 'えらびなおす'
+        # コメントフォームが表示されている
+        # コメントフォームに既存のコメントが表示されている
+        expect(page).to have_field 'こめんと', with: ensoku.comment
+        # ステータスフォームが表示されている
+        # 公開ステータスが選択されている
+        expect(page).to have_field 'こうかいすてーたす', with: ensoku.status
+        expect(page).to have_field 'こうかいすてーたす', with: 'selecting'
+        # 「おっけー！」ボタンが表示されている
+        expect(page).to have_button 'おっけー！'
+        # 「けしちゃう」リンクが表示されていない
+        expect(page).to have_link 'けしちゃう'
+        # おやつが表示される
+        # バッジが表示される
+        expect(page).to have_selector "#oyatsu-id-#{oyatsu.id}-badge", text: '1'
+        # おやつ情報が表示される
+        expect(page).to have_selector "#oyatsu-id-#{oyatsu.id}-name", text: oyatsu.name
+        # footerが表示されない
+        expect(page).to have_no_selector ".card-footer"
+        ## おやつをえらびなおす
+        click_link 'えらびなおす'
+        expect(current_path).to eq oyatsus_path
+        # 更新前のminusボタンを押下
+        link_minus = find("#oyatsu-id-#{oyatsu.id}-minus")
+        link_minus.click
+        # 更新後のplusボタンを押下
+        link_plus = find("#oyatsu-id-#{oyatsu_100.id}-plus")
+        link_plus.click
+        # バッジが表示される
+        expect(page).to have_selector "#oyatsu-id-#{oyatsu_100.id}-badge", text: '1'
+        # 残高が変わる
+        expect(page).to have_selector '.okozukai', text: 'のこり: 200 えん'
+        # おかいけいボタンを押下
+        click_link 'おかいけい'
+        # 2回目の編集確認画面に遷移(おかいけいボタンから))
+        expect(current_path).to eq edit_ensoku_path(ensoku)
+        expect(page).to have_content 'しゅうせいするよ'
+        # 残高
+        expect(page).to have_selector '.okozukai', text: 'のこり: 200 えん'
+        # 「えらびなおす」リンクが表示されている
+        expect(page).to have_link 'えらびなおす'
+        # コメントフォームが表示されている
+        # コメントフォームに既存のコメントが表示されている
+        expect(page).to have_field 'こめんと', with: ensoku.comment
+        # ステータスフォームが表示されている
+        # 公開ステータスが選択されている
+        expect(page).to have_field 'こうかいすてーたす', with: ensoku.status
+        expect(page).to have_field 'こうかいすてーたす', with: 'selecting'
+        # 「おっけー！」ボタンが表示されている
+        expect(page).to have_button 'おっけー！'
+        # 「けしちゃう」リンクが表示されていない
+        expect(page).to have_link 'けしちゃう'
+        # おやつが表示される
+        # バッジが表示される
+        expect(page).to have_selector "#oyatsu-id-#{oyatsu_100.id}-badge", text: '1'
+        # おやつ情報が表示される
+        expect(page).to have_selector "#oyatsu-id-#{oyatsu_100.id}-name", text: oyatsu_100.name
+        # footerが表示されない
+        expect(page).to have_no_selector ".card-footer"
+        ## おっけー！ボタンから更新をしない。
+        ## 2回目の詳細画面に遷移
+        find('.navbar-toggler-icon').click
+        click_link 'えらんだおやつ'
+        tbody = find('tbody')
+        see_link = tbody.find("#ensoku-index-id-#{ensoku.id}-see")
+        see_link.click
+        ## 3回目の修正画面
+        ## session[:oyatsus]でなく@ensoku.basketsの内容が表示される
+        # せっていへんこうボタンを押下
+        click_link 'せっていへんこう'
         expect(current_path).to eq edit_ensoku_path(ensoku)
         expect(page).to have_content 'しゅうせいするよ'
         # 残高
@@ -289,7 +401,7 @@ RSpec.describe "Ensokus", type: :system do
       let!(:oyatsu) { create(:oyatsu) }
       let!(:basket) { create(:basket, ensoku: ensoku, oyatsu: oyatsu) }
 
-      fit '選んだおやつが削除できることを確認する' do
+      it '選んだおやつが削除できることを確認する' do
         login_as(ensoku.user)
         find('.navbar-toggler-icon').click
         click_link 'えらんだおやつ'
@@ -298,14 +410,29 @@ RSpec.describe "Ensokus", type: :system do
         tbody = find('tbody')
         again_link = tbody.find("#ensoku-index-id-#{ensoku.id}-again")
         again_link.click
-        click_link 'せっていへんこう'
         # 削除ボタンを押下
         click_link 'けしちゃう'
-        expect(page).to have_content 'ほんとうにだいじょうぶ？'
+        expect(page.accept_confirm).to eq 'ほんとうにだいじょうぶ？'
+        expect(page).to have_content 'けしたよー'
+        expect(current_path).to eq ensokus_path
+        expect(page).to have_content 'えらんだおやつがないよ。おやつをえらんでね！'
+        expect(page).to have_link 'おやつをえらぶ'
       end
 
       it '確認ダイアログでいいえを押下する' do
-
+        login_as(ensoku.user)
+        find('.navbar-toggler-icon').click
+        click_link 'えらんだおやつ'
+        expect(current_path).to eq ensokus_path
+        expect(page).to have_content 'えらんだおやつ'
+        tbody = find('tbody')
+        again_link = tbody.find("#ensoku-index-id-#{ensoku.id}-again")
+        again_link.click
+        # 削除ボタンを押下
+        click_link 'けしちゃう'
+        expect(page.dismiss_confirm).to eq 'ほんとうにだいじょうぶ？'
+        expect(current_path).to eq edit_ensoku_path(ensoku)
+        expect(page).to have_content 'しゅうせいするよ'
       end
     end
   end
