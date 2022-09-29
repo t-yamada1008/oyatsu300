@@ -118,9 +118,14 @@ end
 
 # --- Test ---
 group :test do
+
+  # capybara for RSpec
   gem 'capybara'
   gem 'webdrivers'
   gem 'mock_redis'
+
+  # Coverage
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

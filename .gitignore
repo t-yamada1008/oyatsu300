@@ -54,3 +54,6 @@ public/uploads
 
 # Ignore installed gem files.
 /vender/bundle
+
+# ignore coverage
+coverage
