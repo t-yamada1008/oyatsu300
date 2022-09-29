@@ -161,7 +161,7 @@ RSpec.describe "EnsokuSessions", type: :system do
           click_link 'あたらしくえらぶ'
           # plusボタンを押下
           link = find("#oyatsu-id-#{oyatsu.id}-plus")
-          30.times {link.click}
+          1..30.times {link.click}
           # バッジが表示される
           expect(page).to have_selector "#oyatsu-id-#{oyatsu.id}-badge", text: '30'
           # minusボタンが表示される
@@ -571,7 +571,7 @@ RSpec.describe "EnsokuSessions", type: :system do
           click_link 'あたらしくえらぶ'
           # plusボタンを押下
           link = find("#oyatsu-id-#{oyatsu.id}-plus")
-          3.times { link.click }
+          1..3.times { link.click }
           # おかいけいボタンを押下
           click_link 'おかいけい'
           # おやつ選択結果確認画面に遷移
