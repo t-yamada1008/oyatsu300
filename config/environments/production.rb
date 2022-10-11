@@ -117,4 +117,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # session_storeの記述を追加
+  config.session_store :redis_store, servers: Settings.redis.servers, expire_after: 1.day
 end
