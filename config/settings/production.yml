@@ -1,6 +1,6 @@
 default_url_options:
-  host: 'https://oyatsu300.herokuapp.com/'
+  host: 'https://oyatsu300.com/'
 twitter:
-  callback_url: 'https://oyatsu300.herokuapp.com/oauth/callback?provider=twitter'
+  callback_url: 'https://oyatsu300.com/oauth/callback?provider=twitter'
 redis:
   servers: 'oyatsu300-redis.hkx8gy.ng.0001.apne1.cache.amazonaws.com:6379'
