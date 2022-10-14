@@ -48,3 +48,12 @@ set :keep_releases, 5
 # rbenvの設定
 set :rbenv_type, :user
 set :rbenv_ruby, '3.1.2'
+
+# main branchの設定
+set :branch, 'main'
+
+# secrets.ymlの変更
+set :linked_files, fetch(:linked_files, []).push('config/secrets.yml')
+
+# pumaの設定
+set :puma_service_unit_name, 'puma.service'
