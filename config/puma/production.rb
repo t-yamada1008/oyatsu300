@@ -8,6 +8,6 @@ workers 2
 preload_app!
 
 pidfile "#{tmp_path}/pids/puma.pid"
-stdout_redirect "#{tmp_path}/logs/puma.stdout.log", "#{tmp_path}/logs/puma.stderr.log", true
+#stdout_redirect "#{tmp_path}/logs/puma.stdout.log", "#{tmp_path}/logs/puma.stderr.log", true
 
 plugin :tmp_restart
