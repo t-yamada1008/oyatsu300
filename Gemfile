@@ -113,6 +113,12 @@ group :development do
   gem 'better_errors' # railsのエラー画面整形
   gem 'binding_of_caller' # ブラウザ上でirb利用
   gem 'annotate' # schema情報をmodelやrootに記述
+
+  # 自動デプロイ
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
 end
 
 
