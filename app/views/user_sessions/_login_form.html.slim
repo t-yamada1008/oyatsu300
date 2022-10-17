@@ -13,7 +13,5 @@ section.form-box.border
       = f.label :password, User.human_attribute_name(:password)
       = f.password_field :password, id: 'password', class: 'form-control', placeholder: t('.password')
     = f.submit t('.submit'), class: 'btn btn-outline-light'
-div
-  = link_to t('.new_registration'), new_users_path, class: 'btn btn-outline-light mt-3'
-div
-  = link_to t('.forgot_password'), new_password_reset_path, class: 'btn btn-outline-light mt-3'
+div.mt-3 = link_to t('.new_registration'), new_users_path, class: 'btn btn-outline-light'
+div.my-3 = link_to t('.forgot_password'), new_password_reset_path, class: 'btn btn-outline-light mb-5'
