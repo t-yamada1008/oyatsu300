@@ -1,6 +1,6 @@
 - content_for :title
 div.main-wrapper.main-bg
-  div.main-inner-text.mt-5
-    = image_tag "logo_transparent.png", size: '300x300'
+  div.main-inner-text.my-5
+    div.mt-5 = image_tag "logo_transparent.png", size: '300x300'
     h1.mb-3.font-weight-normal = t('.title')
     = render 'login_form'
