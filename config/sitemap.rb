@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = Settings.default_url_options.host
+SitemapGenerator::Sitemap.default_host = 'https://oyatsu300.com'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
