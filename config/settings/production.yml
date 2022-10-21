@@ -1,5 +1,5 @@
 default_url_options:
-  host: 'https://oyatsu300.com/'
+  host: 'https://oyatsu300.com'
 twitter:
   callback_url: 'https://oyatsu300.com/oauth/callback?provider=twitter'
 redis:
