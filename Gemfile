@@ -25,7 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# --- Add Gems ---
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+### --- Add Gems ---
 # --- All Enviroments ---
 # login
 gem 'sorcery', '~> 0.16.3'
@@ -71,8 +74,8 @@ gem 'redis-actionpack'
 # 静的ページ作成
 gem 'high_voltage', '~> 3.1', '>= 3.1.2'
 
-# systemd用
-gem "sd_notify"
+# サイトマップ作成
+gem 'sitemap_generator'
 
 # --- Development and Test ---
 group :development, :test do
@@ -125,7 +128,6 @@ group :development do
   gem "capistrano3-puma"
 end
 
-
 # --- Test ---
 group :test do
 
@@ -138,7 +140,8 @@ group :test do
   gem 'simplecov', require: false
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-
+# --- Production ---
+group :production do
+  # systemd用
+  gem "sd_notify"
+end

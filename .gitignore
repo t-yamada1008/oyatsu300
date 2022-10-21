@@ -57,3 +57,9 @@ public/uploads
 
 # ignore coverage
 coverage
+
+# ignore dump
+dump.rdb
+
+# ignore sitemap
+public/sitemap.xml.gz
