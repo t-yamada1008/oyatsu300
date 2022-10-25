@@ -26,6 +26,8 @@
 - 結果を表示。任意でtwitter共有ができます。
 - ログインするとアプリ内機能「みんなのおやつ」で他の人に自分が選んだおやつをみせびらかすことができます！
 
+![遊び方サンプル](app/assets/images/how_to_play_sampe.png)
+
 ## 連絡先
 何かありましたらお気軽にご連絡下さい。
 - [times](https://chat.runteq.jp/runteq/channels/times_yamada_takatoshi)
