@@ -41,6 +41,9 @@ https://www.figma.com/file/UwepZFhub60nnhZ16Ugd21/ensoku-no-oyatsu-ha-300-yen-ma
 ### ER図
 https://drive.google.com/file/d/1J0Py7mTY_zP0ftL_MTqgxwzdHzGOZRZe/view?usp=sharing
 
+### インフラ構成ず
+https://drive.google.com/file/d/1-RKthOhF2UJnWPeczjzWGIUB6hU1rfl9/view?usp=sharing
+
 ## 環境
 - ruby: v3.1.2
 - rails: v6.1.6.1
