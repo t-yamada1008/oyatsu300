@@ -83,5 +83,6 @@ production:
   <<: *default
   database: ensoku_no_oyatsu_ha_300_yen_made_production
   username: oyatsu300_admin
-  password: 2rb6yEmoeihc8kQ4FG7E
+  # passwordは本番環境にて変更
+  password:
   host: database-1.cp1fuzz5ylbn.ap-northeast-1.rds.amazonaws.com
