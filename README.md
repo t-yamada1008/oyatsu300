@@ -1,5 +1,4 @@
-#えんそくのおやつは300えんまで！
-https://oyatsu300.com/
+# [えんそくのおやつは300えんまで！](https://oyatsu300.com/)
 
 ![えんそくのおやつは300えんまで！](app/assets/images/logo_transparent_ogp.png)
 
