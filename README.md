@@ -1,4 +1,4 @@
-![えんそくのおやつは300えんまで！](./app/app/assets/images/logo_transparent_ogp.png)
+![えんそくのおやつは300えんまで！](app/assets/images/logo_transparent_ogp.png)
 
 # URL
 https://oyatsu300.com/
