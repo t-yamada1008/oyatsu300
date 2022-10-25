@@ -1,7 +1,7 @@
-![えんそくのおやつは300えんまで！](app/assets/images/logo_transparent_ogp.png)
-
-# URL
+#えんそくのおやつは300えんまで！
 https://oyatsu300.com/
+
+![えんそくのおやつは300えんまで！](app/assets/images/logo_transparent_ogp.png)
 
 # サービス概要
 300円以内でおやつを選んで、結果をアプリ内もしくはTwitterで共有するアプリです。
