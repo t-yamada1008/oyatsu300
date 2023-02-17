@@ -13,7 +13,7 @@ class Ensoku < ApplicationRecord
 
   enum status: {
     selecting: 0,
-    not_published: 1,
+    unpublished: 1,
     published: 2
   }
 

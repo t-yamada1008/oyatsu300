@@ -1,4 +1,4 @@
-require 'rails_helper'
+equire 'rails_helper'
 
 # みんなのおやつでの挙動をテスト
 RSpec.describe "EveryoneOyatsus", type: :system do
@@ -6,7 +6,7 @@ RSpec.describe "EveryoneOyatsus", type: :system do
   describe '一覧画面' do
     context 'みんなのおやつにデータが存在する' do
 
-      let!(:ensoku_not_published) { create(:ensoku, :not_published) }
+      let!(:ensoku_unpublished) { create(:ensoku, :unpublished) }
       let!(:ensoku_published) { create(:ensoku, :published) }
 
       it '正常にみんなのおやつの一覧画面が表示されている' do
@@ -33,17 +33,17 @@ RSpec.describe "EveryoneOyatsus", type: :system do
         expect(tbody).to have_selector "#everyone-oyatsu-ensoku-id-#{ensoku_published.id}-purse", text: ensoku_published.purse
         see_link = tbody.find("#everyone-oyatsu-ensoku-id-#{ensoku_published.id}-see")
         expect(see_link).to have_link 'みてあげる'
-        # not_publishedが表示されていない
-        expect(tbody).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_not_published.id}-name", text: ensoku_not_published.user.name
-        expect(tbody).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_not_published.id}-comment", text: ensoku_not_published.comment
-        expect(tbody).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_not_published.id}-purse", text: ensoku_not_published.purse
-        expect(tbody).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_not_published.id}-see"
+        # unpublishedが表示されていない
+        expect(tbody).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_unpublished.id}-name", text: ensoku_unpublished.user.name
+        expect(tbody).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_unpublished.id}-comment", text: ensoku_unpublished.comment
+        expect(tbody).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_unpublished.id}-purse", text: ensoku_unpublished.purse
+        expect(tbody).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_unpublished.id}-see"
       end
     end
 
     context 'みんなのおやつにデータが存在しない' do
 
-      let!(:ensoku_not_published) { create(:ensoku, :not_published) }
+      let!(:ensoku_unpublished) { create(:ensoku, :unpublished) }
 
       it 'みんなのおやつに公開される情報がなにもない' do
         # rootに遷移
@@ -60,11 +60,11 @@ RSpec.describe "EveryoneOyatsus", type: :system do
         expect(page).to have_no_content 'こめんと'
         expect(page).to have_no_content 'のこりのおこづかい'
         expect(page).to have_no_content 'みる？'
-        # not_publishedが表示されていない
-        expect(page).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_not_published.id}-name", text: ensoku_not_published.user.name
-        expect(page).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_not_published.id}-comment", text: ensoku_not_published.comment
-        expect(page).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_not_published.id}-purse", text: ensoku_not_published.purse
-        expect(page).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_not_published.id}-see"
+        # unpublishedが表示されていない
+        expect(page).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_unpublished.id}-name", text: ensoku_unpublished.user.name
+        expect(page).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_unpublished.id}-comment", text: ensoku_unpublished.comment
+        expect(page).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_unpublished.id}-purse", text: ensoku_unpublished.purse
+        expect(page).to have_no_selector "#everyone-oyatsu-ensoku-id-#{ensoku_unpublished.id}-see"
         # コメントが表示されている
         expect(page).to have_content 'きみがいちばんのりだ！'
       end

@@ -45,6 +45,6 @@ ja:
     ensoku:
       status:
         selecting: 'とちゅう'
-        not_published: 'ひとにみせない'
+        unpublished: 'ひとにみせない'
         published: 'ひとにみせる'
 
