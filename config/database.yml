@@ -83,6 +83,5 @@ production:
   <<: *default
   database: ensoku_no_oyatsu_ha_300_yen_made_production
   username: oyatsu300_admin
-  # passwordは本番環境にて変更
-  password:
-  host: database-1.cp1fuzz5ylbn.ap-northeast-1.rds.amazonaws.com
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
