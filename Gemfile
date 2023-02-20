@@ -145,5 +145,3 @@ group :production do
   # systemd用
   gem "sd_notify"
 end
-
-gem "dockerfile-rails", ">= 1.0", :group => :development
