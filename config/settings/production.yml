@@ -3,4 +3,4 @@ default_url_options:
 twitter:
   callback_url: 'https://oyatsu300.com/oauth/callback?provider=twitter'
 redis:
-  servers: 'oyatsu300-redis.hkx8gy.ng.0001.apne1.cache.amazonaws.com:6379'
+  servers: <%= Rails.application.credentials.redis[:server] %>
