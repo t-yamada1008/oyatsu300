@@ -34,8 +34,5 @@ module Oyatsu300
     config.i18n.available_locales = %i[ja en]
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
-
-    # for Heroku
-    config.assets.initialize_on_precompile = false
   end
 end
