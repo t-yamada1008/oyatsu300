@@ -9,9 +9,9 @@ module ApplicationHelper
     page_title.empty? ? base_title : "#{page_title} | #{base_title}"
   end
 
-  # OGP: 画像
+  # OGP: 画像 一旦コメントアウト
   def og_image
-    "#{Settings.default_url_options.host}#{asset_path('logo_transparent.png')}"
+    #"#{Settings.default_url_options.host}#{asset_path('logo_transparent.png')}"
   end
 
   # OGP: 説明
