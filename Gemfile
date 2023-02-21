@@ -38,7 +38,7 @@ gem 'rails-i18n'
 gem 'enum_help'
 
 # 環境設定用gem
-gem 'config', '~> 4.0'
+#gem 'config', '~> 4.0'
 
 # Frontend
 # bootstrap
