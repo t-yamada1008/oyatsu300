@@ -40,7 +40,6 @@ Rails.application.configure do
   # 配信方法設定
   config.action_mailer.delivery_method = :letter_opener_web
   #config.action_mailer.default_url_options = Settings.default_url_options.to_h
-  config.action_mailer.default_url_options = 'http://127.0.0.1:3000/'.to_h
 
   config.action_mailer.perform_caching = false
 
