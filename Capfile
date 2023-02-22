@@ -37,7 +37,11 @@ require "capistrano/rails/migrations"
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
 
-# pumaを追加
-require "capistrano/puma"
-install_plugin Capistrano::Puma
-install_plugin Capistrano::Puma::Systemd
+# pumaを一旦削除
+# require "capistrano/puma"
+# install_plugin Capistrano::Puma
+# install_plugin Capistrano::Puma::Systemd
+
+# unicornに変更
+require "capistrano3/unicorn"
+

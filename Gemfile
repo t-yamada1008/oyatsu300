@@ -144,4 +144,7 @@ end
 group :production do
   # systemd用
   gem "sd_notify"
+
+  # unicorn導入
+  gem 'unicorn'
 end
