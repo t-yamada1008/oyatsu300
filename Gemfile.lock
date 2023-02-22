@@ -96,10 +96,8 @@ GEM
     capistrano-rbenv (2.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
-    capistrano3-puma (5.2.0)
-      capistrano (~> 3.7)
-      capistrano-bundler
-      puma (>= 4.0, < 6.0)
+    capistrano3-unicorn (0.2.1)
+      capistrano (~> 3.1, >= 3.1.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -445,7 +443,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rbenv
-  capistrano3-puma
+  capistrano3-unicorn
   capybara
   carrierwave
   enum_help
