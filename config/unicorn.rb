@@ -14,10 +14,10 @@ pid "#{root_path}/shared/tmp/pids/unicorn.pid"
 listen "#{root_path}/shared/tmp/sockets/unicorn.sock"
 
 # エラーのログを記録するファイルを指定
-stderr_path "#{root_path}/shared/log/unicorn.stderr.log"
+stderr_path "#{root_path}/log/unicorn.stderr.log"
 
 # 通常のログを記録するファイルを指定
-stdout_path "#{root_path}/shared/log/unicorn.stdout.log"
+stdout_path "#{root_path}/log/unicorn.stdout.log"
 
 #応答時間を待つ上限時間を設定
 timeout 30
