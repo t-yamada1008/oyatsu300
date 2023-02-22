@@ -1,13 +1,21 @@
-environment "production"
+# bind "unix://#{Rails.root.join('tmp/sockets/puma.sock')}"だとpumactlコマンドで読み込まないため絶対パスで指定
+root_dir = '/var/www/oyatsu300/current'
 
-tmp_path = "#{File.expand_path("../../..", __FILE__)}/tmp"
-bind "unix://#{tmp_path}/sockets/puma.sock"
+max_threads_count = ENV.fetch('RAILS_MAX_THREADS', 5)
+min_threads_count = ENV.fetch('RAILS_MIN_THREADS', max_threads_count)
+threads min_threads_count, max_threads_count
 
-threads 3, 3
+worker_timeout 60
+
+bind "unix://#{root_dir}/tmp/sockets/puma.sock"
+
+environment 'production'
+
+pidfile File.expand_path('tmp/pids/server.pid')
+
+stdout_redirect File.expand_path('log/puma_access.log'), File.expand_path('log/puma_error.log'), true
+
+# workerの数は適宜変更する。指定しない場合はsingle modeとなるが、指定した場合はcluster modeとなる。
 workers 2
-preload_app!
-
-pidfile "#{tmp_path}/pids/puma.pid"
-#stdout_redirect "#{tmp_path}/logs/puma.stdout.log", "#{tmp_path}/logs/puma.stderr.log", true
 
 plugin :tmp_restart
