@@ -57,3 +57,50 @@ set :linked_files, fetch(:linked_files, []).push('config/secrets.yml')
 
 # pumaの設定
 set :puma_service_unit_name, 'puma.service'
+
+namespace :deploy do
+  # ......
+  # ...
+
+  # 1. capistranoを実行したマシン側でコンパイルする
+  task :compile_assets_locally do
+    run_locally do
+      with rails_env: fetch(:stage) do
+        execute 'bundle exec rails assets:precompile'
+      end
+    end
+  end
+
+  # 2. webpackerとsprocketsで生成したファイルをそれぞれzipする
+  task :zip_assets_locally do
+    run_locally do
+      execute 'tar -zcvf ./tmp/assets.tar.gz ./public/assets 1> /dev/null'
+      execute 'tar -zcvf ./tmp/packs.tar.gz ./public/packs 1> /dev/null'
+    end
+  end
+
+  # 3. zip後のファイルをupload!でWebサーバーに送り込む。
+  task :send_assets_zip do
+    on roles(:web) do |_host|
+      upload!('./tmp/assets.tar.gz', "#{release_path}/public/")
+      upload!('./tmp/packs.tar.gz', "#{release_path}/public/")
+    end
+  end
+
+  # 4. Webサーバー内でunzipする
+  task :unzip_assets do
+    on roles(:web) do |_host|
+      execute "cd #{release_path}; tar -zxvf #{release_path}/public/assets.tar.gz 1> /dev/null"
+      execute "cd #{release_path}; tar -zxvf #{release_path}/public/packs.tar.gz 1> /dev/null"
+    end
+  end
+
+  # ...
+  # ......
+end
+
+# どのタイミングでタスクが呼ばれるのかを記述する。
+before 'deploy:updated', 'deploy:compile_assets_locally'
+before 'deploy:updated', 'deploy:zip_assets_locally'
+before 'deploy:updated', 'deploy:send_assets_zip'
+before 'deploy:updated', 'deploy:unzip_assets'
