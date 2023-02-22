@@ -125,7 +125,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem "capistrano3-puma"
+  gem "capistrano3-unicorn"
 end
 
 # --- Test ---
