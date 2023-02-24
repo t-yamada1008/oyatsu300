@@ -11,7 +11,7 @@ working_directory "#{root_path}/current"
 pid "#{root_path}/shared/tmp/pids/unicorn.pid"
 
 # ポート番号を指定
-listen "/var/www/oyatsu300/shared/tmp/sockets/unicorn.sock"
+listen "#{root_path}/shared/tmp/sockets/unicorn.sock"
 
 # エラーのログを記録するファイルを指定
 stderr_path "#{root_path}/log/unicorn.stderr.log"

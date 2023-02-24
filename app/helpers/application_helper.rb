@@ -12,6 +12,7 @@ module ApplicationHelper
   # OGP: 画像 一旦コメントアウト
   def og_image
     #"#{Settings.default_url_options.host}#{asset_path('logo_transparent.png')}"
+    "#{Constants::DEFAULT_URL_OPTIONS}#{asset_path('logo_transparent.png')}"
   end
 
   # OGP: 説明
