@@ -1,17 +1,17 @@
 # rootパスのディレクトリを指定
-root_path = File.expand_path('../../../', __FILE__)
+root_path = File.expand_path('../../', __FILE__)
 
 # アプリケーションサーバの性能を決定する
 worker_processes 2
 
 # アプリケーションの設置されているディレクトリを指定
-working_directory "#{root_path}/current"
+working_directory root_path
 
 # プロセスIDの保存先を指定
-pid "#{root_path}/shared/tmp/pids/unicorn.pid"
+pid "#{root_path}/tmp/pids/unicorn.pid"
 
 # ポート番号を指定
-listen "#{root_path}/shared/tmp/sockets/unicorn.sock"
+listen "/var/www/oyatsu300/tmp/sockets/unicorn.sock"
 
 # エラーのログを記録するファイルを指定
 stderr_path "#{root_path}/log/unicorn.stderr.log"
@@ -53,3 +53,4 @@ end
 after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
 end
+~
